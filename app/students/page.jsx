@@ -13,13 +13,12 @@ export default function Page() {
         const fetchStudents = async () => {
             try {
                 const res = await axios.get("/api/students");
-                setStudents(res.dados.students);
-                setData(res.dados.students)
+                setStudents(res.data.students);
+                setDados(res.data.students)
             } catch (erro) {
                 console.log("Deu erro")
             }
         }
-
         fetchStudents();
     }, []);
 
@@ -27,7 +26,7 @@ export default function Page() {
         <main>
             <h1>Nossa Equipe</h1>
             <article>
-                
+                {
                     dados.length ?
                         students ? (
                             <section>
@@ -35,12 +34,12 @@ export default function Page() {
                                     dados.map((students) => (
                                         <div key={students.id}>
                                             <div>
-                                                <img src={student.img} alt={student.name} />
+                                                <img src={students.img} alt={students.name} />
                                             </div>
-                                            <p>{student.name}</p>
-                                            <p>{student.age}</p>
-                                            <p>{student.gender}</p>
-                                            <p>{student.description}</p>
+                                            <p>{students.name}</p>
+                                            <p>{students.age}</p>
+                                            <p>{students.gender}</p>
+                                            <p>{students.description}</p>
                                         </div>
                                     ))
                                 }
@@ -48,10 +47,10 @@ export default function Page() {
                         ) : (
                             <p>Carregando</p>
                         )
-                    ) : (
-                        <p>Não tem colaboradores cadastrados</p>
-                    )
-                
+                        : (
+                            <p>Não tem colaboradores cadastrados</p>
+                        )
+                }
             </article>
         </main>
     )
