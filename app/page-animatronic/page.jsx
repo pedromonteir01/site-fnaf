@@ -2,8 +2,7 @@
 import { useState, useEffect } from 'react';
 import styles from './animatronic.module.css';
 import axios from 'axios';
-import { Router } from 'next/router';
-import Card from '../api/components/Card';
+import Card from '../components/Card';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
@@ -29,7 +28,10 @@ const animatronicPage = () => {
     
     return(
         <main className={styles.container}>
-            <h1>ANIMATRONICS</h1>
+            <article className={styles.itens}>
+                <h1>ANIMATRONICS</h1>
+                <button>REGISTRAR</button>
+            </article>
             <article>
             {
                 data.length ? (
