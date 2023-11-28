@@ -36,10 +36,10 @@ export default function Page() {
                                             <div>
                                                 <img src={students.img} alt={students.name} />
                                             </div>
-                                            <p>{students.name}</p>
-                                            <p>{students.age}</p>
-                                            <p>{students.gender}</p>
-                                            <p>{students.description}</p>
+                                            <p>Nome: {students.name}</p>
+                                            <p>Idade: {students.age}</p>
+                                            <p>Gênero: {students.gender}</p>
+                                            <p>Descrição: {students.description}</p>
                                         </div>
                                     ))
                                 }
