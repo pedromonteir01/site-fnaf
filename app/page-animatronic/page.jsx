@@ -2,7 +2,8 @@
 import { useState, useEffect } from 'react';
 import styles from './animatronic.module.css';
 import axios from 'axios';
-import { Router } from 'next/router';
+import Card from '../components/Card';
+import Link from 'next/link';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
@@ -24,7 +25,14 @@ const animatronicPage = () => {
     
     return(
         <main className={styles.container}>
-            <h1>ANIMATRONICS</h1>
+            <article className={styles.itens}>
+                <h1>ANIMATRONICS</h1>
+                <button>
+                    <Link href={"/page-animatronic/register"}>
+                        Register
+                    </Link>
+                </button>
+            </article>
             <article>
             {
                 data.length ? (
@@ -32,11 +40,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <div key={animatronic.id}>
-                                        <img src={animatronic.image}/>
-                                        <p>{animatronic.name}</p>
-                                        <p>{animatronic.id}</p>
-                                    </div>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id}/>
                                 ))
                             }
                         </section>
