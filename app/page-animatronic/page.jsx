@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from './animatronic.module.css';
 import axios from 'axios';
 import Card from '../components/Card';
+import Link from 'next/link';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
@@ -30,7 +31,11 @@ const animatronicPage = () => {
         <main className={styles.container}>
             <article className={styles.itens}>
                 <h1>ANIMATRONICS</h1>
-                <button>REGISTRAR</button>
+                <button>
+                    <Link href={"/page-animatronic/register"}>
+                        Register
+                    </Link>
+                </button>
             </article>
             <article>
             {
@@ -39,7 +44,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.image} id={animatronic.id}/>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id}/>
                                 ))
                             }
                         </section>
