@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
+import styles from "@/app/students/students.module.css"
 
 export default function Page() {
 
@@ -23,23 +24,25 @@ export default function Page() {
     }, []);
 
     return (
-        <main>
-            <h1>Nossa Equipe</h1>
+        <main className={styles.megaContainer}>
+            <h1 className={styles.title}>Nossa Equipe</h1>
             <article>
                 {
                     dados.length ?
-                        students ? (
-                            <section>
+                        students ? ( 
+                            <section className={styles.sec}>
                                 {
                                     dados.map((students) => (
-                                        <div key={students.id}>
+                                        <div className={styles.card} key={students.id}>
                                             <div>
-                                                <img src={students.img} alt={students.name} />
+                                                <img className={styles.img} src={students.img} alt={students.name} />
                                             </div>
+                                            <div className={styles.infos}>
                                             <p>Nome: {students.name}</p>
                                             <p>Idade: {students.age}</p>
                                             <p>Gênero: {students.gender}</p>
                                             <p>Descrição: {students.description}</p>
+                                            </div>
                                         </div>
                                     ))
                                 }
