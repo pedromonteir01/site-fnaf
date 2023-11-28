@@ -21,10 +21,6 @@ const animatronicPage = () => {
 
         fetchAnimatronics();
     }, []);
-
-    console.log('animatronics', animatronics);
-    console.log('data', data);
-
     
     return(
         <main className={styles.container}>
@@ -48,7 +44,7 @@ const animatronicPage = () => {
                         <p>Loading...</p>
                     )
                 ) : (
-                    <p>Nâo há animatronics</p>
+                    <p>Nenhum animatronic foi cadastrado.</p>
                 )
             }
             </article>
