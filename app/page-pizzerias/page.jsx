@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import styles from './pizzerias.module.css';
 import axios from 'axios';
-import { Router } from 'next/router';
+import Link from 'next/link';
 
 const pizzeriaPage = () => {
     const [pizzerias, setPizzerias] = useState([]);
@@ -25,6 +25,11 @@ const pizzeriaPage = () => {
     return (
         <main className={styles.container}>
             <h1>PIZZARIA</h1>
+            <button>
+                <Link href={"/page-pizzerias/registerP"}>
+                    Register
+                </Link>
+            </button>
             <article>
                 {
                     data.length ? (
