@@ -1,10 +1,14 @@
-import Image from 'next/image'
+'use client'
 import styles from './page.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      
-    </main>
+     <>
+     <div>
+      TESTE
+     </div>
+     </>
   )
 }
+
+export default Home;
