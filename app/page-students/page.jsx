@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
 
+
 export default function Page() {
 
     const [students, setStudents] = useState([]);
@@ -13,8 +14,9 @@ export default function Page() {
         const fetchStudents = async () => {
             try {
                 const res = await axios.get("/api/students");
-                setStudents(res.dados.students);
-                setData(res.dados.students)
+                setStudents(res.data.students);
+                setDados(res.data.students)
+
             } catch (erro) {
                 console.log("Deu erro")
             }
@@ -27,20 +29,22 @@ export default function Page() {
         <main>
             <h1>Nossa Equipe</h1>
             <article>
-                
+                {
                     dados.length ?
-                        students ? (
+                        students ? ( 
                             <section>
                                 {
                                     dados.map((students) => (
                                         <div key={students.id}>
                                             <div>
-                                                <img src={student.img} alt={student.name} />
+                                                <img src={students.img} alt={students.name} />
                                             </div>
-                                            <p>{student.name}</p>
-                                            <p>{student.age}</p>
-                                            <p>{student.gender}</p>
-                                            <p>{student.description}</p>
+                                            <div>
+                                            <p>Nome: {students.name}</p>
+                                            <p>Idade: {students.age}</p>
+                                            <p>Gênero: {students.gender}</p>
+                                            <p>Descrição: {students.description}</p>
+                                            </div>
                                         </div>
                                     ))
                                 }
@@ -48,11 +52,14 @@ export default function Page() {
                         ) : (
                             <p>Carregando</p>
                         )
-                    ) : (
-                        <p>Não tem colaboradores cadastrados</p>
-                    )
-                
+
+                        : (
+                            <p>Não tem colaboradores cadastrados</p>
+                        )
+                }
             </article>
         </main>
     )
 }
+
+
