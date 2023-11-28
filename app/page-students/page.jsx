@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
 import styles from "@/app/students/students.module.css"
 
+
 export default function Page() {
 
     const [students, setStudents] = useState([]);
@@ -16,10 +17,12 @@ export default function Page() {
                 const res = await axios.get("/api/students");
                 setStudents(res.data.students);
                 setDados(res.data.students)
+
             } catch (erro) {
                 console.log("Deu erro")
             }
         }
+
         fetchStudents();
     }, []);
 
@@ -50,6 +53,7 @@ export default function Page() {
                         ) : (
                             <p>Carregando</p>
                         )
+
                         : (
                             <p>Não tem colaboradores cadastrados</p>
                         )
@@ -58,3 +62,5 @@ export default function Page() {
         </main>
     )
 }
+
+
