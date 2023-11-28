@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import SidebarHeader from './components/header/Header';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,7 +10,7 @@ export const metadata = {
 
  const Layout = ({ children }) => {
   return (
-    <div><SidebarHeader />
+    <div>
       <main>{children}</main>
     </div>
   )

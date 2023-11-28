@@ -1,20 +1,11 @@
-// SidebarHeader.js
-import React from 'react';
-import styled from 'styled-components';
+'use client'
+import React from "react";
+import Styles from './header.module.css';
 
-const SidebarHeaderWrapper = styled.div`
-  background-color: #333;
-  color: #fff;
-  padding: 16px;
-  text-align: center;
-`;
-
-const SidebarHeader = () => {
+const SideHeader = () => {
   return (
-    <SidebarHeaderWrapper>
-      <h2>Seu Cabeçalho</h2>
-    </SidebarHeaderWrapper>
-  );
-};
-
-export default SidebarHeader;
+    <div className={Styles.sideHeader}>
+      <div></div>
+    </div>
+  )
+}
