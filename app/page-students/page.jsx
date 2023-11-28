@@ -2,6 +2,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
+import styles from "@/app/students/students.module.css"
+
 
 export default function Page() {
 
@@ -13,8 +15,9 @@ export default function Page() {
         const fetchStudents = async () => {
             try {
                 const res = await axios.get("/api/students");
-                setStudents(res.dados.students);
-                setData(res.dados.students)
+                setStudents(res.data.students);
+                setDados(res.data.students)
+
             } catch (erro) {
                 console.log("Deu erro")
             }
@@ -24,23 +27,25 @@ export default function Page() {
     }, []);
 
     return (
-        <main>
-            <h1>Nossa Equipe</h1>
+        <main className={styles.megaContainer}>
+            <h1 className={styles.title}>Nossa Equipe</h1>
             <article>
-                
+                {
                     dados.length ?
-                        students ? (
-                            <section>
+                        students ? ( 
+                            <section className={styles.sec}>
                                 {
                                     dados.map((students) => (
-                                        <div key={students.id}>
+                                        <div className={styles.card} key={students.id}>
                                             <div>
-                                                <img src={student.img} alt={student.name} />
+                                                <img className={styles.img} src={students.img} alt={students.name} />
                                             </div>
-                                            <p>{student.name}</p>
-                                            <p>{student.age}</p>
-                                            <p>{student.gender}</p>
-                                            <p>{student.description}</p>
+                                            <div className={styles.infos}>
+                                            <p>Nome: {students.name}</p>
+                                            <p>Idade: {students.age}</p>
+                                            <p>Gênero: {students.gender}</p>
+                                            <p>Descrição: {students.description}</p>
+                                            </div>
                                         </div>
                                     ))
                                 }
@@ -48,11 +53,14 @@ export default function Page() {
                         ) : (
                             <p>Carregando</p>
                         )
-                    ) : (
-                        <p>Não tem colaboradores cadastrados</p>
-                    )
-                
+
+                        : (
+                            <p>Não tem colaboradores cadastrados</p>
+                        )
+                }
             </article>
         </main>
     )
 }
+
+
