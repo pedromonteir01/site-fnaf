@@ -1,10 +1,17 @@
+'use client'
+
 import Image from 'next/image'
 import styles from './page.module.css'
+import Layout from './layout';
 
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      
-    </main>
+      <Layout>
+        <div className={styles.container}>
+          <p>teste</p>
+        </div>
+      </Layout>
   )
 }
+
+export default Home;
