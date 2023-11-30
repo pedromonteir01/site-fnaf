@@ -8,14 +8,14 @@ export default function RegisterPizzeria() {
     const [name, setName] = useState("");
     const [franchise, setFranchise] = useState("");
     const [description, setDescription] = useState([]);
-    const [image, setImage] = useState("");
+    const [img, setImg] = useState("");
     const [pizzerias, setPizzerias] = useState([]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            await axios.post("/api/pizzerias", { name, franchise, description, image });
+            await axios.post("/api/pizzerias", { name, franchise, description, img });
             setName("");
             setFranchise("");
             setDescription("");
@@ -28,14 +28,14 @@ export default function RegisterPizzeria() {
         async function fetchPizzerias() {
             try {
                 const response = await axios.get("/api/pizzerias");
-                setPizzerias(response.data);
+                setPizzerias(response.data.pizzerias);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         }
 
         fetchPizzerias();
-    }, []);
+    }, [pizzerias]);
     return (
         <div className={styles.container}>
 
@@ -92,9 +92,9 @@ export default function RegisterPizzeria() {
                         <input
                             className={styles.input}
                             type="file"
-                            id="image"
-                            value={image}
-                            onChange={(e) => setImage(e.target.value)}
+                            id="img"
+                            value={img}
+                            onChange={(e) => setImg(e.target.value)}
                             required
                         />
                     </div>
@@ -115,7 +115,7 @@ export default function RegisterPizzeria() {
                 <div className={styles.pizzerias}>
                     {pizzerias.map((pizzeria) => (
                         <div key={pizzeria.id} className={styles.pizzeria}>
-                            <img src={pizzeria.image} />
+                            <img src={pizzeria.img} />
                             <p>{pizzeria.name}</p>
                             <p>{pizzeria.franchise}</p>
                             <p>{pizzeria.description}</p>
