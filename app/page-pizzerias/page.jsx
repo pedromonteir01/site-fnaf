@@ -4,6 +4,7 @@ import styles from './pizzerias.module.css';
 import axios from 'axios';
 import Link from 'next/link';
 import SideHeader from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 const pizzeriaPage = () => {
     const [pizzerias, setPizzerias] = useState([]);
@@ -24,46 +25,51 @@ const pizzeriaPage = () => {
     }, []);
 
     return (
-        <main className={styles.container}>
-            <div>
-                <SideHeader />
-            </div>
+        <main>
+            <div className={styles.container}>
+                <div>
+                    <SideHeader />
+                </div>
 
-            <div>
-                <h1>PIZZARIA</h1>
-                <button>
-                    <Link href={"/page-pizzerias/registerP"}>
-                        Register
-                    </Link>
-                </button>
-                <article>
-                    {
-                        data.length ? (
-                            pizzerias ? (
-                                <section className={styles.pizzarias}>
-                                    {
-                                        data.map((pizzeria) => (
-                                            <div key={pizzeria.id}>
-                                                <img src={pizzeria.image} />
-                                                <p>{pizzeria.name}</p>
-                                                <p>{pizzeria.id}</p>
-                                                <p>{pizzeria.franchise}</p>
-                                                <p>{pizzeria.description}</p>
-                                            </div>
-                                        ))
-                                    }
-                                </section>
+                <div>
+                    <h1>PIZZARIA</h1>
+                    <button>
+                        <Link href={"/page-pizzerias/registerP"}>
+                            Register
+                        </Link>
+                    </button>
+                    <article>
+                        {
+                            data.length ? (
+                                pizzerias ? (
+                                    <section className={styles.pizzarias}>
+                                        {
+                                            data.map((pizzeria) => (
+                                                <div key={pizzeria.id}>
+                                                    <img src={pizzeria.image} />
+                                                    <p>{pizzeria.name}</p>
+                                                    <p>{pizzeria.id}</p>
+                                                    <p>{pizzeria.franchise}</p>
+                                                    <p>{pizzeria.description}</p>
+                                                </div>
+                                            ))
+                                        }
+                                    </section>
+                                ) : (
+                                    <p>Loading...</p>
+                                )
                             ) : (
-                                <p>Loading...</p>
+                                <p>Nenhuma pizzaria foi cadastrada.</p>
                             )
-                        ) : (
-                            <p>Nenhuma pizzaria foi cadastrada.</p>
-                        )
-                    }
-                </article>
+                        }
+                    </article>
+                </div>
             </div>
-
+            <div>
+                <Footer />
+            </div>
         </main>
+
     );
 }
 
