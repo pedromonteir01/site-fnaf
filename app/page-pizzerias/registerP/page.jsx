@@ -10,7 +10,7 @@ import SideHeader from "@/app/components/header/Header";
 export default function RegisterPizzeria() {
     const [name, setName] = useState("");
     const [franchise, setFranchise] = useState("");
-    const [description, setDescription] = useState([]);
+    const [description, setDescription] = useState("");
     const [img, setImg] = useState("");
     const [pizzerias, setPizzerias] = useState([]);
 
@@ -150,9 +150,14 @@ export default function RegisterPizzeria() {
                                     <p>{pizzeria.description}</p>
                                 </div>
 
-                                <div>
-                                    <button className={styles.buttons}><MdEdit /></button>
-                                    <button className={styles.buttons}><MdDelete /></button>
+                                <div className={styles.buttons}>
+                                    <div className={styles.buttonEdit}>
+                                        <button className={styles.button}><MdEdit /></button>
+                                    </div>
+
+                                    <div className={styles.buttonDelete}>
+                                        <button className={styles.button}><MdDelete /></button>
+                                    </div>
                                 </div>
                             </div>
                         ))}

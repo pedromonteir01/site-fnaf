@@ -3,22 +3,24 @@
 }
 
 .buttons {
+    margin: 1rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.button {
     text-align: center;
-  }
-  
-.buttons button {
-    padding: 0.8rem 0.8rem;
+    padding: 0.6rem 0.6rem;
     background-color: purple;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 3px;
-    margin-top: 5rem;
     transition: 1s;
-  }
-  
-.buttons button:hover {
+}
+
+.button:hover {
     transition: 0.5s;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 0.8rem;
     background-color: darkorchid;
-    }
+}
