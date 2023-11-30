@@ -6,6 +6,7 @@ import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import styles from "./registerP.module.css";
 import SideHeader from "@/app/components/header/Header";
+import Footer from "@/app/components/footer/Footer";
 
 export default function RegisterPizzeria() {
     const [name, setName] = useState("");
@@ -58,7 +59,8 @@ export default function RegisterPizzeria() {
     }, [pizzerias]);
 
     return (
-        <main className={styles.container}>
+        <main>
+        <div className={styles.container}>
             <div>
                 <SideHeader />
             </div>
@@ -165,6 +167,11 @@ export default function RegisterPizzeria() {
                 </div>
             </div>
 
+        </div>
+
+        <div>
+            <Footer />
+        </div>
         </main>
     );
 }
