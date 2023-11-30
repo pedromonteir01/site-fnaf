@@ -1,7 +1,9 @@
 "use client";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import { useRouter } from "next/navigation";
+import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 import styles from "./registerP.module.css";
 import SideHeader from "@/app/components/header/Header";
 
@@ -11,6 +13,9 @@ export default function RegisterPizzeria() {
     const [description, setDescription] = useState([]);
     const [img, setImg] = useState("");
     const [pizzerias, setPizzerias] = useState([]);
+
+    const [data, setData] = useState([]);
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,6 +30,20 @@ export default function RegisterPizzeria() {
         }
     };
 
+    // const deletePizzeria = async (id) => {
+    //     const url = `/api/pizzerias/${id}`;
+    //     try {
+    //         await axios.delete(url);
+    //         setData(data.filter((pizzeria) => pizzeria.id !== id));
+    //     } catch (error) {
+    //         console.error("Error fetching data:", error);
+    //     }
+    // };
+
+    // const editPizzeria = async (id) => {
+    //     router.push(`/pizzerias/${id}`);
+    // };
+
     useEffect(() => {
         async function fetchPizzerias() {
             try {
@@ -37,6 +56,7 @@ export default function RegisterPizzeria() {
 
         fetchPizzerias();
     }, [pizzerias]);
+
     return (
         <main className={styles.container}>
             <div>
@@ -55,6 +75,7 @@ export default function RegisterPizzeria() {
                             <input
                                 className={styles.input}
                                 type="text"
+                                placeholder="Freddy Fazbear's Pizza"
                                 id="name"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -64,11 +85,12 @@ export default function RegisterPizzeria() {
 
                         <div className={styles.formGroup}>
                             <label className={styles.label} htmlFor="franchise">
-                                Idade:
+                                Franquia:
                             </label>
                             <input
                                 className={styles.input}
                                 type="text"
+                                placeholder="FNAF 5"
                                 id="franchise"
                                 value={franchise}
                                 onChange={(e) => setFranchise(e.target.value)}
@@ -83,6 +105,7 @@ export default function RegisterPizzeria() {
                             <input
                                 className={styles.input}
                                 type="text"
+                                placeholder="Primeira pizzaria do jogo"
                                 id="description"
                                 value={description}
                                 onChange={(e) => setDescription(e.target.value)}
@@ -120,10 +143,17 @@ export default function RegisterPizzeria() {
                     <div className={styles.pizzerias}>
                         {pizzerias.map((pizzeria) => (
                             <div key={pizzeria.id} className={styles.pizzeria}>
-                                <img src={pizzeria.img} />
-                                <p>{pizzeria.name}</p>
-                                <p>{pizzeria.franchise}</p>
-                                <p>{pizzeria.description}</p>
+                                <div>
+                                    <img src={pizzeria.img} />
+                                    <p>{pizzeria.name}</p>
+                                    <p>{pizzeria.franchise}</p>
+                                    <p>{pizzeria.description}</p>
+                                </div>
+
+                                <div>
+                                    <button className={styles.buttons}><MdEdit /></button>
+                                    <button className={styles.buttons}><MdDelete /></button>
+                                </div>
                             </div>
                         ))}
                     </div>
