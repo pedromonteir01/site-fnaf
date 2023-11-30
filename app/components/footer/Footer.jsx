@@ -12,6 +12,7 @@ const Footer = () => {
     color: '#6A0572', // preto
     padding: '20px',
     textAlign: 'center',
+  
   };
 
   return (
@@ -30,4 +31,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;  
+export default Footer; 
