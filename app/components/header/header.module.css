@@ -1,0 +1,37 @@
+.sideHeader {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100%;
+}
+
+.componentsHeader {
+  display: flex;
+  flex-direction: column;
+  background-color: #202020;
+  height: 100vh;
+  width: 10vw;
+  border-right: 10px ridge rgb(169, 0, 169);
+}
+
+.buttons {
+  text-align: center;
+}
+
+.buttons button {
+  padding: 0.8rem 0.8rem;
+  background-color: purple;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 5rem;
+  transition: 1s;
+}
+
+.buttons button:hover {
+  transition: 0.5s;
+  padding: 0.8rem 1rem;
+  background-color: darkorchid;
+  }
+
