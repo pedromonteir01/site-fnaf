@@ -26,7 +26,6 @@ const pizzeriaPage = () => {
 
     return (
         <main>
-
             <div className={styles.container}>
                 <div>
                     <SideHeader />
@@ -65,8 +64,6 @@ const pizzeriaPage = () => {
                         }
                     </article>
                 </div>
-
-
             </div>
             <div>
                 <Footer />
