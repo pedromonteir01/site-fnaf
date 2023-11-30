@@ -4,10 +4,13 @@ import styles from './animatronic.module.css';
 import axios from 'axios';
 import Card from '../components/Card';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
     const [data, setData] = useState([]);
+
+    const router = useRouter();
 
     useEffect(() => {
         const fetchAnimatronics = async() => {
@@ -29,14 +32,20 @@ const animatronicPage = () => {
 
     //put animatronic
 
-    const edit = () => {
-
+    const edit = (id) => {
+        router.push(`/page-animatronic/${id}`)
     }
 
     //delete animatronic
     
-    const exclude = () => {
-        
+    const exclude = async(id) => {
+        const url = `/api/animatronics/${id}`;
+        try {
+            await axios.delete(url);
+            setData(data.filter((animatronic) => animatronic.id !== id));
+        } catch(e) {
+        console.log("Error feetching data:", e);
+        }
     }
 
     return(
@@ -56,7 +65,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} openDetails={openDetails}/>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)}/>
                                 ))
                             }
                         </section>
