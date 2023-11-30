@@ -59,7 +59,7 @@ export default function RegisterPizzeria() {
     }, [pizzerias]);
 
     return (
-        <main>
+        <main className={styles.mainContainer}>
         <div className={styles.container}>
             <div>
                 <SideHeader />

@@ -16,11 +16,4 @@
     border: none;
     cursor: pointer;
     border-radius: 3px;
-    transition: 1s;
-}
-
-.button:hover {
-    transition: 0.5s;
-    padding: 0.8rem 0.8rem;
-    background-color: darkorchid;
 }
