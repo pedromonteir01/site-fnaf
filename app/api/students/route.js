@@ -24,6 +24,6 @@ export async function POST(request) {
     return NextResponse.json(response.data);
   } catch (error) {
     console.log("[ORDER_POST]", error);
-    return new NextResponse("Erro interno do servidor!", { status: 500 });
+    return new NextResponse("Erro interno do servidor! Front", { status: 500 });
   }
 }

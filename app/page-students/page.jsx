@@ -25,6 +25,8 @@ export default function Page() {
         fetchStudents();
     }, []);
 
+    console.log(dados);
+    console.log(students);
     return (
         <main>
             <h1>Nossa Equipe</h1>
@@ -61,5 +63,3 @@ export default function Page() {
         </main>
     )
 }
-
-
