@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
@@ -7,16 +8,9 @@ import { FaGithub } from "react-icons/fa";
 import Styles from './footer.module.css';
 
 const Footer = () => {
-  const footerStyle = {
-    backgroundColor: '#000000', // roxo
-    color: '#6A0572', // preto
-    padding: '20px',
-    textAlign: 'center',
-  
-  };
 
   return (
-    <footer style={footerStyle}>
+    <footer className={Styles.footerStyle}>
       <p>2023
         Five Nights at Freddy's
         . Todos os direitos reservados.©</p>
@@ -29,6 +23,6 @@ const Footer = () => {
       </div>
     </footer>
   );
-};
+}
 
 export default Footer; 

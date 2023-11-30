@@ -19,19 +19,19 @@
 }
 
 .buttons button {
-  padding: 0.8rem 0.8rem;
+  padding: 0.8rem 1rem;
   background-color: purple;
   color: #fff;
   border: none;
-  cursor: pointer;
+  cursor: grab;
   border-radius: 3px;
   margin-top: 5rem;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .buttons button:hover {
   transition: 0.5s;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1.5rem;
   background-color: darkorchid;
   }
 

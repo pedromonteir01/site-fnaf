@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+@font-face {
+  font-family: Impact-Regular;
+  src: url('/impact.ttf');
+}
+  
 #main{
   display: flex;
   margin: 0%;
   padding: 0%;
+  cursor: crosshair;
 }
 
 .main2 {
 background-image: url('/backGroundHome.jpg');
 min-width: 90%;
 min-height: 90%;
+box-sizing: border-box;
+background-attachment: fixed;
+background-repeat: no-repeat;
 }
 
 .divTitle {
@@ -19,4 +29,16 @@ justify-content: center;
 
 .titlePage {
   text-align: center;
+  font-family: 'Impact', sans-serif; /* Substituí Impact-Regular pela fonte Impact */
+  font-weight: 100;
+  font-size: 70px;
+  background-image: url('/background-Font.png'); /* Substituí 'cor' pelo caminho da imagem de fundo */
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text; /* Adicione para compatibilidade com navegadores modernos */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  text-shadow: 0 0 90px whitesmoke;
 }

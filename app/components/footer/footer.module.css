@@ -3,5 +3,12 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    
+}
+
+.footerStyle {
+    background-color: #000000;
+    color: #6A0572;
+    padding: 20px;
+    text-align: center;
+    min-width: 100%;
 }
