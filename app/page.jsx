@@ -1,12 +1,18 @@
-import Image from 'next/image'
-import styles from './page.module.css'
-import Footer from './components/footer/Footer'
+'use client'
+import styles from './page.module.css';
+import SideHeader from './components/header/Header';
 
-
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      <Footer />
+    <main id={styles.main}>
+      <SideHeader />
+      <div className={styles.main2}>
+        <div className={styles.divTitle}>
+        <h1 className={styles.titlePage}>FNAF</h1>
+        </div>
+      </div>
     </main>
   )
 }
+
+export default Home;
