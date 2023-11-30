@@ -26,7 +26,19 @@ const animatronicPage = () => {
     const openDetails = () => {
 
     }
+
+    //put animatronic
+
+    const edit = () => {
+
+    }
+
+    //delete animatronic
     
+    const exclude = () => {
+        
+    }
+
     return(
         <main className={styles.container}>
             <article className={styles.itens}>
