@@ -1,13 +1,21 @@
 'use client'
-import { useRef, useState } from 'react';
+import { 
+    useEffect, 
+    useState 
+} from 'react';
 import styles from './resgister.module.css';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Register = () => {
+
+    const [animatronicsRegistered, setAnimatronicsRegisteres] = useState([]);
+
     //variaveis do cadastro
     const [name, setName] = useState('');
     const [initialLocation, setInitialLocation] = useState('');
     const [description, setDescription] = useState('');
+    const [occupation, setOccupation] = useState('');
     const [color, setColor] = useState('');
     const [status, setStatus] = useState('');
     const [instrument, setInstrument] = useState('');
@@ -16,25 +24,50 @@ const Register = () => {
     const [imageIcon, setImageIcon] = useState('');
     const [jumpscare, setJumpscare] = useState('');
 
-    const handleSubmit = async(e) => {
-        e.preventDefault();
-        
-        try {
+    const router = useRouter();
 
+    const handleSubmit = async(e) => {
+        e.preventDefault(); 
+        try {
+            await axios.post('/api/animatronics', {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
+            setName('');
+            setInitialLocation('');
+            setDescription('');
+            setColor('');
+            setStatus('');
+            setInstrument('');
+            setImageBody('');
+            setImageIcon('');
+            setJumpscare('');
+            setOccupation('test');
+            router.push('/page-animatronic/')
         } catch(e) {
-            await axios.post('/api/animatronics', {name, initialLocation, description, color, status, instrument});
+            console.log('error', e);
         }
     }
+
+    useEffect(() => {
+        async function fetchStudents() {
+          try {
+            const response = await axios.get("/api/animatronics");
+            setAnimatronicsRegisteres(response.data);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        }
+    
+        fetchStudents();
+      }, []);
 
     return (
         <main className={styles.register}>
             <h1>REGISTER</h1>
-            <form onSubmit={handleSubmit}>
-                <article className={styles.form}>
+            <form onSubmit={handleSubmit} className={styles.tagForm}>
+                <article className={styles.Form}>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="name">Name animatronic:</label>
                         <input
-                            className={styles.input}
+                            className={styles.Input}
                             type="text"
                             name='name'
                             value={name}
@@ -43,14 +76,22 @@ const Register = () => {
                     </section>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="occupation">Pizzeria:</label>
-                        <select name="occupation" className={styles.input}>
-                            <option value="test">test</option>
+                        <select 
+                            value={occupation} 
+                            onChange={(e) => setOccupation(e.target.value)} 
+                            name="occupation" 
+                            className={styles.Input}
+                        >
+                            <option value=''>Selecione</option>
+                            <option value='test'>test</option>
+
+
                         </select>
                     </section>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="location">Initial location:</label>
                         <input
-                            className={styles.input}
+                            className={styles.Input}
                             type="text"
                             name='location'
                             value={initialLocation}
@@ -60,7 +101,7 @@ const Register = () => {
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="color">Color animatronic:</label>
                         <input
-                            className={styles.input}
+                            className={styles.Input}
                             type="text"
                             name='color'
                             value={color}
@@ -70,7 +111,7 @@ const Register = () => {
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="status">Status animatronic:</label>
                         <input
-                            className={styles.input}
+                            className={styles.Input}
                             type="text"
                             name='status'
                             value={status}
@@ -80,7 +121,7 @@ const Register = () => {
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="instrument">Instrument animatronic:</label>
                         <input
-                            className={styles.input}
+                            className={styles.Input}
                             type="text"
                             name='instrument'
                             value={instrument}
@@ -90,28 +131,36 @@ const Register = () => {
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="description">Descritption animatronic:</label>
                         <textarea
-                            className={styles.input}
+                            className={styles.Input}
                             type="text"
                             name='description'
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
-                            rows={3}
-                            maxLength={1}
                         />
                     </section>
                 </article>
                 <h2>UPLOADS</h2>
                 <article>
                     <section className={styles.uploads}>
-                        <input type="file"
-                            ref={hiddenFileInput}
-                            onChange={handleChange}
-
-                            accept="image/*"
-                            style={{ display: 'none' }} />
-
-
-                        <button onClick={handleClick}>test</button>
+                        <input 
+                            type="text" 
+                            value={imageBody}
+                            onChange={(e) => setImageBody(e.target.value)}
+                        />
+                    </section>
+                    <section className={styles.uploads}>
+                        <input 
+                            type="text" 
+                            value={imageIcon}
+                            onChange={(e) => setImageIcon(e.target.value)}
+                        />
+                    </section>
+                    <section className={styles.uploads}>
+                        <input 
+                            type="text" 
+                            value={jumpscare}
+                            onChange={(e) => setJumpscare(e.target.value)}
+                        />
                     </section>
                 </article>
                 <button type='submit'>REGISTER</button>

@@ -22,6 +22,10 @@ const animatronicPage = () => {
 
         fetchAnimatronics();
     }, []);
+
+    const openDetails = () => {
+
+    }
     
     return(
         <main className={styles.container}>
@@ -40,7 +44,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id}/>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} openDetails={openDetails}/>
                                 ))
                             }
                         </section>

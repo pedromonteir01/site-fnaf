@@ -18,7 +18,7 @@ export async function POST(request) {
     const params = await request.json();
   
     try {
-      const response = await axios.post(url, params);
+      const response = await axios.post(baseUrl, params);
   
       return NextResponse.json(response.data);
     } catch (e) {

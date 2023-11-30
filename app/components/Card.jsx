@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./card.module.css";
 
-const Card = ({name, image, id}) => {
+const Card = ({name, image, id, openDetails}) => {
     console.log(id);
     return(
-        <div className={styles.card} key={id}>
+        <div className={styles.card} key={id} onClick={openDetails}>
             <h1>{name}</h1>
             <img className={styles.icon} src={image} alt={name}/>
         </div>
