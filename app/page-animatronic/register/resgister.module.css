@@ -34,12 +34,8 @@
     border: 1px solid black;
 }
 
-.select {
-    width: 54%;
-    margin: 5px;
-    padding: 1rem;
-    font-size: large;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid black;
+.uploads {
+    background-color: beige;
+    width: 50%;
+    border-radius: 8px;
 }
