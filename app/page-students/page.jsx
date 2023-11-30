@@ -1,5 +1,6 @@
 'use client'
 import axios from "axios";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
 
@@ -30,6 +31,11 @@ export default function Page() {
     return (
         <main>
             <h1>Nossa Equipe</h1>
+            <button>
+                <Link href={"/page-students/registerS"}>
+                    Cadastrar Aluno
+                </Link>
+            </button>
             <article>
                 {
                     dados.length ?
