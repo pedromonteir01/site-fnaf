@@ -1,7 +1,6 @@
 'use client'
-import styles from './page.module.css';
-import SideHeader from './components/header/Header';
-// import Footer from './components/footer/Footer';
+import styles from './pageModel.module.css';
+import SideHeader from '../components/header/Header';
 
 const Home = () => {
 
@@ -12,7 +11,7 @@ const Home = () => {
       </div>
       <div className={styles.body}>
          <div className={styles.subDiv1}>
-          <h1 className={styles.titlePage}>FIVE NIGHTS AT FREDDY'S</h1>
+          <h1 className={styles.titlePage}>SEU TITULO</h1>
          </div>
       </div>
     </div>
