@@ -43,9 +43,6 @@ export default function RegisterSudents() {
 
     return (
         <main className={styles.back}>
-            <div>
-                <SideHeader />
-            </div>
             <div className={styles.containerPai}>
                 <div className={styles.container}>
                     <div className={styles.divContainer}>
