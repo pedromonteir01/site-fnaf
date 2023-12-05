@@ -43,6 +43,7 @@ const animatronicPage = () => {
         try {
             await axios.delete(url);
             setData(data.filter((animatronic) => animatronic.id !== id));
+            setAnimatronics(animatronics.filter((animatronic) => animatronic.id !== id))
         } catch(e) {
         console.log("Error feetching data:", e);
         }
@@ -73,7 +74,7 @@ const animatronicPage = () => {
                         <p>Loading...</p>
                     )
                 ) : (
-                    <p>Nenhum animatronic foi cadastrado.</p>
+                    <p>{data.message ? (data.message) : (null)}</p>
                 )
             }
             </article>

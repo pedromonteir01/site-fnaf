@@ -6,7 +6,6 @@ import {
 import styles from './edit.module.css';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-
 const Register = ({ params }) => {
 
     const [animatronicsRegistered, setAnimatronicsRegisteres] = useState([]);
@@ -32,18 +31,8 @@ const Register = ({ params }) => {
     const handleSubmit = async(e) => {
         e.preventDefault(); 
         try {
-            await axios.put('/api/animatronics', {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
-            setName('');
-            setInitialLocation('');
-            setDescription('');
-            setColor('');
-            setStatus('');
-            setInstrument('');
-            setImageBody('');
-            setImageIcon('');
-            setJumpscare('');
-            setOccupation('test');
-            router.push('/page-animatronic/')
+            await axios.put(`/api/animatronics/${id}`, {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
+            router.push('/page-animatronic')
         } catch(e) {
             console.log('error', e);
         }
@@ -53,7 +42,8 @@ const Register = ({ params }) => {
         async function fetchAnimatronics() {
           try {
             const response = await axios.get(`/api/animatronics/${id}`);
-            const animatronic = response.data;
+            const animatronic = response.data.animatronic;
+            console.log(animatronic);
             setName(animatronic.name);
             setInitialLocation(animatronic.initialLocation);
             setDescription(animatronic.description);
@@ -179,7 +169,7 @@ const Register = ({ params }) => {
                         />
                     </section>
                 </article>
-                <button type='submit'>REGISTER</button>
+                <button type='submit'>REFRESH</button>
             </form>
         </main>
     )

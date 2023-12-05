@@ -61,8 +61,11 @@ const Register = () => {
 
     return (
         <main className={styles.register}>
-            <h1>REGISTER</h1>
+            <article className={styles.gif}>
+                <img src="/teste.gif" alt="test" />
+            </article>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
+            <h1>REGISTER</h1>
                 <article className={styles.Form}>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="name">Name animatronic:</label>
