@@ -1,11 +1,10 @@
 "use client";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import styles from "@/app/page-pizzerias/registerP/registerP.module.css"
-import SideHeader from "@/app/components/header/Header";
+import styles from "./registerP.module.css"
+import SideHeader from "./../../components/header/Header";
 
-
-export default function RegisterPizzeirass() {
+const Home = () => {
     const [name, setName] = useState("");
     const [img, setImg] = useState("");
     const [franchise, setFranchise] = useState("");
@@ -39,17 +38,17 @@ export default function RegisterPizzeirass() {
         fetchPizzerias();
     }, [pizzerias]);
 
-    return (
-        <main className={styles.back}>
-            <div>
-                <SideHeader />
-            </div>
-            <div className={styles.containerPai}>
-        <div className={styles.container}>
-            <div className={styles.divContainer}>
-                <h1 className={styles.titulo}>Cadastrar pizzarias</h1>
-
-                <form onSubmit={handleSubmit}>
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <SideHeader/> 
+      </div>
+      <div className={styles.body}>
+         <div className={styles.subDiv1}>
+          <h1 className={styles.titlePage}>Registre sua pizzaria</h1>
+         </div>
+         <div className={styles.subDiv2}>
+         <form onSubmit={handleSubmit}>
                     <div className={styles.containerInputs}>
                         <label className={styles.label} htmlFor="name">
                             Nome:
@@ -73,7 +72,7 @@ export default function RegisterPizzeirass() {
                             type="text"
                             id="franchise"
                             value={franchise}
-                            onChange={(e) => setAge(e.target.value)}
+                            onChange={(e) => setFranchise(e.target.value)}
                             required
                         />
                     </div>
@@ -113,9 +112,10 @@ export default function RegisterPizzeirass() {
                         Cadastrar
                     </button>
                 </form>
-            </div>
-        </div>
-        </div>
-        </main>
-    )
+         </div>
+      </div>
+    </div>
+  )
 }
+
+export default Home;

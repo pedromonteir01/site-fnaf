@@ -1,39 +1,49 @@
-@font-face {
-    font-family: Impact-Regular;
-    src: url('/impact.ttf');
+.container{
+    display: flex;
+    background-image: url('/wallpapersHome/backHome.png');
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    width: 100%;
   }
-
-.header {
+  
+  .header{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  .body{
+    width: 100%;
+  }
+  
+  .subDiv1{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    flex-wrap: nowrap;
+    align-content: center;
     justify-content: center;
-}
-
-.title {
-    background-image: url('/background-Font.png');
-  text-align: center;
-  font-family: 'Impact', sans-serif;
-
-  font-weight: 100;
-  font-size: 70px;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  text-transform: uppercase;
-  text-shadow: 0 0 40px gold;
-}
-
-.containerMain {
-    display: flex;
-    background-color: #333;
-}
-
-.container {
-    width: 80%;
     align-items: center;
-    justify-content: flex-start;
-}
+  }
+  
+  .titlePage {
+    background-image: url('/background-Font.png');
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    /* Substituí Impact-Regular pela fonte Impact */
+    font-weight: 100;
+    font-size: 70px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Adicione para compatibilidade com navegadores modernos */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px gold;
+  }

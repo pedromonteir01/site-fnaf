@@ -6,7 +6,7 @@ import Link from 'next/link';
 import SideHeader from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
-const pizzeriaPage = () => {
+const RegisterPizzeiras = () => {
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
 
@@ -25,14 +25,16 @@ const pizzeriaPage = () => {
     }, []);
 
     return (
-        <main className={styles.containerMain}>
-                <div className={styles.header}>
-                    <SideHeader />
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <SideHeader />
+            </div>
+            <div className={styles.body}>
+                <div className={styles.subDiv1}>
+                    <h1 className={styles.titlePage}>PIZZARIAS</h1>
                 </div>
-
-                <div className={styles.container}>
-                    <h1 className={styles.title}>PIZZARIA</h1>
-                    <button>
+            <div className={styles.subDiv2}>
+            <button>
                         <Link href={"/page-pizzerias/registerP"}>
                             Resgistrar pizzaria
                         </Link>
@@ -46,13 +48,13 @@ const pizzeriaPage = () => {
                                             data.map((pizzeria) => (
                                                 <div key={pizzeria.id} className={styles.card}>
                                                     <div className={styles.imgDiv}>
-                                                    <img src={pizzeria.image} />
+                                                        <img src={pizzeria.image} />
                                                     </div>
                                                     <div className={styles.infos}>
-                                                    <p>{pizzeria.name}</p>
-                                                    <p>{pizzeria.id}</p>
-                                                    <p>{pizzeria.franchise}</p>
-                                                    <p>{pizzeria.description}</p>
+                                                        <p>{pizzeria.name}</p>
+                                                        <p>{pizzeria.id}</p>
+                                                        <p>{pizzeria.franchise}</p>
+                                                        <p>{pizzeria.description}</p>
                                                     </div>
                                                 </div>
                                             ))
@@ -66,13 +68,13 @@ const pizzeriaPage = () => {
                             )
                         }
                     </article>
-                </div>
+            </div>
+            </div>
             <div className={styles.footer}>
                 <Footer />
             </div>
-        </main>
-
-    );
+        </div>
+    )
 }
 
-export default pizzeriaPage;
+export default RegisterPizzeiras;
