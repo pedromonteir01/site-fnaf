@@ -3,11 +3,10 @@ import {
     useEffect, 
     useState 
 } from 'react';
-import styles from './resgister.module.css';
+import styles from './edit.module.css';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-
-const Register = () => {
+const Register = ({ params }) => {
 
     const [animatronicsRegistered, setAnimatronicsRegisteres] = useState([]);
 
@@ -24,48 +23,52 @@ const Register = () => {
     const [imageIcon, setImageIcon] = useState('');
     const [jumpscare, setJumpscare] = useState('');
 
+    //id
+    const { id } = params;
+
     const router = useRouter();
 
     const handleSubmit = async(e) => {
         e.preventDefault(); 
         try {
-            await axios.post('/api/animatronics', {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
-            setName('');
-            setInitialLocation('');
-            setDescription('');
-            setColor('');
-            setStatus('');
-            setInstrument('');
-            setImageBody('');
-            setImageIcon('');
-            setJumpscare('');
-            setOccupation('test');
-            router.push('/page-animatronic/')
+            await axios.put(`/api/animatronics/${id}`, {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
+            router.push('/page-animatronic')
         } catch(e) {
             console.log('error', e);
         }
     }
 
     useEffect(() => {
-        async function fetchStudents() {
+        async function fetchAnimatronics() {
           try {
-            const response = await axios.get("/api/animatronics");
-            setAnimatronicsRegisteres(response.data);
+            const response = await axios.get(`/api/animatronics/${id}`);
+            const animatronic = response.data.animatronic;
+            console.log(animatronic);
+            setName(animatronic.name);
+            setInitialLocation(animatronic.initialLocation);
+            setDescription(animatronic.description);
+            setColor(animatronic.color);
+            setStatus(animatronic.status);
+            setInstrument(animatronic.instrument);
+            setImageBody(animatronic.imageBody);
+            setImageIcon(animatronic.imageIcon);
+            setJumpscare(animatronic.jumpscare);
+            setOccupation(animatronic.occupation);
           } catch (error) {
             console.error("Error fetching data:", error);
           }
         }
     
-        fetchStudents();
-      }, []);
+        if(id) {
+            fetchAnimatronics();
+        }
+
+      }, [id]);
 
     return (
         <main className={styles.register}>
-            <article className={styles.gif}>
-                <img src="/assets/foxy-run.gif" alt="test" style={{width:700, height:500}}/>
-            </article>
+            <h1>REGISTER</h1>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
-            <h1 style={{color: 'white'}}>REGISTER</h1>
                 <article className={styles.Form}>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="name">Name animatronic:</label>
@@ -166,7 +169,7 @@ const Register = () => {
                         />
                     </section>
                 </article>
-                <button type='submit'>REGISTER</button>
+                <button type='submit'>REFRESH</button>
             </form>
         </main>
     )

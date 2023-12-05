@@ -4,10 +4,13 @@ import styles from './animatronic.module.css';
 import axios from 'axios';
 import Card from '../components/Card';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
     const [data, setData] = useState([]);
+
+    const router = useRouter();
 
     useEffect(() => {
         const fetchAnimatronics = async() => {
@@ -22,7 +25,30 @@ const animatronicPage = () => {
 
         fetchAnimatronics();
     }, []);
+
+    const openDetails = () => {
+
+    }
+
+    //put animatronic
+
+    const edit = (id) => {
+        router.push(`/page-animatronic/${id}`)
+    }
+
+    //delete animatronic
     
+    const exclude = async(id) => {
+        const url = `/api/animatronics/${id}`;
+        try {
+            await axios.delete(url);
+            setData(data.filter((animatronic) => animatronic.id !== id));
+            setAnimatronics(animatronics.filter((animatronic) => animatronic.id !== id))
+        } catch(e) {
+        console.log("Error feetching data:", e);
+        }
+    }
+
     return(
         <main className={styles.container}>
             <article className={styles.itens}>
@@ -40,7 +66,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id}/>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} status={animatronic.status} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)}/>
                                 ))
                             }
                         </section>
@@ -48,7 +74,7 @@ const animatronicPage = () => {
                         <p>Loading...</p>
                     )
                 ) : (
-                    <p>Nenhum animatronic foi cadastrado.</p>
+                    <p>{data.message ? (data.message) : (null)}</p>
                 )
             }
             </article>
