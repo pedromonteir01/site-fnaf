@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
 import styles from "@/app/page-students/students.module.css"
+import SideHeader from "../components/header/Header";
+import { MdDelete } from "react-icons/md";
+import { MdEdit } from "react-icons/md";
 
 
 export default function Page() {
@@ -11,6 +14,17 @@ export default function Page() {
     const [students, setStudents] = useState([]);
     const [dados, setDados] = useState([]);
     // const router = useRouter();
+
+    const deleteStudents = async (id) => {
+        console.log("id do dlete", id)
+        const url = `/api/students/${id}`;
+        try {
+            await axios.delete(url);
+            setDados(dados.filter((student) => student.id !== id));
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
 
     useEffect(() => {
         const fetchStudents = async () => {
@@ -25,7 +39,7 @@ export default function Page() {
         }
 
         fetchStudents();
-    }, []);
+    }, [dados]);
 
     console.log(dados);
     console.log(students);
@@ -34,13 +48,13 @@ export default function Page() {
             <h1 className={styles.title}>Nossa Equipe</h1>
             <button className={styles.btnRegister}>
                 <Link href={"/page-students/registerS"}>
-                    Cadastrar Aluno
+                    Cadastrar Colaborador
                 </Link>
             </button>
             <article className={styles.containerCard}>
                 {
                     dados.length ?
-                        students ? ( 
+                        students ? (
                             <section className={styles.sec}>
                                 {
                                     dados.map((students) => (
@@ -49,10 +63,25 @@ export default function Page() {
                                                 <img src={students.img} alt={students.name} />
                                             </div>
                                             <div className={styles.infos}>
-                                            <p>Nome: {students.name}</p>
-                                            <p>Idade: {students.age}</p>
-                                            <p>Gênero: {students.gender}</p>
-                                            <p>Descrição: {students.description}</p>
+                                                <p>Nome: {students.name}</p>
+                                                <p>Idade: {students.age}</p>
+                                                <p>Gênero: {students.gender}</p>
+                                                <p>Descrição: {students.description}</p>
+                                            </div>
+
+                                            <div className={styles.buttons}>
+                                                <div className={styles.buttonEdit}>
+                                                    <button
+                                                        className={styles.button}><MdEdit />
+                                                    </button>
+                                                </div>
+
+                                                <div className={styles.buttonDelete}>
+                                                    <button
+                                                        onClick={() => deleteStudents(students.id)}
+                                                        className={styles.button}><MdDelete />
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     ))

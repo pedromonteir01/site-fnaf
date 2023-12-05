@@ -3,12 +3,12 @@
     width: 25%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     border: 1px solid black;
     margin: 2rem;
-    min-height: 15rem;
-    max-height: 15rem;
+    min-height: 22rem;
+    max-height: 22rem;
     -webkit-box-shadow: 7px 10px 23px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 10px 23px -6px rgba(0,0,0,0.75);
     box-shadow: 7px 10px 23px -6px rgba(0,0,0,0.75);
@@ -19,3 +19,32 @@
     border: 1px solid black;
 }
 
+.btns {
+    width: 25%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete {
+    padding: 7%;
+    width: 40%;
+    background-color: purple;
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.edit {
+    padding: 7%;
+    width: 40%;
+    background-color: rgb(233, 233, 0);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+
+@media screen {
+    
+}

@@ -1,50 +1,28 @@
 "use client";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { MdDelete } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
-import styles from "./registerP.module.css";
-import SideHeader from "@/app/components/header/Header";
-import Footer from "@/app/components/footer/Footer";
+import { useState, useEffect } from "react";
+import styles from "./registerP.module.css"
+import SideHeader from "./../../components/header/Header";
 
-export default function RegisterPizzeria() {
+const Home = () => {
     const [name, setName] = useState("");
+    const [img, setImg] = useState("");
     const [franchise, setFranchise] = useState("");
     const [description, setDescription] = useState("");
-    const [img, setImg] = useState("");
-    const [pizzerias, setPizzerias] = useState([]);
-
-    const [data, setData] = useState([]);
-    const router = useRouter();
+    const [pizzerias, setPizzerias] = useState([])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            await axios.post("/api/pizzerias", { name, franchise, description, img });
+            const response = await axios.post("/api/pizzerias", { name, franchise, description, img });
             setName("");
             setFranchise("");
             setDescription("");
+            setPizzerias(response.data.pizzerias)
         } catch (error) {
             console.error("Error submitting data:", error);
         }
-    };
-
-    const deletePizzeria = async (id) => {
-        console.log("id do dlete", id)
-        const url = `/api/pizzerias/${id}`;
-        try {
-            await axios.delete(url);
-            setData(data.filter((pizzeria) => pizzeria.id !== id));
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    };
-
-    const editPizzeria = async (id) => {
-        console.log("id do edit", id)
-
-        router.push(`/pizzerias/${id}`);
     };
 
     useEffect(() => {
@@ -60,126 +38,84 @@ export default function RegisterPizzeria() {
         fetchPizzerias();
     }, [pizzerias]);
 
-    return (
-        <main className={styles.mainContainer}>
-            <div className={styles.container}>
-                <div>
-                    <SideHeader />
-                </div>
-
-                <div>
-                    <div className={styles.pizzeriasContainer}>
-                        <h1 className={styles.mainText}>Cadastrar Pizzarias</h1>
-
-                        <form onSubmit={handleSubmit}>
-                            <div className={styles.formGroup}>
-                                <label className={styles.label} htmlFor="name">
-                                    Nome:
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    type="text"
-                                    placeholder="Freddy Fazbear's Pizza"
-                                    id="name"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    required
-                                />
-                            </div>
-
-                            <div className={styles.formGroup}>
-                                <label className={styles.label} htmlFor="franchise">
-                                    Franquia:
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    type="text"
-                                    placeholder="FNAF 5"
-                                    id="franchise"
-                                    value={franchise}
-                                    onChange={(e) => setFranchise(e.target.value)}
-                                    required
-                                />
-                            </div>
-
-                            <div className={styles.formGroup}>
-                                <label className={styles.label} htmlFor="description">
-                                    Descrição:
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    type="text"
-                                    placeholder="Primeira pizzaria do jogo"
-                                    id="description"
-                                    value={description}
-                                    onChange={(e) => setDescription(e.target.value)}
-                                    required
-                                />
-                            </div>
-
-                            <div className={styles.formGroup}>
-                                <label className={styles.label} htmlFor="image">
-                                    Imagem:
-                                </label>
-                                <input
-                                    className={styles.input}
-                                    type="file"
-                                    id="img"
-                                    value={img}
-                                    onChange={(e) => setImg(e.target.value)}
-                                    required
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className={`${styles.button} ${styles.submitButton}`}
-                            >
-                                Cadastrar
-                            </button>
-                        </form>
+  return (
+    <div className={styles.container}>
+      <div className={styles.header}>
+        <SideHeader/> 
+      </div>
+      <div className={styles.body}>
+         <div className={styles.subDiv1}>
+          <h1 className={styles.titlePage}>Registre sua pizzaria</h1>
+         </div>
+         <div className={styles.subDiv2}>
+         <form onSubmit={handleSubmit}>
+                    <div className={styles.containerInputs}>
+                        <label className={styles.label} htmlFor="name">
+                            Nome:
+                        </label>
+                        <input
+                        className={styles.input}
+                            type="text"
+                            id="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
                     </div>
 
-                    {/* Renderizar conteúdo dos Inputs */}
-                    <div className={styles.pizzeriasContainer}>
-                        <h1 className={styles.mainText}>Pizzarias Cadastradas</h1>
-
-                        <div className={styles.pizzerias}>
-                            {pizzerias.map((pizzeria) => (
-                                <div key={pizzeria.id} className={styles.pizzeria}>
-                                    <div>
-                                        <img src={pizzeria.img} />
-                                        <p>{pizzeria.name}</p>
-                                        <p>{pizzeria.franchise}</p>
-                                        <p>{pizzeria.description}</p>
-                                    </div>
-
-                                    <div className={styles.buttons}>
-                                        <div className={styles.buttonEdit}>
-                                            <button
-                                                onClick={() => editPizzeria(pizzeria.id)}
-                                                className={styles.button}><MdEdit />
-                                            </button>
-                                        </div>
-
-                                        <div className={styles.buttonDelete}>
-                                            <button
-                                                onClick={() => deletePizzeria(pizzeria.id)}
-                                                className={styles.button}><MdDelete />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    <div className={styles.containerInputs}>
+                        <label className={styles.label} htmlFor="franchise">
+                            Franquia:
+                        </label>
+                        <input
+                        className={styles.input}
+                            type="text"
+                            id="franchise"
+                            value={franchise}
+                            onChange={(e) => setFranchise(e.target.value)}
+                            required
+                        />
                     </div>
-                </div>
 
-            </div>
+                    <div className={styles.containerInputs}>
+                        <label className={styles.label} htmlFor="description">
+                            Descrição:
+                        </label>
+                        <input
+                        className={styles.input}
+                            type="text"
+                            id="description"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            required
+                        />
+                    </div>
 
-            <div>
-                <Footer />
-            </div>
-        </main>
-    );
+                    <div className={styles.containerInputs}>
+                        <label className={styles.label} htmlFor="image">
+                            Imagem:
+                        </label>
+                        <input
+                        className={styles.input}
+                            type="file"
+                            id="img"
+                            value={img}
+                            onChange={(e) => setImg(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <button
+                    className={styles.btn}
+                        type="submit"
+                    >
+                        Cadastrar
+                    </button>
+                </form>
+         </div>
+      </div>
+    </div>
+  )
 }
+
+export default Home;
