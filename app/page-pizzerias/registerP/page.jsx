@@ -114,22 +114,6 @@ export default function RegisterPizzeirass() {
                     </button>
                 </form>
             </div>
-
-            {/* Renderizar conteúdo dos Inputs */}
-            <div className={styles.studentsContainer}>
-                <h1 className={styles.title2}>Pizzerias cadastradas</h1>
-
-                <div className={styles.studentCard}>
-                    {pizzerias.map((pizzeria) => (
-                        <div key={pizzeria.id}>
-                            <img src={pizzeria.img} />
-                            <p>Nome: {pizzeria.name}</p>
-                            <p>Franquia: {pizzeria.age}</p>
-                            <p>Descrição: {pizzeria.description}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
         </div>
         </div>
         </main>

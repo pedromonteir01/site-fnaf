@@ -35,7 +35,7 @@ const pizzeriaPage = () => {
                     <h1>PIZZARIA</h1>
                     <button>
                         <Link href={"/page-pizzerias/registerP"}>
-                            Register
+                            Resgistrar pizzaria
                         </Link>
                     </button>
                     <article>
