@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
+import styles from "@/app/page-students/students.module.css"
 
 
 export default function Page() {
@@ -29,25 +30,25 @@ export default function Page() {
     console.log(dados);
     console.log(students);
     return (
-        <main>
-            <h1>Nossa Equipe</h1>
-            <button>
+        <main className={styles.containerGiga}>
+            <h1 className={styles.title}>Nossa Equipe</h1>
+            <button className={styles.btnRegister}>
                 <Link href={"/page-students/registerS"}>
                     Cadastrar Aluno
                 </Link>
             </button>
-            <article>
+            <article className={styles.containerCard}>
                 {
                     dados.length ?
                         students ? ( 
-                            <section>
+                            <section className={styles.sec}>
                                 {
                                     dados.map((students) => (
-                                        <div key={students.id}>
-                                            <div>
+                                        <div key={students.id} className={styles.card}>
+                                            <div className={styles.imgDiv}>
                                                 <img src={students.img} alt={students.name} />
                                             </div>
-                                            <div>
+                                            <div className={styles.infos}>
                                             <p>Nome: {students.name}</p>
                                             <p>Idade: {students.age}</p>
                                             <p>Gênero: {students.gender}</p>
