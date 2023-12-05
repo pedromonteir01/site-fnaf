@@ -31,7 +31,7 @@ const Register = ({ params }) => {
     const handleSubmit = async(e) => {
         e.preventDefault(); 
         try {
-            await axios.put(`/api/animatronics/${id}`, {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
+            await axios.put(`/api/animatronics/${id}`, {name, imageBody, imageIcon, occupation, initialLocation, description, color, status, instrument, jumpscare});
             router.push('/page-animatronic')
         } catch(e) {
             console.log('error', e);
