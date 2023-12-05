@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 // import { useRouter } from "next/navigation";
 import styles from "@/app/page-students/students.module.css"
+import SideHeader from "../components/header/Header";
 
 
 export default function Page() {
