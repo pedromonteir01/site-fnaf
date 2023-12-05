@@ -80,7 +80,7 @@ export default function RegisterPizzeirass() {
 
                     <div className={styles.containerInputs}>
                         <label className={styles.label} htmlFor="description">
-                            Descrição
+                            Descrição:
                         </label>
                         <input
                         className={styles.input}

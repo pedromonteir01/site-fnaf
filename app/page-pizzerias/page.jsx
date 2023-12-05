@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react';
-import styles from './pizzerias.module.css';
+import styles from "./pizzerias.module.css";
 import axios from 'axios';
 import Link from 'next/link';
 import SideHeader from '../components/header/Header';
@@ -26,12 +26,11 @@ const pizzeriaPage = () => {
 
     return (
         <main className={styles.containerMain}>
-            <div className={styles.container}>
-                <div>
+                <div className={styles.header}>
                     <SideHeader />
                 </div>
 
-                <div>
+                <div className={styles.container}>
                     <h1 className={styles.title}>PIZZARIA</h1>
                     <button>
                         <Link href={"/page-pizzerias/registerP"}>
@@ -68,8 +67,7 @@ const pizzeriaPage = () => {
                         }
                     </article>
                 </div>
-            </div>
-            <div>
+            <div className={styles.footer}>
                 <Footer />
             </div>
         </main>
