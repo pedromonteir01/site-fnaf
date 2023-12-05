@@ -48,7 +48,7 @@ export default function Page() {
             <h1 className={styles.title}>Nossa Equipe</h1>
             <button className={styles.btnRegister}>
                 <Link href={"/page-students/registerS"}>
-                    Cadastrar Aluno
+                    Cadastrar Colaborador
                 </Link>
             </button>
             <article className={styles.containerCard}>
