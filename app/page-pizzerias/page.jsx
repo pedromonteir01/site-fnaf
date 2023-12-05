@@ -42,15 +42,19 @@ const pizzeriaPage = () => {
                         {
                             data.length ? (
                                 pizzerias ? (
-                                    <section className={styles.pizzarias}>
+                                    <section className={styles.secPizzerias}>
                                         {
                                             data.map((pizzeria) => (
-                                                <div key={pizzeria.id}>
+                                                <div key={pizzeria.id} className={styles.card}>
+                                                    <div className={styles.imgDiv}>
                                                     <img src={pizzeria.image} />
+                                                    </div>
+                                                    <div className={styles.infos}>
                                                     <p>{pizzeria.name}</p>
                                                     <p>{pizzeria.id}</p>
                                                     <p>{pizzeria.franchise}</p>
                                                     <p>{pizzeria.description}</p>
+                                                    </div>
                                                 </div>
                                             ))
                                         }
