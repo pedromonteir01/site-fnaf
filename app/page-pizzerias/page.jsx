@@ -25,14 +25,14 @@ const pizzeriaPage = () => {
     }, []);
 
     return (
-        <main>
+        <main className={styles.containerMain}>
             <div className={styles.container}>
                 <div>
                     <SideHeader />
                 </div>
 
                 <div>
-                    <h1>PIZZARIA</h1>
+                    <h1 className={styles.title}>PIZZARIA</h1>
                     <button>
                         <Link href={"/page-pizzerias/registerP"}>
                             Resgistrar pizzaria
