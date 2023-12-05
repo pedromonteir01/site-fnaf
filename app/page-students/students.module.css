@@ -36,10 +36,12 @@
     display: inline-block;
     transition: background-color 0.3s ease;
     margin-left: 1rem;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 30px #ffde67;
 }
 
 .btnRegister:hover {
-    background-color: goldenrod;
+    background-color: #ffde67;
 }
 
 .containerCard {
@@ -58,8 +60,8 @@
     width: calc(33.33% - 1.25rem);
     margin-bottom: 1.25rem;
     box-sizing: border-box;
-    background-color: #f4f4f4;
-    border: 1px solid #878787;
+    background-color: #3f3f3f;
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -88,7 +90,7 @@
 
 .infos p {
     margin: 0;
-    color: #333;
+    color: #f4c519;
 }
 
 
@@ -117,18 +119,20 @@
 
 /* Customize the edit button */
 .buttonEdit .button {
-    background-color: #27ae60;
+    background-color: #6654b1;
 }
 
 .buttonEdit .button:hover {
-    background-color: #219a52;
+    background-color: #9378ff;
+    box-shadow: 0 0 30px #9378ff;
 }
 
 /* Customize the delete button */
 .buttonDelete .button {
-    background-color: #e74c3c;
+    background-color: #f4c519;
 }
 
 .buttonDelete .button:hover {
-    background-color: #c0392b;
+    background-color: #ffde67;
+    box-shadow: 0 0 30px #ffde67;
 }
