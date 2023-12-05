@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "@/app/page-students/registerS/registerS.module.css"
-import SideHeader from "@/app/components/header/Header";
+import { useRouter } from "next/navigation";
 
 
 export default function RegisterSudents() {
@@ -12,6 +12,8 @@ export default function RegisterSudents() {
     const [gender, setGender] = useState("");
     const [description, setDescription] = useState("");
     const [students, setStudents] = useState([])
+const router = useRouter();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,7 +24,8 @@ export default function RegisterSudents() {
             setAge("");
             setGender("");
             setDescription("");
-            setStudents(response.data.students)
+            setStudents(response.data.students);
+            router.push("/page-students");
         } catch (error) {
             console.error("Error submitting data:", error);
         }
