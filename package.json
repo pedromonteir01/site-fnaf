@@ -13,6 +13,7 @@
     "metadata": "^0.1.0",
     "next": "14.0.3",
     "react": "^18",
+    "react-curved-text": "^3.0.0",
     "react-icons": "^4.12.0",
     "styled-components": "^6.1.1"
   }

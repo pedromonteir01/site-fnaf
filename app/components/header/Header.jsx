@@ -8,15 +8,13 @@ import { GiBearFace } from "react-icons/gi";
 
 const SideHeader = () => {
   return (
-    <div className={Styles.sideHeader}>
-      <div className={Styles.componentsHeader}>
-        <div className={Styles.buttons}><button><FaHome /></button></div>
-        <div className={Styles.buttons}><button><GiBearFace /></button></div>
-        <div className={Styles.buttons}><button><FaPizzaSlice /></button></div>
-        <div className={Styles.buttons}><button><FaPeopleGroup /></button></div>
-      </div>
+    <div className={Styles.componentsHeader}>
+      <div className={Styles.buttons}><button><FaHome /></button></div>
+      <div className={Styles.buttons}><button><GiBearFace /></button></div>
+      <div className={Styles.buttons}><button><FaPizzaSlice /></button></div>
+      <div className={Styles.buttons}><button><FaPeopleGroup /></button></div>
     </div>
-  )
+  ) 
 }
 
 export default SideHeader;

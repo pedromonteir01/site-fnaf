@@ -6,9 +6,12 @@
 }
 
 .footerStyle {
-    background-color: #000000;
-    color: #6A0572;
+    background-color: #202020c1;
+    color: #f4c519;
     padding: 20px;
     text-align: center;
     min-width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
 }
