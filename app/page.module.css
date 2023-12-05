@@ -1,44 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+
 @font-face {
   font-family: Impact-Regular;
   src: url('/impact.ttf');
 }
-  
-#main{
-  display: flex;
+
+#main {
+  background-image: url('/wallpapersHome/backHome.png');
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   margin: 0%;
   padding: 0%;
-  cursor: crosshair;
+  width: 100vw !important;
+  height: 100vh !important;
 }
 
-.main2 {
-background-image: url('/backGroundHome.jpg');
-min-width: 90%;
-min-height: 90%;
-box-sizing: border-box;
-background-attachment: fixed;
-background-repeat: no-repeat;
-}
-
-.divTitle {
-max-width: 100%;
-align-items: center;
-display: flex;
-justify-content: center;
+.header {
+ max-width: 10vw;
 }
 
 .titlePage {
+  background-image: url('/background-Font.png');
   text-align: center;
-  font-family: 'Impact', sans-serif; /* Substituí Impact-Regular pela fonte Impact */
+  font-family: 'Impact', sans-serif;
+  /* Substituí Impact-Regular pela fonte Impact */
   font-weight: 100;
   font-size: 70px;
-  background-image: url('/background-Font.png'); /* Substituí 'cor' pelo caminho da imagem de fundo */
   background-repeat: repeat;
   -webkit-background-clip: text;
-  background-clip: text; /* Adicione para compatibilidade com navegadores modernos */
+  background-clip: text;
+  /* Adicione para compatibilidade com navegadores modernos */
   color: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
-  text-shadow: 0 0 90px whitesmoke;
+  text-shadow: 0 0 40px gold;
+}
+
+.main2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0%;
+  padding: 0%;
+}
+
+.main3 {
+  background-color: #202020c1;
+  color: whitesmoke;
+  text-align: center;
+  width: 50rem;
 }
