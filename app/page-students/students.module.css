@@ -1,34 +1,45 @@
 /* Arquivo students.module.css */
-
 .containerGiga {
     width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 1.25rem;
     box-sizing: border-box;
+    background-color: #333;
 }
 
 .title {
-    font-size: 2em;
-    margin-bottom: 1.25rem;
-    color: #333;
+    background-image: url('/background-Font.png');
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    /* Substituí Impact-Regular pela fonte Impact */
+    font-weight: 100;
+    font-size: 70px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Adicione para compatibilidade com navegadores modernos */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px gold;
 }
 
 .btnRegister {
-    background-color: #2ecc71;
+    background-color: gold;
     color: #ffffff;
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1rem;
     display: inline-block;
     transition: background-color 0.3s ease;
-    text-decoration: none;
+    margin-left: 1rem;
 }
 
 .btnRegister:hover {
-    background-color: #1f9651;
+    background-color: goldenrod;
 }
 
 .containerCard {
@@ -47,8 +58,8 @@
     width: calc(33.33% - 1.25rem);
     margin-bottom: 1.25rem;
     box-sizing: border-box;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    border: 1px solid #878787;
     border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 0.3s ease;
