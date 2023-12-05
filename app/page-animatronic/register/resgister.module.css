@@ -2,20 +2,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(38, 38, 38);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(39, 39, 39);
 }
 
 .gif {
-    border: 1rem solid white;
+    border: 0.5rem solid white;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 1rem;
+}
+
+.textStyle {
+    font-size: x-large;
 }
 
 .Form {
-    background-color: azure;
+    background-color: rgba(0, 0, 0, 0.707);
     width: 80%;
+    border-radius: 8px;
+    border: 0.5rem solid white;
 }
 
 .inputField {
@@ -29,6 +39,7 @@
 
 .title {
     text-transform: uppercase;
+    color: white;
 }
 
 .Input {

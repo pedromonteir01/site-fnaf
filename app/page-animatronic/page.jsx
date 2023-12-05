@@ -66,7 +66,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)}/>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} status={animatronic.status} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)}/>
                                 ))
                             }
                         </section>

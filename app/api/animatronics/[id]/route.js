@@ -33,8 +33,6 @@ export async function PUT(request, { params }) {
 
   export async function DELETE(request, { params }) {
     const { id } = params;
-    console.log(id);
-    console.log(baseUrl);
 
     try {
       const response = await axios.delete(`${baseUrl}/${id}`);

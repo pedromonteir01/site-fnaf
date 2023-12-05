@@ -62,10 +62,10 @@ const Register = () => {
     return (
         <main className={styles.register}>
             <article className={styles.gif}>
-                <img src="/teste.gif" alt="test" />
+                <img src="/assets/foxy-run.gif" alt="test" style={{width:700, height:500}}/>
             </article>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
-            <h1>REGISTER</h1>
+            <h1 style={{color: 'white'}}>REGISTER</h1>
                 <article className={styles.Form}>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="name">Name animatronic:</label>

@@ -7,8 +7,8 @@
     align-items: center;
     border: 1px solid black;
     margin: 2rem;
-    min-height: 17rem;
-    max-height: 17rem;
+    min-height: 20rem;
+    max-height: 20rem;
     -webkit-box-shadow: 7px 10px 23px -6px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 10px 23px -6px rgba(0,0,0,0.75);
     box-shadow: 7px 10px 23px -6px rgba(0,0,0,0.75);
@@ -43,6 +43,7 @@
     color: white;
     border: none;
 }
+
 
 @media screen {
     
