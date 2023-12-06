@@ -1,11 +1,14 @@
-.container{
-  display: flex;
+.containerPai{
   background-image: url('/wallpapersHome/backHome2.png');
   box-sizing: border-box;
   background-size: cover;
   background-position: right;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+.container{
+  display: flex;
   width: 100%;
 }
 
@@ -50,7 +53,7 @@
 
 .subDiv2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   justify-content: center;
@@ -62,11 +65,12 @@
   width: 60%;
   border-top: 6px double #f4c519;
   border-bottom: 6px double #f4c519;
-  margin-top: 1rem;
+  margin-top: 4rem;
 }
 
 .textStorie {
   color: rgb(180, 180, 180);
+  padding: 1rem;
 }
 
 .titleStorie {
@@ -84,9 +88,5 @@
   -webkit-text-fill-color: transparent;
   -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
-  text-shadow: 0 0 40px gold;
-}
-
-.divEspaco{
-  height: 1rem;
+  text-shadow: 0 0 150px gold;
 }
