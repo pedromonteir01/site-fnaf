@@ -26,55 +26,55 @@ const RegisterPizzeiras = () => {
 
     return (
         <div className={styles.containerPai}>
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <SideHeader />
-            </div>
-            <div className={styles.body}>
-                <div className={styles.subDiv1}>
-                    <h1 className={styles.titlePage}>PIZZARIAS</h1>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <SideHeader />
                 </div>
-            <div className={styles.subDiv2}>
-                <div className={styles.subDivAnimatronics}>
-            <button>
-                        <Link href={"/page-pizzerias/registerP"}>
-                            Resgistrar pizzaria
-                        </Link>
-                    </button>
-                    <article>
-                        {
-                            data.length ? (
-                                pizzerias ? (
-                                    <section className={styles.secPizzerias}>
-                                        {
-                                            data.map((pizzeria) => (
-                                                <div key={pizzeria.id} className={styles.card}>
-                                                    <div className={styles.imgDiv}>
-                                                        <img src={pizzeria.image} />
-                                                    </div>
-                                                    <div className={styles.infos}>
-                                                        <p>{pizzeria.name}</p>
-                                                        <p>{pizzeria.id}</p>
-                                                        <p>{pizzeria.franchise}</p>
-                                                        <p>{pizzeria.description}</p>
-                                                    </div>
-                                                </div>
-                                            ))
-                                        }
-                                    </section>
-                                ) : (
-                                    <p>Loading...</p>
-                                )
-                            ) : (
-                                <p>Nenhuma pizzaria foi cadastrada.</p>
-                            )
-                        }
-                    </article>
+                <div className={styles.body}>
+                    <div className={styles.subDiv1}>
+                        <h1 className={styles.titlePage}>PIZZARIAS</h1>
                     </div>
+                    <div className={styles.subDiv2}>
+                        <div className={styles.subDivAnimatronics}>
+                            <button>
+                                <Link href={"/page-pizzerias/registerP"}>
+                                    Registrar pizzaria
+                                </Link>
+                            </button>
+                            <article>
+                                {
+                                    data.length ? (
+                                        pizzerias ? (
+                                            <section className={styles.secPizzerias}>
+                                                {
+                                                    data.map((pizzeria) => (
+                                                        <div key={pizzeria.id} className={styles.card}>
+                                                            <div className={styles.imgDiv}>
+                                                                <img src={pizzeria.image} />
+                                                            </div>
+                                                            <div className={styles.infos}>
+                                                                <p>{pizzeria.name}</p>
+                                                                <p>{pizzeria.id}</p>
+                                                                <p>{pizzeria.franchise}</p>
+                                                                <p>{pizzeria.description}</p>
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </section>
+                                        ) : (
+                                            <p>Loading...</p>
+                                        )
+                                    ) : (
+                                        <p>Nenhuma pizzaria foi cadastrada.</p>
+                                    )
+                                }
+                            </article>
+                        </div>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-        <div className={styles.footer}>
+            <div className={styles.footer}>
                 <Footer />
             </div>
         </div>
