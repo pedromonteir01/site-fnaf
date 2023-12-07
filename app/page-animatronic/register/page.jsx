@@ -7,6 +7,7 @@ import styles from './resgister.module.css';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import SideHeader from '@/app/components/header/Header';
+import Footer from '@/app/components/footer/Footer';
 
 const Register = () => {
 
@@ -70,7 +71,7 @@ const Register = () => {
                     
         <main className={styles.register}>
             <article className={styles.gif}>
-                <img src="/assets/foxy-run.gif" alt="test" style={{width:700, height:500}}/>
+                <img src="/assets/foxy-run.gif" alt="test" style={{width:500, height:200}}/>
             </article>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
             <h1 className={styles.titlePage}>REGISTRO</h1>
@@ -151,7 +152,7 @@ const Register = () => {
                     </section>
                 </article>
                 <h2>UPLOADS</h2>
-                <article>
+                <article className={styles.divUploads}>
                     <section className={styles.uploads}>
                         <input 
                             type="text" 
@@ -178,6 +179,9 @@ const Register = () => {
             </form>
         </main>
                 </div>
+            </div>
+            <div className={styles.footer}>
+                <Footer/>
             </div>
         </div>
     )
