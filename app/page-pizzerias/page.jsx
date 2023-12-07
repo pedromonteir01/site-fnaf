@@ -13,7 +13,7 @@ const RegisterPizzeiras = () => {
     useEffect(() => {
         const fetchPizzerias = async () => {
             try {
-                const response = await axios.get("/api/pizzarias");
+                const response = await axios.get("/api/pizzerias");
                 setPizzerias(response.data.pizzerias);
                 setData(response.data.pizzerias);
             } catch (e) {
