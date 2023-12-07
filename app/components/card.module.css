@@ -17,6 +17,8 @@
 .icon {
     border-radius: 100px;
     border: 1px solid black;
+    max-width: 9rem;
+    max-height: 9rem;
 }
 
 .btns {
@@ -33,15 +35,36 @@
     border-radius: 5px;
     color: white;
     border: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 10px #9e019e;
+}
+
+.delete:hover {
+    background-color: #9e019e;
 }
 
 .edit {
     padding: 7%;
     width: 40%;
-    background-color: rgb(233, 233, 0);
-    border-radius: 5px;
-    color: white;
+    color: black;
     border: none;
+    background-color: gold;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 10px #ffde67;
+}
+
+.edit:hover {
+    background-color: #ffde67;
 }
 
 

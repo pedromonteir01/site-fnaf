@@ -55,10 +55,9 @@
     border: none;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.25rem;
     display: inline-block;
     transition: background-color 0.3s ease;
-    margin-left: 1rem;
     border-radius: 0.6rem;
     box-shadow: 0 0 30px #ffde67;
 }
@@ -80,7 +79,7 @@
 }
 
 .card {
-    width: calc(33.33% - 1.25rem);
+    width: calc(33.33% - 1rem);
     margin-bottom: 1.25rem;
     box-sizing: border-box;
     background-color: #696969;
@@ -142,20 +141,20 @@
 
 /* Customize the edit button */
 .buttonEdit .button {
-    background-color: #6654b1;
+    background-color: gold;
 }
 
 .buttonEdit .button:hover {
-    background-color: #9378ff;
-    box-shadow: 0 0 30px #9378ff;
+    background-color: #ffde67;
+    box-shadow: 0 0 30px #ffde67;
 }
 
 /* Customize the delete button */
 .buttonDelete .button {
-    background-color: #f4c519;
+    background-color: #9e019e;
 }
 
 .buttonDelete .button:hover {
-    background-color: #ffde67;
-    box-shadow: 0 0 30px #ffde67;
+    background-color: #9e019e;
+    box-shadow: 0 0 30px #9e019e;
 }

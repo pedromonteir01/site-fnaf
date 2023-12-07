@@ -20,6 +20,24 @@
     align-items: center;
 }
 
+.titlePage {
+    background-image: url('/background-Font.png');
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    /* Substituí Impact-Regular pela fonte Impact */
+    font-weight: 100;
+    font-size: 70px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Adicione para compatibilidade com navegadores modernos */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px gold;
+}
+
 .itens {
     display: flex;
     flex-direction: row;
@@ -36,13 +54,25 @@
 
 .body {
     color: white;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+
 }
+
 .btnRegister {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    text-transform: uppercase;
-    border-radius: 8px;
-    font-size: large;
+    background-color: gold;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.25rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 30px #ffde67;
+    margin: 1.5rem;
+}
+
+.btnRegister:hover {
+    background-color: #ffde67;
 }

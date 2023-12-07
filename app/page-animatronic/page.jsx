@@ -64,8 +64,8 @@ const animatronicPage = () => {
                         <h1 className={styles.titlePage}>ANIMATRONICS</h1>
                         <article className={styles.itens}>
                                 <button className={styles.btnRegister}>
-                                    <Link href={"/page-animatronic/register"}>
-                                        Register
+                                    <Link href={"/page-animatronic/register"} style={{color: 'black'}}>
+                                        CADASTRAR ANIMATRONIC
                                     </Link>
                                 </button>
                         </article>
@@ -74,8 +74,8 @@ const animatronicPage = () => {
                         <div className={styles.subDivAnimatronics}>
                             <article>
                                 {
-                                    data ? (
-                                        animatronics ? (
+                                    animatronics ? (
+                                        data ? (
                                             <section className={styles.animatronics}>
                                                 {
                                                     animatronics.map((animatronic) => (
