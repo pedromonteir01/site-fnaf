@@ -58,3 +58,40 @@
   text-transform: uppercase;
   text-shadow: 0 0 40px gold;
 }
+
+.divButtons {
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0.3rem;
+  margin-left: 5rem;
+}
+
+.divButtons button {
+  padding: 0.8rem 1rem;
+  background-color: #f4c519;
+  color: #fff;
+  border: none;
+  cursor: grab;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.divButtons button:hover {
+  transition: 0.5s;
+  padding: 0.8rem 1.3rem;
+  border-radius: 3px;
+  background-color: #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+}
+
+.inputImg {
+  padding: 0.8rem 1rem;
+  background-color: #f4c519;
+  color: #fff;
+  border: none;
+  cursor: grab;
+  border-radius: 3px;
+  transition: 0.5s;
+}
