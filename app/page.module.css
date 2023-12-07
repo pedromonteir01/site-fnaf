@@ -18,6 +18,7 @@
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
+  position: fixed;
 }
 
 .body{
@@ -65,6 +66,17 @@
   width: 60%;
   border-top: 6px double #f4c519;
   border-bottom: 6px double #f4c519;
+  transition: 1s;
+  margin-top: 4rem;
+}
+.subDivStorie:hover {
+  background-color: #202020c1;
+  width: 60%;
+  border-top: 6px double #6f47dd;
+  border-bottom: 6px double #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  cursor: grab;
+  transition: 1s;
   margin-top: 4rem;
 }
 
@@ -97,7 +109,22 @@
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   border: 6px double #f4c519;
+  transition: 1s;
+}
+
+.bannerStorie:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 6px double #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  cursor: grab;
+  transition: 1s;
 }
 
 @media only screen and (max-width: 600px) {
