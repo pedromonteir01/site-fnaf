@@ -53,7 +53,7 @@ const router = useRouter();
 
                         <form onSubmit={handleSubmit}>
                             <div className={styles.containerInputs}>
-                                <label className={styles.label} htmlFor="name">
+                                <label className={styles.label1} htmlFor="name">
                                     Nome:
                                 </label>
                                 <input
@@ -67,7 +67,7 @@ const router = useRouter();
                             </div>
 
                             <div className={styles.containerInputs}>
-                                <label className={styles.label} htmlFor="age">
+                                <label className={styles.label1} htmlFor="age">
                                     Idade:
                                 </label>
                                 <input
@@ -81,7 +81,7 @@ const router = useRouter();
                             </div>
 
                             <div className={styles.containerInputs}>
-                                <label className={styles.label} htmlFor="gender">
+                                <label className={styles.label1} htmlFor="gender">
                                     Gênero:
                                 </label>
                                 <input
@@ -95,7 +95,7 @@ const router = useRouter();
                             </div>
 
                             <div className={styles.containerInputs}>
-                                <label className={styles.label} htmlFor="description">
+                                <label className={styles.label1} htmlFor="description">
                                     Descrição:
                                 </label>
                                 <input
@@ -109,7 +109,7 @@ const router = useRouter();
                             </div>
 
                             <div className={styles.containerInputs}>
-                                <label className={styles.label} htmlFor="image">
+                                <label className={styles.label1} htmlFor="image">
                                     Imagem:
                                 </label>
                                 <input
