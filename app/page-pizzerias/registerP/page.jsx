@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./registerP.module.css"
 import SideHeader from "./../../components/header/Header";
+import Footer from "./../../components/footer/Footer";
 
 const Home = () => {
     const [name, setName] = useState("");
@@ -114,6 +115,9 @@ const Home = () => {
                 </form>
          </div>
       </div>
+      {/* <div className={styles.footer}>
+        <Footer/>
+      </div> */}
     </div>
   )
 }

@@ -1,4 +1,27 @@
 /* Arquivo students.module.css */
+
+.containerPai {
+    background-image: url('/wallpapersHome/backHome2.png');
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .containerGiga {
     width: 100%;
     margin: 0 auto;
