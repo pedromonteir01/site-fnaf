@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className={Styles.footerStyle}>
       <p>2023
         Five Nights at Freddy's
-        . Todos os direitos reservados.©</p>
+        © Todos os direitos reservados.</p>
         <div id={Styles.icons}>
       <div><FaInstagram /></div>
       <div><FaFacebook /></div>

@@ -90,3 +90,14 @@
   text-transform: uppercase;
   text-shadow: 0 0 150px gold;
 }
+
+@media only screen and (max-width: 600px) {
+  .subDivStorie {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .textStorie {
+    padding: 0.3rem;
+  }
+}
