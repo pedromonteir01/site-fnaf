@@ -7,6 +7,7 @@ import styles from "@/app/page-students/students.module.css"
 import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
+import Footer from "../components/footer/Footer";
 
 
 export default function Page() {
@@ -44,58 +45,74 @@ export default function Page() {
     console.log(dados);
     console.log(students);
     return (
-        <main className={styles.containerGiga}>
-            <h1 className={styles.title}>Nossa Equipe</h1>
-            <button className={styles.btnRegister}>
-                <Link href={"/page-students/registerS"}>
-                    Cadastrar Colaborador
-                </Link>
-            </button>
-            <article className={styles.containerCard}>
-                {
-                    dados.length ?
-                        students ? (
-                            <section className={styles.sec}>
+        <div className={styles.containerPai}>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <SideHeader />
+                </div>
+                <div className={styles.body}>
+                    <div className={styles.subDiv1}>
+                        <h1 className={styles.titlePage}>Nossa equipe</h1>
+                    </div>
+                    <div className={styles.subDiv2}>
+                        <div className={styles.subDivAnimatronics}>
+                            <button className={styles.btnRegister}>
+                                <Link href={"/page-students/registerS"}>
+                                    Cadastrar Colaborador
+                                </Link>
+                            </button>
+                            <article className={styles.containerCard}>
                                 {
-                                    dados.map((students) => (
-                                        <div key={students.id} className={styles.card}>
-                                            <div className={styles.imgDiv}>
-                                                <img src={students.img} alt={students.name} />
-                                            </div>
-                                            <div className={styles.infos}>
-                                                <p>Nome: {students.name}</p>
-                                                <p>Idade: {students.age}</p>
-                                                <p>Gênero: {students.gender}</p>
-                                                <p>Descrição: {students.description}</p>
-                                            </div>
+                                    dados.length ?
+                                        students ? (
+                                            <section className={styles.sec}>
+                                                {
+                                                    dados.map((students) => (
+                                                        <div key={students.id} className={styles.card}>
+                                                            <div className={styles.imgDiv}>
+                                                                <img src={students.img} alt={students.name} />
+                                                            </div>
+                                                            <div className={styles.infos}>
+                                                                <p>Nome: {students.name}</p>
+                                                                <p>Idade: {students.age}</p>
+                                                                <p>Gênero: {students.gender}</p>
+                                                                <p>Descrição: {students.description}</p>
+                                                            </div>
 
-                                            <div className={styles.buttons}>
-                                                <div className={styles.buttonEdit}>
-                                                    <button
-                                                        className={styles.button}><MdEdit />
-                                                    </button>
-                                                </div>
+                                                            <div className={styles.buttons}>
+                                                                <div className={styles.buttonEdit}>
+                                                                    <button
+                                                                        className={styles.button}><MdEdit />
+                                                                    </button>
+                                                                </div>
 
-                                                <div className={styles.buttonDelete}>
-                                                    <button
-                                                        onClick={() => deleteStudents(students.id)}
-                                                        className={styles.button}><MdDelete />
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))
+                                                                <div className={styles.buttonDelete}>
+                                                                    <button
+                                                                        onClick={() => deleteStudents(students.id)}
+                                                                        className={styles.button}><MdDelete />
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                }
+                                            </section>
+                                        ) : (
+                                            <p>Carregando</p>
+                                        )
+
+                                        : (
+                                            <p>Não tem colaboradores cadastrados</p>
+                                        )
                                 }
-                            </section>
-                        ) : (
-                            <p>Carregando</p>
-                        )
-
-                        : (
-                            <p>Não tem colaboradores cadastrados</p>
-                        )
-                }
-            </article>
-        </main>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.footer}>
+                <Footer />
+            </div>
+        </div>
     )
 }
