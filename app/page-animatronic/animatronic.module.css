@@ -1,7 +1,29 @@
+.containerPai {
+    background-color: #232323;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .itens {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -9,4 +31,18 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+
+.body {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+.btnRegister {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: large;
 }
