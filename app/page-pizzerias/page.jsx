@@ -25,6 +25,7 @@ const RegisterPizzeiras = () => {
     }, []);
 
     return (
+        <div className={styles.containerPai}>
         <div className={styles.container}>
             <div className={styles.header}>
                 <SideHeader />
@@ -34,6 +35,7 @@ const RegisterPizzeiras = () => {
                     <h1 className={styles.titlePage}>PIZZARIAS</h1>
                 </div>
             <div className={styles.subDiv2}>
+                <div className={styles.subDivAnimatronics}>
             <button>
                         <Link href={"/page-pizzerias/registerP"}>
                             Resgistrar pizzaria
@@ -68,9 +70,11 @@ const RegisterPizzeiras = () => {
                             )
                         }
                     </article>
+                    </div>
             </div>
             </div>
-            <div className={styles.footer}>
+        </div>
+        <div className={styles.footer}>
                 <Footer />
             </div>
         </div>

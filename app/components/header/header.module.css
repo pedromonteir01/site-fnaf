@@ -9,7 +9,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 60%;
     width: 100%;
     gap:2rem;
 }
@@ -37,7 +37,8 @@
   transition: 0.5s;
   padding: 0.8rem 1.3rem;
   border-radius: 3px;
-  background-color: #6654d1;
+  background-color: #6f47dd; /* Cor roxo neon no hover */
+  box-shadow: 0 0 30px #6f47dd; /* Efeito de glow */
 }
 
 
