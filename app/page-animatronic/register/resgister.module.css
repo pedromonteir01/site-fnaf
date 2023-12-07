@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    background-image: url('/wallpapersHome/backHome.png');
+    background-color: rgb(39, 39, 39);
     box-sizing: border-box;
     background-size: cover;
     background-position: right;
@@ -19,11 +19,12 @@
   
   .body{
     width: 100%;
+
   }
   
   .subDiv1{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
@@ -50,6 +51,8 @@
 
 .register {
     display: flex;
+    width: 80%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
@@ -121,10 +124,20 @@
     border: 0.20rem solid black;
 }
 
+.divUploads {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .uploads {
     background-color: beige;
-    width: 50%;
+    width: 80%;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tagForm {
