@@ -78,7 +78,8 @@
   text-align: justify;
   border-top: 6px double #6f47dd;
   border-bottom: 6px double #6f47dd;
-  box-shadow: 0 0 30px #6f47dd;
+  box-shadow: 0px -25px 20px -20px rgba(111,71,221,1),
+0px 25px 20px -20px rgba(111,71,221,1);
   cursor: grab;
   transition: 1s;
   margin-top: 2rem;
@@ -178,7 +179,8 @@
   text-align: justify;
   border-top: 6px double #6f47dd;
   border-bottom: 6px double #6f47dd;
-  box-shadow: 0 0 30px #6f47dd;
+  box-shadow: 0px -25px 20px -20px rgba(111,71,221,1),
+0px 25px 20px -20px rgba(111,71,221,1);
   cursor: grab;
   transition: 1s;
   margin-top: 2rem;

@@ -1,49 +1,60 @@
-.container{
-    display: flex;
-    background-image: url('/wallpapersHome/backHome2.png');
-    box-sizing: border-box;
-    background-size: cover;
-    background-position: right;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    width: 100%;
-  }
-  
-  .header{
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-  
-  .body{
-    width: 100%;
-  }
-  
-  .subDiv1{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .titlePage {
-    background-image: url('/background-Font.png');
-    text-align: center;
-    font-family: 'Impact', sans-serif;
+.mainContainer {
+  background-image: url('/wallpapersHome/backHome2.png');
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: right;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 
-    font-weight: 100;
-    font-size: 70px;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
+.mainContainer label {
+  color: #FFF;
+}
 
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    text-transform: uppercase;
-    text-shadow: 0 0 40px gold;
-  }
+.mainContainer input {
+  color: #FFF;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.body {
+  width: 100%;
+}
+
+.subDiv1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.titlePage {
+  background-image: url('/background-Font.png');
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+
+  font-weight: 100;
+  font-size: 70px;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px gold;
+}

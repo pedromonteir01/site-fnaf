@@ -35,15 +35,14 @@ const RegisterPizzeiras = () => {
                         <h1 className={styles.titlePage}>PIZZARIAS</h1>
                     </div>
                     <div className={styles.divButtons}>
-                        <button className={styles.buttons}>
-                            <Link href={"/page-pizzerias/registerP"}>
+                        <Link href={"/page-pizzerias/registerP"}>
+                            <button className={styles.buttons}>
                                 Registrar pizzaria
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
                     </div>
                     <div className={styles.subDiv2}>
                         <div>
-
                             <article>
                                 {
                                     data.length ? (
@@ -69,7 +68,9 @@ const RegisterPizzeiras = () => {
                                             <p>Loading...</p>
                                         )
                                     ) : (
-                                        <p>Nenhuma pizzaria foi cadastrada.</p>
+                                        <div className={styles.divText}>
+                                            <p className={styles.texts}>Nenhuma pizzaria foi cadastrada.</p>
+                                        </div>
                                     )
                                 }
                             </article>

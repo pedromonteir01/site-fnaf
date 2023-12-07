@@ -58,12 +58,6 @@
   margin-top: 2rem;
 }
 
-.subDivAnimatronics {
-  background-color: #202020c1;
-  width: 60%;
-  color: whitesmoke;
-}
-
 .divButtons {
   text-align: center;
   display: flex;
@@ -89,4 +83,20 @@
   border-radius: 3px;
   background-color: #6f47dd;
   box-shadow: 0 0 30px #6f47dd;
+}
+
+.card {
+  background-color: #f4c519;
+}
+
+.divText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.texts {
+  text-align: center;
+  color: #fff;
 }
