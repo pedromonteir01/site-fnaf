@@ -52,7 +52,7 @@ export default function Page() {
                 </div>
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
-                        <h1 className={styles.titlePage}>Nossa equipe</h1>
+                        <h1 className={styles.title}>Nossa equipe</h1>
                     </div>
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivAnimatronics}>
