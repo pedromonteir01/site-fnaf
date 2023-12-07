@@ -1,4 +1,5 @@
-'use client'
+// Importação de bibliotecas e componentes necessários
+'use client';
 import { useState, useEffect } from 'react';
 import styles from "./pizzerias.module.css";
 import axios from 'axios';
@@ -6,48 +7,61 @@ import Link from 'next/link';
 import SideHeader from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
+// Definição do componente funcional chamado RegisterPizzeiras
 const RegisterPizzeiras = () => {
+    // Estados para armazenar dados das pizzarias e dados gerais
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
 
+    // Efeito colateral que busca dados das pizzarias ao carregar a página
     useEffect(() => {
         const fetchPizzerias = async () => {
             try {
+                // Solicita dados das pizzarias ao servidor
                 const response = await axios.get("/api/pizzerias");
+                // Atualiza os estados com os dados recebidos
                 setPizzerias(response.data.pizzerias);
                 setData(response.data.pizzerias);
             } catch (e) {
-                console.log('feetching data', e);
+                console.log('Erro ao obter dados:', e);
             }
         }
 
+        // Executa a função de busca ao montar o componente
         fetchPizzerias();
     }, []);
 
+    // Renderização do componente com a estrutura da página
     return (
         <div className={styles.containerPai}>
+            {/* Estrutura principal do componente */}
             <div className={styles.container}>
                 <div className={styles.header}>
+                    {/* Cabeçalho */}
                     <SideHeader />
                 </div>
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
+                        {/* Título da página */}
                         <h1 className={styles.titlePage}>PIZZARIAS</h1>
                     </div>
-                    <div className={styles.divButtons}>
-                        <button className={styles.buttons}>
-                            <Link href={"/page-pizzerias/registerP"}>
+                    {/* Link para a página de registro de pizzarias */}
+                    <Link href={"/page-pizzerias/registerP"}>
+                        <div className={styles.divButtons}>
+                            <button className={styles.buttons}>
                                 Registrar pizzaria
-                            </Link>
-                        </button>
-                    </div>
+                            </button>
+                        </div>
+                    </Link>
+                    {/* Seção que exibe as pizzarias */}
                     <div className={styles.subDiv2}>
                         <div>
-
                             <article>
                                 {
+                                    // Verifica se há pizzarias cadastradas
                                     data.length ? (
                                         pizzerias ? (
+                                            // Exibe as informações de cada pizzaria
                                             <section className={styles.secPizzerias}>
                                                 {
                                                     data.map((pizzeria) => (
@@ -66,10 +80,14 @@ const RegisterPizzeiras = () => {
                                                 }
                                             </section>
                                         ) : (
+                                            // Exibe uma mensagem de carregamento
                                             <p>Loading...</p>
                                         )
                                     ) : (
-                                        <p>Nenhuma pizzaria foi cadastrada.</p>
+                                        // Exibe uma mensagem se não houver pizzarias cadastradas
+                                        <div className={styles.divText}>
+                                            <p className={styles.texts}>Nenhuma pizzaria foi cadastrada.</p>
+                                        </div>
                                     )
                                 }
                             </article>
@@ -77,6 +95,7 @@ const RegisterPizzeiras = () => {
                     </div>
                 </div>
             </div>
+            {/* Rodapé */}
             <div className={styles.footer}>
                 <Footer />
             </div>
@@ -84,4 +103,5 @@ const RegisterPizzeiras = () => {
     )
 }
 
+// Exporta o componente RegisterPizzeiras
 export default RegisterPizzeiras;
