@@ -2,7 +2,6 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 
 const baseUrl = process.env.BASE_URL + "animatronics";
-console.log(baseUrl);
 
 export async function GET() {
     try {

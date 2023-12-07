@@ -44,11 +44,14 @@ const animatronicPage = () => {
         const url = `/api/animatronics/${id}`;
         try {
             await axios.delete(url);
-            setAnimatronics(animatronics.filter((animatronic) => animatronic.id !== id))
+            setAnimatronics(animatronics.filter((animatronic) => animatronic.id !== id));
         } catch (e) {
             console.log("Error feetching data:", e);
         }
     }
+
+    console.log('data:', data);
+    console.log('animatronics:', animatronics);
 
     return (
         <div className={styles.containerPai}>
@@ -59,23 +62,23 @@ const animatronicPage = () => {
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
                         <h1 className={styles.titlePage}>ANIMATRONICS</h1>
-                    </div>
-                    <div className={styles.subDiv2}>
-                        <div className={styles.subDivAnimatronics}>
-                            <article className={styles.itens}>
-                                <button>
-                                    <Link href={"/page-animatronic/register"}>''
+                        <article className={styles.itens}>
+                                <button className={styles.btnRegister}>
+                                    <Link href={"/page-animatronic/register"}>
                                         Register
                                     </Link>
                                 </button>
-                            </article>
+                        </article>
+                    </div>
+                    <div className={styles.subDiv2}>
+                        <div className={styles.subDivAnimatronics}>
                             <article>
                                 {
-                                    data.length ? (
+                                    data ? (
                                         animatronics ? (
                                             <section className={styles.animatronics}>
                                                 {
-                                                    data.map((animatronic) => (
+                                                    animatronics.map((animatronic) => (
                                                         <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} instrument={animatronic.instrument} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)} />
                                                     ))
                                                 }
