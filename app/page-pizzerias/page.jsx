@@ -34,13 +34,16 @@ const RegisterPizzeiras = () => {
                     <div className={styles.subDiv1}>
                         <h1 className={styles.titlePage}>PIZZARIAS</h1>
                     </div>
+                    <div className={styles.divButtons}>
+                        <button className={styles.buttons}>
+                            <Link href={"/page-pizzerias/registerP"}>
+                                Registrar pizzaria
+                            </Link>
+                        </button>
+                    </div>
                     <div className={styles.subDiv2}>
-                        <div className={styles.subDivAnimatronics}>
-                            <button>
-                                <Link href={"/page-pizzerias/registerP"}>
-                                    Registrar pizzaria
-                                </Link>
-                            </button>
+                        <div>
+
                             <article>
                                 {
                                     data.length ? (

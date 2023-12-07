@@ -1,4 +1,4 @@
-.containerPai{
+.containerPai {
   background-image: url('/wallpapersHome/backHome2.png');
   box-sizing: border-box;
   background-size: cover;
@@ -7,12 +7,12 @@
   background-repeat: no-repeat;
 }
 
-.container{
+.container {
   display: flex;
   width: 100%;
 }
 
-.header{
+.header {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -21,11 +21,11 @@
   position: fixed;
 }
 
-.body{
+.body {
   width: 100%;
 }
 
-.subDiv1{
+.subDiv1 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -64,20 +64,24 @@
 .subDivStorie {
   background-color: #202020c1;
   width: 60%;
+  text-align: justify;
   border-top: 6px double #f4c519;
   border-bottom: 6px double #f4c519;
   transition: 1s;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
+
 .subDivStorie:hover {
   background-color: #202020c1;
   width: 60%;
+  text-align: justify;
   border-top: 6px double #6f47dd;
   border-bottom: 6px double #6f47dd;
   box-shadow: 0 0 30px #6f47dd;
   cursor: grab;
   transition: 1s;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .textStorie {
@@ -128,22 +132,57 @@
 }
 
 .titlePage2 {
-    background-image: url('/background-Font.png');
-    text-align: center;
-    font-family: 'Impact', sans-serif;
-    /* Substituí Impact-Regular pela fonte Impact */
-    font-weight: 100;
-    font-size: 50px;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* Adicione para compatibilidade com navegadores modernos */
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    text-transform: uppercase;
-    text-shadow: 0 0 40px gold;
-  }
+  background-image: url('/background-Font.png');
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  /* Substituí Impact-Regular pela fonte Impact */
+  font-weight: 100;
+  font-size: 50px;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Adicione para compatibilidade com navegadores modernos */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px gold;
+}
+
+.stories {
+  display: flex;
+  width: 70%;
+  gap: 2rem;
+}
+
+.storie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #202020c1;
+  width: 60%;
+  text-align: justify;
+  border-top: 6px double #f4c519;
+  border-bottom: 6px double #f4c519;
+  transition: 1s;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.storie:hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #202020c1;
+  width: 60%;
+  text-align: justify;
+  border-top: 6px double #6f47dd;
+  border-bottom: 6px double #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  cursor: grab;
+  transition: 1s;
+  margin-top: 2rem;
+}
 
 @media only screen and (max-width: 600px) {
   .subDivStorie {

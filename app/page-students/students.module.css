@@ -1,7 +1,7 @@
 /* Arquivo students.module.css */
 
 .containerPai {
-    background-image: url('/wallpapersHome/backHome2.png');
+    background-color: #232323;
     box-sizing: border-box;
     background-size: cover;
     background-position: right;
@@ -83,8 +83,8 @@
     width: calc(33.33% - 1.25rem);
     margin-bottom: 1.25rem;
     box-sizing: border-box;
-    background-color: #3f3f3f;
-    border: 1px solid rgb(0, 0, 0);
+    background-color: #696969;
+    border: 1px solid rgb(192, 192, 192);
     border-radius: 0.5rem;
     overflow: hidden;
     transition: transform 0.3s ease;
