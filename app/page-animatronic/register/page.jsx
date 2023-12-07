@@ -1,11 +1,12 @@
 'use client'
-import { 
-    useEffect, 
-    useState 
+import {
+    useEffect,
+    useState
 } from 'react';
 import styles from './resgister.module.css';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import SideHeader from '@/app/components/header/Header';
 
 const Register = () => {
 
@@ -26,10 +27,10 @@ const Register = () => {
 
     const router = useRouter();
 
-    const handleSubmit = async(e) => {
-        e.preventDefault(); 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
-            await axios.post('/api/animatronics', {name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare});
+            await axios.post('/api/animatronics', { name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare });
             setName('');
             setInitialLocation('');
             setDescription('');
@@ -41,31 +42,38 @@ const Register = () => {
             setJumpscare('');
             setOccupation('test');
             router.push('/page-animatronic/')
-        } catch(e) {
+        } catch (e) {
             console.log('error', e);
         }
     }
 
     useEffect(() => {
         async function fetchStudents() {
-          try {
-            const response = await axios.get("/api/animatronics");
-            setAnimatronicsRegisteres(response.data);
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
+            try {
+                const response = await axios.get("/api/animatronics");
+                setAnimatronicsRegisteres(response.data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
         }
-    
+
         fetchStudents();
-      }, []);
+    }, []);
 
     return (
+        <div className={styles.container}>
+            <div className={styles.header}>
+                <SideHeader/>
+            </div>
+            <div className={styles.body}>
+                <div className={styles.subDiv1}>
+                    
         <main className={styles.register}>
             <article className={styles.gif}>
                 <img src="/assets/foxy-run.gif" alt="test" style={{width:700, height:500}}/>
             </article>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
-            <h1 style={{color: 'white'}}>REGISTRO</h1>
+            <h1 className={styles.titlePage}>REGISTRO</h1>
                 <article className={styles.Form}>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="name">Nome animatronic:</label>
@@ -169,6 +177,9 @@ const Register = () => {
                 <button type='submit'>REGISTER</button>
             </form>
         </main>
+                </div>
+            </div>
+        </div>
     )
 }
 
