@@ -36,8 +36,7 @@
 
 .body {
     color: white;
-    display: flex;
-    justify-content: center;
+
 }
 .btnRegister {
     margin-top: 1rem;
