@@ -29,13 +29,35 @@ const Home = () => {
             </div>
             <div className={styles.bannerStorie}>
               <div className={styles.banner}>
-              <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" width={600} height={300}/>
-              </div>
-
-              <div className={styles.storie}>
-                <h1 className={styles.titlePage2}>A HISTÓRIA DO JOGO</h1>
+              <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" width={800} height={400}/>
               </div>
             </div>
+
+            <div className={styles.subDivStorie}>
+              <h2 className={styles.titleStorie}>COMO SURGIU O PRIMEIRO RESTAURANTE</h2>
+              <p className={styles.textStorie}>
+                Os amigos William Afton e Henry tinham o mesmo objetivo: um restaurante temático para crianças.
+
+                A partir disso, se juntaram para criar a famosa Fazbear Entertainment, tendo como seu primeiro
+
+                restaurante o FredBear Family Diner. 
+
+                William, por ser um homem de negócios, tinha como objetivo principal o lucro, 
+
+                então ficou responsável pela parte financeira e burocrática da empresa.
+
+                Henry, por sua vez, era um homem intelectual, que ficou com a parte 
+                
+                mecânica e robótica.
+                </p>
+            </div>
+
+            <div className={styles.stories}>
+                  <h1 className={styles.titleStorie}>A HISTÓRIA POR TRÁS</h1>
+                  <p>
+
+                  </p>
+                </div>
           </div>
         </div>
       </div>
