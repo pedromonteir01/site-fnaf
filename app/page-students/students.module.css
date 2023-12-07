@@ -79,7 +79,7 @@
 }
 
 .card {
-    width: calc(30% - 1rem);
+    width: calc(33,33% - 1rem);
     margin-bottom: 1.25rem;
     box-sizing: border-box;
     background-color: #696969;

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import styles from "./pizzerias.module.css";
 import axios from 'axios';
 import Link from 'next/link';
+import { MdDelete } from "react-icons/md";
+import { FaPen } from "react-icons/fa";
 import SideHeader from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 
@@ -30,6 +32,24 @@ const RegisterPizzeiras = () => {
         // Executa a função de busca ao montar o componente
         fetchPizzerias();
     }, []);
+
+
+    // Edita uma pizzaria
+    const edit = (id) => {
+        router.push(`/page-pizzerias/${id}`)
+    }
+
+    //delete animatronic
+
+    const exclude = async (id) => {
+        const url = `/api/pizzerias/${id}`;
+        try {
+            await axios.delete(url);
+            setPizzerias(pizzerias.filter((pizzeria) => pizzeria.id !== id));
+        } catch (e) {
+            console.log("Error feetching data:", e);
+        }
+    }
 
     // Renderização do componente com a estrutura da página
     return (
@@ -65,15 +85,17 @@ const RegisterPizzeiras = () => {
                                             <section className={styles.secPizzerias}>
                                                 {
                                                     data.map((pizzeria) => (
-                                                        <div key={pizzeria.id} className={styles.card}>
-                                                            <div className={styles.imgDiv}>
-                                                                <img src={pizzeria.image} />
-                                                            </div>
-                                                            <div className={styles.infos}>
-                                                                <p>{pizzeria.name}</p>
-                                                                <p>{pizzeria.id}</p>
-                                                                <p>{pizzeria.franchise}</p>
-                                                                <p>{pizzeria.description}</p>
+                                                        <div className={styles.card} key={pizzeria.id}>
+                                                            <h1>{pizzeria.name}</h1>
+                                                            <img className={styles.icon} src={pizzeria.img} alt={pizzeria.name} />
+                                                            <p><strong>DESCRIÇÃO:</strong> {pizzeria.description}</p>
+                                                            <div className={styles.btns}>
+                                                                <button type="button" onClick={exclude} className={styles.delete}>
+                                                                    <MdDelete />
+                                                                </button>
+                                                                <button type="button" onClick={edit} className={styles.edit}>
+                                                                    <FaPen />
+                                                                </button>
                                                             </div>
                                                         </div>
                                                     ))
