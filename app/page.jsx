@@ -28,7 +28,7 @@ const Home = () => {
                 Ao longo dos anos, Fnaf ganhou uma grande base de fãs e se tornou conhecido não apenas pelos elementos de horror, mas também por sua trama intrigante e cheia de reviravoltas. A série inclui vários jogos, livros e até mesmo teorias elaboradas pelos fãs para desvendar todos os segredos do universo Fnaf.</p>
             </div>
             <div className={styles.bannerStorie}>
-              <img src="" alt="banner FNAF" />
+              <img src="/banners/bannerHome.png" alt="banner FNAF" width={1000} height={500}/>
             </div>
           </div>
         </div>
