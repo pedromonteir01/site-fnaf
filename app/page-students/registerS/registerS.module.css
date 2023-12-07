@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;*/
-    background-color: #9c9c9c;
+    background-color: #cccccc;
 }
 
 .containerPai {
@@ -15,8 +15,9 @@
 
 .container {
     max-width: 37%;
-    background-color: rgb(235, 234, 234);
-    color: #333;
+    background-color: #696969;
+    border: 1px solid rgb(0, 0, 0);
+    color: #f4c519;
     padding: 3rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -25,7 +26,7 @@
 }
 
 .titulo {
-    color: rgb(169, 0, 169);
+    color: #f4c519;
     font-size: 2rem;
     margin-bottom: 2rem;
 }
@@ -37,10 +38,8 @@
     margin-bottom: 1.5rem;
 }
 
-.label {
-    margin-top: 1rem;
-    font-size: 1rem;
-    color: #555555;
+.label1{
+    color: #f4c519;
 }
 
 .input {
@@ -51,22 +50,24 @@
     box-sizing: border-box;
     border: 1px solid #d2d2d2;
     border-radius: 0.5rem;
+    color: #f4c519;
 }
 
 .btn {
-    background-color: #2ecc71;
+    background-color: gold;
     color: #fff;
     cursor: pointer;
     padding: 1.2rem 2rem;
     font-size: 1rem;
     border: none;
-    border-radius: 0.5rem;
     transition: background-color 0.3s ease;
     width: 100%;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 30px #ffde67;
 }
 
 .btn:hover {
-    background-color: #1f9651;
+    background-color: #ffde67;
 }
 
 .studentsContainer {
@@ -102,8 +103,4 @@
     font-size: 2rem;
     margin-bottom: 2rem;
     margin-top: 1rem;
-}
-
-.label {
-    color: #000000;
 }
