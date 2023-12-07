@@ -64,7 +64,16 @@
   color: whitesmoke;
 }
 
-.buttons{
+.divButtons {
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0.3rem;
+  margin-left: 5rem;
+}
+
+.divButtons button {
   padding: 0.8rem 1rem;
   background-color: #f4c519;
   color: #fff;
@@ -74,7 +83,7 @@
   transition: 0.5s;
 }
 
-.buttons:hover {
+.divButtons button:hover {
   transition: 0.5s;
   padding: 0.8rem 1.3rem;
   border-radius: 3px;
