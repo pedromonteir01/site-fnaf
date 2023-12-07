@@ -82,7 +82,7 @@ const router = useRouter();
 
                             <div className={styles.containerInputs}>
                                 <label className={styles.label} htmlFor="gender">
-                                    Gênero
+                                    Gênero:
                                 </label>
                                 <input
                                     className={styles.input}
@@ -96,7 +96,7 @@ const router = useRouter();
 
                             <div className={styles.containerInputs}>
                                 <label className={styles.label} htmlFor="description">
-                                    Descrição
+                                    Descrição:
                                 </label>
                                 <input
                                     className={styles.input}
