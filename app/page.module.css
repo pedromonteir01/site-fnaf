@@ -18,6 +18,7 @@
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
+  position: fixed;
 }
 
 .body{
@@ -65,6 +66,17 @@
   width: 60%;
   border-top: 6px double #f4c519;
   border-bottom: 6px double #f4c519;
+  transition: 1s;
+  margin-top: 4rem;
+}
+.subDivStorie:hover {
+  background-color: #202020c1;
+  width: 60%;
+  border-top: 6px double #6f47dd;
+  border-bottom: 6px double #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  cursor: grab;
+  transition: 1s;
   margin-top: 4rem;
 }
 
@@ -97,8 +109,41 @@
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   border: 6px double #f4c519;
+  transition: 1s;
 }
+
+.bannerStorie:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 6px double #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  cursor: grab;
+  transition: 1s;
+}
+
+.titlePage2 {
+    background-image: url('/background-Font.png');
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    /* Substituí Impact-Regular pela fonte Impact */
+    font-weight: 100;
+    font-size: 50px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Adicione para compatibilidade com navegadores modernos */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px gold;
+  }
 
 @media only screen and (max-width: 600px) {
   .subDivStorie {

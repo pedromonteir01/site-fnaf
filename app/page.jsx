@@ -17,7 +17,7 @@ const Home = () => {
           </div>
           <div className={styles.subDiv2}>
             <div className={styles.subDivStorie}>
-              <h2 className={styles.titleStorie}>História do jogo</h2>
+              <h2 className={styles.titleStorie}>SOBRE O JOGO</h2>
               <p className={styles.textStorie}>
                 "Five Nights at Freddy's" (Fnaf) é uma série de jogos de terror criada por Scott Cawthon. O primeiro jogo foi lançado em 2014 e desde então a franquia cresceu com várias sequências e spin-offs. A história gira em torno de um guarda noturno que trabalha em uma pizzaria chamada Freddy Fazbear's Pizza, que possui animatrônicos animados durante o dia.
 
@@ -28,8 +28,36 @@ const Home = () => {
                 Ao longo dos anos, Fnaf ganhou uma grande base de fãs e se tornou conhecido não apenas pelos elementos de horror, mas também por sua trama intrigante e cheia de reviravoltas. A série inclui vários jogos, livros e até mesmo teorias elaboradas pelos fãs para desvendar todos os segredos do universo Fnaf.</p>
             </div>
             <div className={styles.bannerStorie}>
-              <img src="/banners/bannerHome.png" alt="banner FNAF" width={1000} height={500}/>
+              <div className={styles.banner}>
+              <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" width={800} height={400}/>
+              </div>
             </div>
+
+            <div className={styles.subDivStorie}>
+              <h2 className={styles.titleStorie}>COMO SURGIU O PRIMEIRO RESTAURANTE</h2>
+              <p className={styles.textStorie}>
+                Os amigos William Afton e Henry tinham o mesmo objetivo: um restaurante temático para crianças.
+
+                A partir disso, se juntaram para criar a famosa Fazbear Entertainment, tendo como seu primeiro
+
+                restaurante o FredBear Family Diner. 
+
+                William, por ser um homem de negócios, tinha como objetivo principal o lucro, 
+
+                então ficou responsável pela parte financeira e burocrática da empresa.
+
+                Henry, por sua vez, era um homem intelectual, que ficou com a parte 
+                
+                mecânica e robótica.
+                </p>
+            </div>
+
+            <div className={styles.stories}>
+                  <h1 className={styles.titleStorie}>A HISTÓRIA POR TRÁS</h1>
+                  <p>
+
+                  </p>
+                </div>
           </div>
         </div>
       </div>
