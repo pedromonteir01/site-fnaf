@@ -65,10 +65,10 @@ const Register = () => {
                 <img src="/assets/foxy-run.gif" alt="test" style={{width:700, height:500}}/>
             </article>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
-            <h1 style={{color: 'white'}}>REGISTER</h1>
+            <h1 style={{color: 'white'}}>REGISTRO</h1>
                 <article className={styles.Form}>
                     <section className={styles.inputField}>
-                        <label className={styles.title} htmlFor="name">Name animatronic:</label>
+                        <label className={styles.title} htmlFor="name">Nome animatronic:</label>
                         <input
                             className={styles.Input}
                             type="text"
@@ -78,7 +78,7 @@ const Register = () => {
                         />
                     </section>
                     <section className={styles.inputField}>
-                        <label className={styles.title} htmlFor="occupation">Pizzeria:</label>
+                        <label className={styles.title} htmlFor="occupation">Pizzaria:</label>
                         <select 
                             value={occupation} 
                             onChange={(e) => setOccupation(e.target.value)} 
@@ -92,7 +92,7 @@ const Register = () => {
                         </select>
                     </section>
                     <section className={styles.inputField}>
-                        <label className={styles.title} htmlFor="location">Initial location:</label>
+                        <label className={styles.title} htmlFor="location">Localização inicial:</label>
                         <input
                             className={styles.Input}
                             type="text"
@@ -102,7 +102,7 @@ const Register = () => {
                         />
                     </section>
                     <section className={styles.inputField}>
-                        <label className={styles.title} htmlFor="color">Color animatronic:</label>
+                        <label className={styles.title} htmlFor="color">Cor animatronic:</label>
                         <input
                             className={styles.Input}
                             type="text"
@@ -122,7 +122,7 @@ const Register = () => {
                         />
                     </section>
                     <section className={styles.inputField}>
-                        <label className={styles.title} htmlFor="instrument">Instrument animatronic:</label>
+                        <label className={styles.title} htmlFor="instrument">Instrumento animatronic:</label>
                         <input
                             className={styles.Input}
                             type="text"
@@ -132,7 +132,7 @@ const Register = () => {
                         />
                     </section>
                     <section className={styles.inputField}>
-                        <label className={styles.title} htmlFor="description">Descritption animatronic:</label>
+                        <label className={styles.title} htmlFor="description">Descrição animatronic:</label>
                         <textarea
                             className={styles.Input}
                             type="text"

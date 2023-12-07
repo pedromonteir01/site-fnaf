@@ -54,7 +54,7 @@ const animatronicPage = () => {
             <article className={styles.itens}>
                 <h1>ANIMATRONICS</h1>
                 <button>
-                    <Link href={"/page-animatronic/register"}>
+                    <Link href={"/page-animatronic/register"}>''
                         Register
                     </Link>
                 </button>
@@ -66,7 +66,7 @@ const animatronicPage = () => {
                         <section className={styles.animatronics}>
                             {
                                 data.map((animatronic) => (
-                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} status={animatronic.status} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)}/>
+                                    <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} instrument={animatronic.instrument} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)}/>
                                 ))
                             }
                         </section>
@@ -74,7 +74,9 @@ const animatronicPage = () => {
                         <p>Loading...</p>
                     )
                 ) : (
-                    <p>{data.message ? (data.message) : (null)}</p>
+                    <p>{
+                        data.message ? (data.message) : ("")
+                        }</p>
                 )
             }
             </article>
