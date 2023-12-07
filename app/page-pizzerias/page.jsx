@@ -14,24 +14,29 @@ const RegisterPizzeiras = () => {
     // Estados para armazenar dados das pizzarias e dados gerais
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
+    const [franchise, setFranchise] = useState('');
 
     // Efeito colateral que busca dados das pizzarias ao carregar a página
     useEffect(() => {
         const fetchPizzerias = async () => {
             try {
-                // Solicita dados das pizzarias ao servidor
-                const response = await axios.get("/api/pizzerias");
-                // Atualiza os estados com os dados recebidos
-                setPizzerias(response.data.pizzerias);
-                setData(response.data.pizzerias);
-            } catch (e) {
-                console.log('Erro ao obter dados:', e);
+                let queryParams = '';
+            if(franchise) {
+                queryParams += `franchise=${franchise}&`
+            }
+
+            const url = `/api/pizzerias?${queryParams}`
+            console.log(url)
+            const response = await axios.get(url);
+            setData(response.data.pizzerias)
+            }catch (error) {
+                console.error(error);
             }
         }
 
         // Executa a função de busca ao montar o componente
         fetchPizzerias();
-    }, []);
+    }, [franchise]);
 
 
     // Edita uma pizzaria
@@ -51,6 +56,7 @@ const RegisterPizzeiras = () => {
         }
     }
 
+    console.log(franchise);
     // Renderização do componente com a estrutura da página
     return (
         <div className={styles.containerPai}>
@@ -73,6 +79,18 @@ const RegisterPizzeiras = () => {
                             </button>
                         </div>
                     </Link>
+                    <div className={styles.filter}>
+                    <select className={styles.selectedFranchise} value={franchise} onChange={(e) => setFranchise(e.target.value)} >
+                        <option value=''>Selecione</option>
+                        <option value={'FNAF'}>FNAF</option>
+                        <option value={'FNAF2'}>FNAF 2</option>
+                        <option value={'FNAF3'}>FNAF 3</option>
+                        <option value={'FNAF4'}>FNAF 4</option>
+                        <option value={'FNAFSL'}>FNAF SL</option>
+                        <option value={'FFPS'}>FFPS</option>
+                        <option value={'UNC'}>UNC</option>
+                    </select>
+                    </div>
                     {/* Seção que exibe as pizzarias */}
                     <div className={styles.subDiv2}>
                         <div>
