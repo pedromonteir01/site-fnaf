@@ -65,7 +65,7 @@ const Register = () => {
                 <img src="/assets/foxy-run.gif" alt="test" style={{width:700, height:500}}/>
             </article>
             <form onSubmit={handleSubmit} className={styles.tagForm}>
-            <h1 style={{color: 'white'}}>REGISTRO</h1>
+            <h1 className={styles.titlePage}>REGISTRO</h1>
                 <article className={styles.Form}>
                     <section className={styles.inputField}>
                         <label className={styles.title} htmlFor="name">Nome animatronic:</label>
