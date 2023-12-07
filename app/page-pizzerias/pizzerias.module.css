@@ -1,4 +1,4 @@
-.containerPai{
+.containerPai {
   background-image: url('/wallpapersHome/backHome2.png');
   box-sizing: border-box;
   background-size: cover;
@@ -7,59 +7,77 @@
   background-repeat: no-repeat;
 }
 
-.container{
-    display: flex;
-    width: 100%;
-  }
-  
-  .header{
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-  
-  .body{
-    width: 100%;
-  }
-  
-  .titlePage {
-    background-image: url('/background-Font.png');
-    text-align: center;
-    font-family: 'Impact', sans-serif;
-    /* Substituí Impact-Regular pela fonte Impact */
-    font-weight: 100;
-    font-size: 70px;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* Adicione para compatibilidade com navegadores modernos */
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    text-transform: uppercase;
-    text-shadow: 0 0 40px gold;
-  }
+.container {
+  display: flex;
+  width: 100%;
+}
 
-  .subDiv1{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-  }
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 
-  .subDiv2 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
-  }
+.body {
+  width: 100%;
+}
 
-  .subDivAnimatronics{
-    background-color: #202020c1;
-    width: 60%;
-    color: whitesmoke;
-  }
+.titlePage {
+  background-image: url('/background-Font.png');
+  text-align: center;
+  font-family: 'Impact', sans-serif;
+  /* Substituí Impact-Regular pela fonte Impact */
+  font-weight: 100;
+  font-size: 70px;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Adicione para compatibilidade com navegadores modernos */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-transform: uppercase;
+  text-shadow: 0 0 40px gold;
+}
+
+.subDiv1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.subDiv2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.subDivAnimatronics {
+  background-color: #202020c1;
+  width: 60%;
+  color: whitesmoke;
+}
+
+.buttons{
+  padding: 0.8rem 1rem;
+  background-color: #f4c519;
+  color: #fff;
+  border: none;
+  cursor: grab;
+  border-radius: 3px;
+  transition: 0.5s;
+}
+
+.buttons:hover {
+  transition: 0.5s;
+  padding: 0.8rem 1.3rem;
+  border-radius: 3px;
+  background-color: #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+}

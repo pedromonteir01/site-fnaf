@@ -29,7 +29,7 @@ const Home = () => {
             </div>
             <div className={styles.bannerStorie}>
               <div className={styles.banner}>
-              <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" width={800} height={400}/>
+                <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" width={800} height={400} />
               </div>
             </div>
 
@@ -40,24 +40,79 @@ const Home = () => {
 
                 A partir disso, se juntaram para criar a famosa Fazbear Entertainment, tendo como seu primeiro
 
-                restaurante o FredBear Family Diner. 
+                restaurante o FredBear Family Diner.
 
-                William, por ser um homem de negócios, tinha como objetivo principal o lucro, 
+                William, por ser um homem de negócios, tinha como objetivo principal o lucro,
 
                 então ficou responsável pela parte financeira e burocrática da empresa.
 
-                Henry, por sua vez, era um homem intelectual, que ficou com a parte 
-                
+                Henry, por sua vez, era um homem intelectual, que ficou com a parte
+
                 mecânica e robótica.
-                </p>
+
+                O restaurante foi um sucesso, mas os amigos queriam algo mais, algo que pudesse
+
+                atrair mais crianças e servir como um diferencial para a empresa.
+
+                Então, ele criou os primeiros animatrônicos: FredBear e SpringBonnie.
+
+                Até então, os animatrônicos não eram nada além de robôs que se moviam e interagiam com as crianças,
+
+                sendo controlados por pessoas dentro deles.
+              </p>
             </div>
 
-            <div className={styles.stories}>
-                  <h1 className={styles.titleStorie}>A HISTÓRIA POR TRÁS</h1>
-                  <p>
+            <h1 className={styles.titleStorie}>A HISTÓRIA POR TRÁS</h1>
 
-                  </p>
-                </div>
+            <div className={styles.stories}>
+              <div className={styles.storie}>
+                <p className={styles.textStorie}>
+                  Sammy e Michael eram filhos de William Afton. O filho mais novo, Sammy, apesar de gostar
+
+                  muito dos animatrônicos, tinha medo dos robôs. Michael, o mais velho, sabendo disso,
+
+                  decidiu fazer uma brincadeira com o irmão na sua festa de aniversário.
+
+                  Ele agarrou Sammy e o levou até a boca de FredBear. O que ele não esperava,
+
+                  era que o robô iria fechar a boca, prensando a cabeça do garoto e
+
+                  resultando na sua morte imediata.
+
+                  William, ao saber da morte do filho, ficou transtornado e decidiu se vingar de Henry,
+
+                  o criador dos animatrônicos e o único capaz de desligá-los, o que poderia ter evitado
+
+                  a morte de Sammy, mas não estava presente no momento do acidente. Ele sequestrou a filha de Henry,
+
+                  Charlotte, e a matou, escondendo seu corpo dentro de um dos animatrônicos.
+                </p>
+              </div>
+
+              <div className={styles.storie}>
+                <p className={styles.textStorie}>
+                  Sammy e Michael eram filhos de William Afton. O filho mais novo, Sammy, apesar de gostar
+
+                  muito dos animatrônicos, tinha medo dos robôs. Michael, o mais velho, sabendo disso,
+
+                  decidiu fazer uma brincadeira com o irmão na sua festa de aniversário.
+
+                  Ele agarrou Sammy e o levou até a boca de FredBear. O que ele não esperava,
+
+                  era que o robô iria fechar a boca, prensando a cabeça do garoto e
+
+                  resultando na sua morte imediata.
+
+                  William, ao saber da morte do filho, ficou transtornado e decidiu se vingar de Henry,
+
+                  o criador dos animatrônicos e o único capaz de desligá-los, o que poderia ter evitado
+
+                  a morte de Sammy, mas não estava presente no momento do acidente. Ele sequestrou a filha de Henry,
+
+                  Charlotte, e a matou, escondendo seu corpo dentro de um dos animatrônicos.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
