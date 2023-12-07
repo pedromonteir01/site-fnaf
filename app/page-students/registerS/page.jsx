@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "@/app/page-students/registerS/registerS.module.css"
 import { useRouter } from "next/navigation";
+import SideHeader from "@/app/components/header/Header";
+import Footer from "@/app/components/footer/Footer";
 
 
 export default function RegisterSudents() {
@@ -45,11 +47,17 @@ const router = useRouter();
     }, [students]);
 
     return (
-        <main className={styles.back}>
-            <div className={styles.containerPai}>
-                <div className={styles.container}>
-                    <div className={styles.divContainer}>
-                        <h1 className={styles.titulo}>Cadastrar Colaboradores</h1>
+<div className={styles.containerPai}>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <SideHeader/>
+                </div>
+                <div className={styles.body}>
+                    <div className={styles.subDiv1}>
+                        <h1 className={styles.title}>Cadastrar Colaboradores</h1>
+                    </div>
+                    <div className={styles.subDiv2}>
+                    <div className={styles.subDivStudents}>
 
                         <form onSubmit={handleSubmit}>
                             <div className={styles.containerInputs}>
@@ -132,6 +140,10 @@ const router = useRouter();
                     </div>
                 </div>
             </div>
-        </main>
+            </div>
+            <div className={styles.footer}>
+                <Footer/>
+            </div>
+            </div>
     )
 }
