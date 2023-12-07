@@ -100,6 +100,32 @@
   border: 6px double #f4c519;
 }
 
+.titlePage2 {
+    background-image: url('/background-Font.png');
+    text-align: center;
+    font-family: 'Impact', sans-serif;
+    /* Substituí Impact-Regular pela fonte Impact */
+    font-weight: 100;
+    font-size: 50px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Adicione para compatibilidade com navegadores modernos */
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    text-shadow: 0 0 40px gold;
+  }
+
+.banner {
+  width: 50%;
+}
+
+.storie {
+  width: 50%;
+}
+
 @media only screen and (max-width: 600px) {
   .subDivStorie {
     width: 100%;
