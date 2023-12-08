@@ -103,10 +103,13 @@ const RegisterPizzeiras = () => {
                                             <section className={styles.secPizzerias}>
                                                 {
                                                     data.map((pizzeria) => (
+                                                        <div className={styles.containerCard}>
                                                         <div className={styles.card} key={pizzeria.id}>
                                                             <div className={styles.pizzerias}>
-                                                                <h1>{pizzeria.name}</h1>
+                                                                <h1 className={styles.titlePizzerias}>{pizzeria.name}</h1>
+                                                                <div className={styles.imgPizzerias}>
                                                                 <img className={styles.icon} src={pizzeria.img} alt={pizzeria.name} />
+                                                                </div>
                                                                 <p><strong>DESCRIÇÃO:</strong> {pizzeria.description}</p>
                                                                 <div className={styles.btns}>
                                                                     <button type="button" onClick={exclude} className={styles.delete}>
@@ -117,6 +120,7 @@ const RegisterPizzeiras = () => {
                                                                     </button>
                                                                 </div>
                                                             </div>
+                                                        </div>
                                                         </div>
                                                     ))
                                                 }
