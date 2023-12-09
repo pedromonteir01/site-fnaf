@@ -12,6 +12,8 @@ const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
     const [data, setData] = useState([]);
 
+    const [Loading, setLoading] = useState(false);
+
     const router = useRouter();
 
     useEffect(() => {
@@ -63,33 +65,27 @@ const animatronicPage = () => {
                     <div className={styles.subDiv1}>
                         <h1 className={styles.titlePage}>ANIMATRONICS</h1>
                         <article className={styles.itens}>
-                                <button className={styles.btnRegister}>
-                                    <Link href={"/page-animatronic/register"} style={{color: 'black'}}>
-                                        CADASTRAR ANIMATRONIC
-                                    </Link>
-                                </button>
+                            <button className={styles.btnRegister}>
+                                <Link href={"/page-animatronic/register"} style={{ color: 'black' }}>
+                                    CADASTRAR ANIMATRONIC
+                                </Link>
+                            </button>
                         </article>
                     </div>
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivAnimatronics}>
-                            <article>
+                            <article className={styles.containerCard}>
                                 {
-                                    animatronics ? (
-                                        data ? (
-                                            <section className={styles.animatronics}>
-                                                {
-                                                    animatronics.map((animatronic) => (
-                                                        <Card key={animatronic.id} name={animatronic.name} image={animatronic.imageIcon} id={animatronic.id} instrument={animatronic.instrument} openDetails={openDetails} exclude={() => exclude(animatronic.id)} edit={() => edit(animatronic.id)} />
-                                                    ))
-                                                }
-                                            </section>
+                                    data.animatronics ? (
+                                        animatronics.length ? (
+                                            animatronics.map((animatronic) => (
+                                                <Card name={animatronic.name} id={animatronic.id} image={animatronic.imageIcon} occupation={animatronic.occupation} edit={() => edit(id)} exclude={() => exclude(id)} openDetails={openDetails}/>
+                                            ))
                                         ) : (
-                                            <p>Loading...</p>
+                                            <p>Não há animatronics cadastrados</p>
                                         )
                                     ) : (
-                                        <p>{
-                                            data.message ? (data.message) : ("")
-                                        }</p>
+                                        <p>{data.message ? (data.message) : ('Carregando...')}</p>
                                     )
                                 }
                             </article>
