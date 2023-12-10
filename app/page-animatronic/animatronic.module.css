@@ -19,6 +19,7 @@
     flex-wrap: nowrap;
     align-items: center;
     position: fixed;
+    margin-right: 1px;
 }
 
 .titlePage {

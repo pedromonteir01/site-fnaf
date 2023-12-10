@@ -16,10 +16,12 @@
 }
 
 .icon {
-    border-radius: 100px;
+    border-radius: 100%;
     border: 1px solid black;
     max-width: 8rem;
     max-height: 8rem;
+    min-width: 8rem;
+    min-height: 8rem;
 }
 
 .btns {
@@ -69,6 +71,6 @@
 }
 
 
-@media screen {
+@media screen and (max-width: 600px) {
     
 }
