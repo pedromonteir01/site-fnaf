@@ -29,7 +29,7 @@ const Home = () => {
             </div>
             <div className={styles.bannerStorie}>
               <div className={styles.banner}>
-                <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" width={800} height={400} />
+                <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF"/>
               </div>
             </div>
 
