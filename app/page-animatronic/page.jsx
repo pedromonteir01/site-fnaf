@@ -12,23 +12,29 @@ const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
     const [data, setData] = useState([]);
 
-    const [Loading, setLoading] = useState(false);
+    const [franchise, setFranchise] = useState('');
+    const [name, setName] = useState('');
 
     const router = useRouter();
 
     useEffect(() => {
         const fetchAnimatronics = async () => {
             try {
-                const response = await axios.get("/api/animatronics");
-                setAnimatronics(response.data.animatronics);
+                let queryParams = '';
+                if(franchise) {
+                    queryParams += `franchise=${queryParams}&`
+                }
+                const url = `/api/animatronics?${queryParams}`
+                const response = await axios.get(url);
                 setData(response.data);
+                setAnimatronics(response.data.animatronics)
             } catch (e) {
                 console.log('feetching data', e);
             }
         }
 
         fetchAnimatronics();
-    }, []);
+    }, [franchise, name]);
 
     const openDetails = () => {
 
@@ -65,16 +71,23 @@ const animatronicPage = () => {
                     <div className={styles.subDiv1}>
                         <h1 className={styles.titlePage}>ANIMATRONICS</h1>
                         <article className={styles.itens}>
-                            <button className={styles.btnRegister}>
-                                <Link href={"/page-animatronic/register"} style={{ color: 'black' }}>
+                        <Link href={"/page-animatronic/register"}>
+                            <button className={styles.btnRegister} style={{ color: 'black' }}>
                                     CADASTRAR ANIMATRONIC
-                                </Link>
-                            </button>
+                                </button>
+                            </Link>
                         </article>
                     </div>
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivAnimatronics}>
                             <article className={styles.containerCard}>
+                                <section className={styles.filters}>
+                                    <select className={styles.franchise} value={franchise} onChange={(e) => setFranchise(e.target.value)}>
+                                        <option value="">Selecione...</option>
+                                        <option value={"Freddy Fazbear's Pizza (1993)"}>Freddy Fazbear's Pizza (1993)</option>
+                                    </select>
+                                </section>
+                                <section className={styles.cards}>
                                 {
                                     data.animatronics ? (
                                         animatronics.length ? (
@@ -88,6 +101,7 @@ const animatronicPage = () => {
                                         <p>{data.message ? (data.message) : ('Carregando...')}</p>
                                     )
                                 }
+                                </section>
                             </article>
                         </div>
                     </div>

@@ -87,9 +87,17 @@
 
 .containerCard {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: flex-end;
     align-items: center;
+}
 
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
 }
