@@ -86,6 +86,11 @@ const animatronicPage = () => {
                                         <option value="">Selecione...</option>
                                         <option value={"Freddy Fazbear's Pizza (1993)"}>Freddy Fazbear's Pizza (1993)</option>
                                     </select>
+                                    <input 
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    />
                                 </section>
                                 <section className={styles.cards}>
                                 {
