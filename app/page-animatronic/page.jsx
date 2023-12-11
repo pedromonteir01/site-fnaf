@@ -21,10 +21,11 @@ const animatronicPage = () => {
         const fetchAnimatronics = async () => {
             try {
                 let queryParams = '';
-                if(franchise) {
-                    queryParams += `franchise=${queryParams}&`
+                if(franchise || name) {
+                    queryParams += `franchise=${franchise}&name=${name}`
                 }
                 const url = `/api/animatronics?${queryParams}`
+                console.log(url);
                 const response = await axios.get(url);
                 setData(response.data);
                 setAnimatronics(response.data.animatronics)
@@ -58,9 +59,6 @@ const animatronicPage = () => {
         }
     }
 
-    console.log('data:', data);
-    console.log('animatronics:', animatronics);
-
     return (
         <div className={styles.containerPai}>
             <div className={styles.container}>
@@ -85,6 +83,13 @@ const animatronicPage = () => {
                                     <select className={styles.franchise} value={franchise} onChange={(e) => setFranchise(e.target.value)}>
                                         <option value="">Selecione...</option>
                                         <option value={"Freddy Fazbear's Pizza (1993)"}>Freddy Fazbear's Pizza (1993)</option>
+                                        <option value={"Freddy Fazbear's Pizza (1987)"}>Freddy Fazbear's Pizza (1987)</option>
+                                        <option value={"Fazbear's Fright: The Horror Attraction (2023)"}>Fazbear's Fright: The Horror Attraction (2023)</option>
+                                        <option value={"Casa William Afton (1983)"}>Casa William Afton (1983)</option>
+                                        <option value={"Circus Baby's Pizza World (1995)"}>Circus Baby's Pizza World (1995)</option>
+                                        <option value={"Chica's Party World (1995)"}>Chica's Party World (1995)</option>
+                                        <option value={"Fredbear's Family Dinner (1983)"}>Fredbear's Family Dinner (1983)</option>
+                                        <option value={"Freddy Fazbear's Pizza (2023)"}>Freddy Fazbear's Pizza (2023)</option>
                                     </select>
                                     <input 
                                     type="text"

@@ -73,9 +73,7 @@ const Register = () => {
                     <div className={styles.subDiv1}>
                         {/* Título da página */}
                         <h1 className={styles.titlePage}>AFTON ROBOTICS</h1>
-                    </div>
-
-                    <main className={styles.register}>
+                        <main className={styles.register}>
                         {/*<article className={styles.gif}>
                             <img src="/assets/foxy-run.gif" alt="test" style={{ width: 500, height: 200 }} />
     </article> */}
@@ -157,30 +155,42 @@ const Register = () => {
                                 </section>
 
                                 <section className={styles.uploads}>
+                                    <label style={{color: 'white'}}>Imagem do animatrônico:</label>
                                     <input
                                         type="text"
                                         value={imageBody}
                                         onChange={(e) => setImageBody(e.target.value)}
+                                        className={styles.fieldUp}
                                     />
                                 </section>
                                 <section className={styles.uploads}>
+                                    <label style={{color: 'white'}}>Imagem do ícone:</label>
                                     <input
                                         type="text"
                                         value={imageIcon}
                                         onChange={(e) => setImageIcon(e.target.value)}
+                                        className={styles.fieldUp}
                                     />
                                 </section>
                                 <section className={styles.uploads}>
+                                    <label style={{color: 'white'}}>Vídeo do jumpscare:</label>
                                     <input
                                         type="text"
                                         value={jumpscare}
                                         onChange={(e) => setJumpscare(e.target.value)}
+                                        className={styles.fieldUp}
                                     />
                                 </section>
+                                <div className={styles.alert}>
+                                    <p style={{color:'white'}}>ATENÇÃO! UTILIZAR LINKS PARA UPLOADS DOS ARQUIVOS</p>
+                                </div>
                             </article>
-                            <button type='submit'>REGISTER</button>
+                            <div className={styles.regis}>
+                                <button className={styles.btnRegister} type='submit'>REGISTRAR</button>
+                            </div>
                         </form>
                     </main>
+                    </div>
                 </div>
             </div>
             <div className={styles.footer}>
