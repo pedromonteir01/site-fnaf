@@ -1,10 +1,10 @@
 import React from 'react'
-import HeaderMobile from '../components/headerMobile/HeaderMobile'
+import ImageLoading from '../components/imageLoading/ImageLoading'
 
 function page() {
   return (
     <div>
-      <HeaderMobile/>
+      <ImageLoading/>
     </div>
   )
 }

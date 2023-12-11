@@ -8,6 +8,7 @@ import { MdDelete } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import SideHeader from '../components/header/Header';
 import Footer from '../components/footer/Footer';
+import ImageLoading from '../components/imageLoading/ImageLoading';
 
 // Definição do componente funcional chamado RegisterPizzeiras
 const RegisterPizzeiras = () => {
@@ -131,9 +132,7 @@ const RegisterPizzeiras = () => {
                                         )
                                     ) : (
                                         // Exibe uma mensagem se não houver pizzarias cadastradas
-                                        <div className={styles.divText}>
-                                            <p className={styles.texts}>Nenhuma pizzaria foi cadastrada.</p>
-                                        </div>
+                                        <ImageLoading />
                                     )
                                 }
                             </article>
