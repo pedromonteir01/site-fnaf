@@ -27,28 +27,9 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-content: center;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
   }
-  
-  .titlePage {
-    background-image: url('/background-Font.png');
-    text-align: center;
-    font-family: 'Impact', sans-serif;
-    /* Substituí Impact-Regular pela fonte Impact */
-    font-weight: 100;
-    font-size: 70px;
-    background-repeat: repeat;
-    -webkit-background-clip: text;
-    background-clip: text;
-    /* Adicione para compatibilidade com navegadores modernos */
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-font-smoothing: antialiased;
-    text-transform: uppercase;
-    text-shadow: 0 0 40px gold;
-  }
-
 .register {
     display: flex;
     width: 80%;
@@ -78,7 +59,8 @@
     background-color: transparent;
     width: 80%;
     border-radius: 8px;
-    border: 0.25rem solid gold;
+    border: 0.25rem solid rgb(183, 155, 0);
+    box-shadow: -15px 15px 15px rgba(128, 0, 128, 0.4);
 }
 
 .inputField {
@@ -105,7 +87,7 @@
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
-    text-shadow: 0 0 40px gold;
+    text-shadow: 0 0 40px purple;
 }
 
 
@@ -121,18 +103,12 @@
     font-size: large;
     border-radius: 5px;
     outline: none;
-    border: 0.20rem solid black;
+    border: 1px solid black;
 }
 
-.divUploads {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
 
 .uploads {
-    background-color: beige;
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -145,5 +121,5 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:flex-end;
 }
