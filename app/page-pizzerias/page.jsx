@@ -9,6 +9,7 @@ import { FaPen } from "react-icons/fa";
 import SideHeader from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import ImageLoading from '../components/imageLoading/ImageLoading';
+import HeaderMobile from '../components/headerMobile/HeaderMobile';
 
 // Definição do componente funcional chamado RegisterPizzeiras
 const RegisterPizzeiras = () => {
@@ -61,6 +62,7 @@ const RegisterPizzeiras = () => {
     // Renderização do componente com a estrutura da página
     return (
         <div className={styles.containerPai}>
+            <HeaderMobile />
             {/* Estrutura principal do componente */}
             <div className={styles.container}>
                 <div className={styles.header}>

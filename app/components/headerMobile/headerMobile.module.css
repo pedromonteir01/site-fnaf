@@ -1,3 +1,8 @@
+.container {
+    display: none;
+    visibility: hidden;
+}
+
 @media only screen and (max-width: 600px) {
 
     .container {
@@ -7,6 +12,7 @@
         background-color: #202020c1;
         border-bottom: 8px ridge #f4c519;
         height: 5rem;
+        visibility: visible;
     }
 
     .componentsHeader {
