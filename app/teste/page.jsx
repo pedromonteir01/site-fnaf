@@ -1,10 +1,10 @@
 import React from 'react'
-import SideHeader from '../components/header/Header'
+import ImageLoading from '../components/imageLoading/ImageLoading'
 
 function page() {
   return (
     <div>
-      <SideHeader/>
+      <ImageLoading/>
     </div>
   )
 }

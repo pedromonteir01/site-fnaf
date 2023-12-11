@@ -1,0 +1,41 @@
+.container {
+    display: none;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #202020c1;
+        border-bottom: 8px ridge #f4c519;
+        height: 5rem;
+        visibility: visible;
+    }
+
+    .componentsHeader {
+        display: flex;
+        gap: 3rem;
+    }
+
+    .buttons button {
+        padding: 0.5rem 0.8rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #f4c519;
+        box-shadow: 0 0 30px #f4c519;
+        color: #fff;
+        transition: 0.5s;
+    }
+
+    .buttons button:hover {
+        transition: 0.5s;
+        padding: 0.5rem 0.9rem;
+        border-radius: 3px;
+        background-color: #6f47dd;
+        box-shadow: 0 0 30px #6f47dd;
+    }
+
+}

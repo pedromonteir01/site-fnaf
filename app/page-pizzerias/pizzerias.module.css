@@ -1,5 +1,5 @@
 .containerPai {
-  background-image: url('/wallpapersHome/backHome2.png');
+  background-image: url('/wallpapersHome/backPizzeria.png');
   box-sizing: border-box;
   background-size: cover;
   background-position: right;
@@ -179,4 +179,11 @@
 
 .edit:hover {
   background-color: #ffde67;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    display: none;
+    visibility: hidden;
+  }
 }

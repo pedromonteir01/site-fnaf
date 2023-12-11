@@ -2,11 +2,15 @@
 import styles from './page.module.css';
 import SideHeader from './components/header/Header';
 import Footer from './components/footer/Footer';
+import HeaderMobile from './components/headerMobile/HeaderMobile';
 
 const Home = () => {
 
   return (
     <div className={styles.containerPai}>
+      <div className={styles.headerMobile}>
+      <HeaderMobile />
+      </div>
       <div className={styles.container}>
         <div className={styles.header}>
           <SideHeader />

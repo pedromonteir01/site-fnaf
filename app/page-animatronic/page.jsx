@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import SideHeader from '../components/header/Header';
 import Footer from '../components/footer/Footer';
+import HeaderMobile from '../components/headerMobile/HeaderMobile';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
@@ -61,6 +62,7 @@ const animatronicPage = () => {
 
     return (
         <div className={styles.containerPai}>
+            <HeaderMobile />
             <div className={styles.container}>
                 <div className={styles.header}>
                     <SideHeader />

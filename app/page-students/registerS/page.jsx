@@ -1,10 +1,11 @@
 "use client";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import styles from "@/app/page-students/registerS/registerS.module.css"
+import styles from "./registerS.module.css"
 import { useRouter } from "next/navigation";
 import SideHeader from "@/app/components/header/Header";
 import Footer from "@/app/components/footer/Footer";
+import HeaderMobile from "@/app/components/headerMobile/HeaderMobile";
 
 
 export default function RegisterSudents() {
@@ -48,6 +49,7 @@ const router = useRouter();
 
     return (
 <div className={styles.containerPai}>
+    <HeaderMobile />
             <div className={styles.container}>
                 <div className={styles.header}>
                     <SideHeader/>

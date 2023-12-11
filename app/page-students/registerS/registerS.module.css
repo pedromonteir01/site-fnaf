@@ -1,10 +1,9 @@
 /* registerS_responsive.module.css */
 
 .containerPai {
-    background-color: #232323;
+     background-image: url("/wallpapersHome/backHome.png");
     box-sizing: border-box;
     background-size: cover;
-    background-position: right;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -22,22 +21,15 @@
     align-items: center;
 }
 
-.subDivStudents {
-    max-width: 60%;
-    background-color: #696969;
-    border: 1px solid rgb(0, 0, 0);
-    color: #f4c519;
-    padding: 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+.body {
+    width: 100%;
+}
+
+.subDiv1{
     display: flex;
-    flex-wrap: nowrap;
-    align-content: flex-end;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin-left: 23rem;
 }
 
 .title {
@@ -58,51 +50,38 @@
     text-shadow: 0 0 40px gold;
 }
 
-.subDiv1{
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    height: auto;
-    margin-right: 10%;
-    margin-left: 29%;
-}
-
-.back {
-    /*background-image: url("/backSN6.gif");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;*/
-    background-color: #232323;
-}
-
-/* .containerPai {
+.subDiv2{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container {
-    max-width: 37%;
-    background-color: #696969;
-    border: 1px solid rgb(0, 0, 0);
+.subDivStudents {
+    min-width: 30%;
+    background-color: #202020c1;
+    border: 2px solid #f4c519;
     color: #f4c519;
     padding: 3rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-top: 4rem;
-    margin-bottom: 4rem;
-} */
+    transition: 0.5s;
+}
 
-.titulo {
+.subDivStudents:hover {
+    min-width: 30%;
+    background-color: #202020e5;
+    border: 2px solid #6f47dd;
+    box-shadow: 0 0 30px #6f47dd;
     color: #f4c519;
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-top: 4rem;
+    transition: 0.5s;
 }
 
 .containerInputs {
     width: 100%;
-    max-width: 30rem;
-    /* Ajuste conforme necessário */
     margin-bottom: 1.5rem;
 }
 
@@ -122,8 +101,8 @@
 }
 
 .btn {
-    background-color: gold;
-    color: #fff;
+    background-color: #f4c519;
+    color: #202020;
     cursor: pointer;
     padding: 1.2rem 2rem;
     font-size: 1rem;
@@ -131,44 +110,18 @@
     transition: background-color 0.3s ease;
     width: 100%;
     border-radius: 0.6rem;
-    box-shadow: 0 0 30px #ffde67;
 }
 
 .btn:hover {
-    background-color: #ffde67;
+    background-color: #6f47dd; 
+    box-shadow: 0 0 30px #6f47dd;
+    color: whitesmoke;
+    cursor: grab;
 }
 
-.studentsContainer {
-    width: 100%;
-}
-
-.studentCard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 2rem;
-}
-
-.studentCard div {
-    flex: 0 1 calc(30% - 1rem);
-    margin: 0.5rem;
-    padding: 1rem;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.studentCard img {
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.title2 {
-    color: rgb(169, 0, 169);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-}
+@media only screen and (max-width: 600px) {
+    .header {
+      display: none;
+      visibility: hidden;
+    }
+  }

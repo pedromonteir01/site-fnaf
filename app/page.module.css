@@ -1,5 +1,5 @@
 .containerPai {
-  background-image: url('/wallpapersHome/backHome2.png');
+  background-image: url('/wallpapersHome/backHomeP.png');
   box-sizing: border-box;
   background-size: cover;
   background-position: right;
@@ -10,6 +10,11 @@
 .container {
   display: flex;
   width: 100%;
+}
+
+.headerMobile {
+  display: none;
+  visibility: hidden;
 }
 
 .header {
@@ -193,12 +198,28 @@
 
 @media only screen and (max-width: 600px) {
   .subDivStorie {
-    width: 100%;
+    margin-top: 1rem;
+    width: 95%;
     margin-top: 1rem;
   }
 
-  .textStorie {
-    padding: 0.3rem;
+  .subDivStorie:hover {
+    width: 80%;
+    border-top: 6px double #6f47dd;
+    border-bottom: 6px double #6f47dd;
+    box-shadow: 0px -25px 20px -20px rgba(111, 71, 221, 1),
+      0px 25px 20px -20px rgba(111, 71, 221, 1);
+      margin-top: 1rem;
+      transition: 2s;
+  }
+
+  .headerMobile {
+    display: inline;
+    visibility: visible;
+  }
+
+  .titlePage {
+    margin-top: 1rem;
   }
 
   .header {
@@ -209,5 +230,9 @@
   .imgBanner {
     width: 400px;
     height: 200px;
+  }
+
+  .stories {
+    width: 95%;
   }
 }
