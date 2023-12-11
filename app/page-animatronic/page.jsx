@@ -97,7 +97,7 @@ const animatronicPage = () => {
                                     data.animatronics ? (
                                         animatronics.length ? (
                                             animatronics.map((animatronic) => (
-                                                <Card name={animatronic.name} id={animatronic.id} image={animatronic.imageIcon} occupation={animatronic.occupation} edit={() => edit(id)} exclude={() => exclude(id)} openDetails={openDetails}/>
+                                                <Card name={animatronic.name} id={animatronic.id} image={animatronic.imageIcon} occupation={animatronic.occupation} edit={() => edit(animatronic.id)} exclude={() => exclude(animatronic.id)} openDetails={openDetails}/>
                                             ))
                                         ) : (
                                             <p>Não há animatronics cadastrados</p>

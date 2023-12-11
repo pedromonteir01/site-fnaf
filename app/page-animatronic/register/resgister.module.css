@@ -106,18 +106,14 @@
     border: 1px solid black;
 }
 
-.divUploads {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
 
 .uploads {
-    background-color: beige;
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .tagForm {

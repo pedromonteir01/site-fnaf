@@ -155,9 +155,7 @@ const Register = () => {
                                         onChange={(e) => setDescription(e.target.value)}
                                     />
                                 </section>
-                            </article>
-                            <h2>UPLOADS</h2>
-                            <article className={styles.divUploads}>
+
                                 <section className={styles.uploads}>
                                     <input
                                         type="text"
