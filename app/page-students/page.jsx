@@ -8,6 +8,7 @@ import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import Footer from "../components/footer/Footer";
+import HeaderMobile from "../components/headerMobile/HeaderMobile";
 
 
 export default function Page() {
@@ -42,10 +43,11 @@ export default function Page() {
         fetchStudents();
     }, [dados]);
 
-    console.log(dados);
-    console.log(students);
+    // console.log(dados);
+    // console.log(students);
     return (
         <div className={styles.containerPai}>
+            <HeaderMobile />
             <div className={styles.container}>
                 <div className={styles.header}>
                     <SideHeader />

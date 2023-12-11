@@ -159,3 +159,10 @@
     background-color: #9e019e;
     box-shadow: 0 0 30px #9e019e;
 }
+
+@media only screen and (max-width: 600px) {
+    .header {
+      display: none;
+      visibility: hidden;
+    }
+  }
