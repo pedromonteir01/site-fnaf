@@ -1,10 +1,10 @@
 import React from 'react'
-import SideHeader from '../components/header/Header'
+import HeaderMobile from '../components/headerMobile/HeaderMobile'
 
 function page() {
   return (
     <div>
-      <SideHeader/>
+      <HeaderMobile/>
     </div>
   )
 }

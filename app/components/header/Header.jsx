@@ -17,10 +17,6 @@ const SideHeader = () => {
           <div className={Styles.buttons}><a href="../page-students"><button><FaPeopleGroup /></button></a></div>
         </div>
       </div>
-      <div className={Styles.subDiv2}>
-        </div>
-
-
     </div>
   )
 }
