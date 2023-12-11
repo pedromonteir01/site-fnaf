@@ -7,6 +7,7 @@ import styles from "@/app/page-students/students.module.css"
 import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
+import { FaAddressBook } from "react-icons/fa";
 import Footer from "../components/footer/Footer";
 import HeaderMobile from "../components/headerMobile/HeaderMobile";
 
@@ -54,14 +55,12 @@ export default function Page() {
                 </div>
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
-                        <h1 className={styles.title}>Nossa equipe</h1>
+                        <h1 className={styles.title}>Equipe</h1>
                     </div>
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivAnimatronics}>
                             <button className={styles.btnRegister}>
-                                <Link href={"/page-students/registerS"}>
-                                    Cadastrar Colaborador
-                                </Link>
+                                <a className={styles.link} href={"/page-students/registerS"}><FaAddressBook /></a>
                             </button>
                             <article className={styles.containerCard}>
                                 {
