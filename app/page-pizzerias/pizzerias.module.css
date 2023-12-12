@@ -112,6 +112,7 @@
   border: 2px solid #6f47dd;
   box-shadow: 0 0 30px #6f47dd;
   transition: 0.5s;
+  cursor: grab;
 }
 
 .imgDiv {
