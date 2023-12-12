@@ -2,7 +2,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import styles from "@/app/page-students/students.module.css"
 import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
@@ -16,7 +16,7 @@ export default function Page() {
 
     const [students, setStudents] = useState([]);
     const [dados, setDados] = useState([]);
-    // const router = useRouter();
+    const router = useRouter();
 
     //put student
 
@@ -90,7 +90,7 @@ export default function Page() {
                                                             <div className={styles.buttons}>
                                                                 <div className={styles.buttonEdit}>
                                                                     <button
-                                                                        onClick={() => deleteStudents(students.id)}
+                                                                        onClick={() => edit(students.id)}
                                                                         className={styles.button}><MdEdit />
                                                                     </button>
                                                                 </div>
