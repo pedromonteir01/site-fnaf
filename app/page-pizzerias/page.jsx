@@ -2,7 +2,7 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import styles from "@/app/page-students/students.module.css"
+import styles from "./pizzerias.module.css"
 import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
@@ -55,7 +55,7 @@ export default function Page() {
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivAnimatronics}>
                             <button className={styles.btnRegister}>
-                                <a className={styles.link} href={"/page-students/registerS"}><FaAddressBook /></a>
+                                <a className={styles.link} href={"/page-pizzerias/registerP"}><FaAddressBook /></a>
                             </button>
                             <article className={styles.containerCard}>
                                 {
@@ -69,8 +69,9 @@ export default function Page() {
                                                                 <img src={pizzerias.img} alt={pizzerias.name} />
                                                             </div>
                                                             <div className={styles.infos}>
-                                                                <p>Nome: {pizzerias.name}</p>
-                                                                <p>Franquia: {pizzerias.franchise}</p>
+                                                                <p><b>Nome:</b> {pizzerias.name}</p>
+                                                                <p><b>Franquia:</b> {pizzerias.franchise}</p>
+                                                                <p><b>Animatronics:</b> {pizzerias.animatronics}</p>
                                                             </div>
 
                                                             <div className={styles.buttons}>
