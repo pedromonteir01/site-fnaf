@@ -16,6 +16,10 @@ export default function Page() {
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
 
+    const editPizzerias = (id) => {
+        router.push(`/page-animatronic/${id}`)
+    }
+
     const deletePizzerias = async (id) => {
         const url = `/api/pizzerias/${id}`;
         try {
@@ -78,6 +82,7 @@ export default function Page() {
                                                             <div className={styles.buttons}>
                                                                 <div className={styles.buttonEdit}>
                                                                     <button
+                                                                        onClick={() => editPizzerias(pizzerias.id)}
                                                                         className={styles.button}><MdEdit />
                                                                     </button>
                                                                 </div>
@@ -99,7 +104,7 @@ export default function Page() {
                                         )
 
                                         : (
-                                            <p>Não tem colaboradores cadastrados</p>
+                                            <p>Não tem pizzarias cadastradas</p>
                                         )
                                 }
                             </article>
