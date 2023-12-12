@@ -1,18 +1,11 @@
-.mainContainer {
-  background-image: url('/wallpapersHome/backHome2.png');
+/* registerS_responsive.module.css */
+
+.containerPai {
+  background-image: url("/wallpapersHome/backHome.png");
   box-sizing: border-box;
   background-size: cover;
-  background-position: right;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
-
-.mainContainer label {
-  color: #FFF;
-}
-
-.mainContainer input {
-  color: #FFF;
 }
 
 .container {
@@ -35,23 +28,21 @@
 .subDiv1 {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
   justify-content: center;
   align-items: center;
 }
 
-.titlePage {
+.title {
   background-image: url('/background-Font.png');
   text-align: center;
   font-family: 'Impact', sans-serif;
-
+  /* Substituí Impact-Regular pela fonte Impact */
   font-weight: 100;
   font-size: 70px;
   background-repeat: repeat;
   -webkit-background-clip: text;
   background-clip: text;
-
+  /* Adicione para compatibilidade com navegadores modernos */
   color: transparent;
   -webkit-text-fill-color: transparent;
   -webkit-font-smoothing: antialiased;
@@ -59,39 +50,83 @@
   text-shadow: 0 0 40px gold;
 }
 
-.divButtons {
-  text-align: center;
+.subDiv2 {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin: 0.3rem;
-  margin-left: 5rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.divButtons button {
-  padding: 0.8rem 1rem;
+.subDivStudents {
+  min-width: 30%;
+  background-color: #202020c1;
+  border: 2px solid #f4c519;
+  color: #f4c519;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-top: 4rem;
+  transition: 0.5s;
+  margin-bottom: 2rem;
+}
+
+.subDivStudents:hover {
+  min-width: 30%;
+  background-color: #202020e5;
+  border: 2px solid #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  color: #f4c519;
+  padding: 3rem;
+  border-radius: 1rem;
+  margin-top: 4rem;
+  transition: 0.5s;
+}
+
+.containerInputs {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.label1 {
+  color: #f4c519;
+}
+
+.input {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d2;
+  border-radius: 0.5rem;
+  color: #f4c519;
+}
+
+.btn {
   background-color: #f4c519;
-  color: #fff;
+  color: #202020;
+  cursor: pointer;
+  padding: 1.2rem 2rem;
+  font-size: 1rem;
   border: none;
-  cursor: grab;
-  border-radius: 3px;
-  transition: 0.5s;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  border-radius: 0.6rem;
 }
 
-.divButtons button:hover {
-  transition: 0.5s;
-  padding: 0.8rem 1.3rem;
-  border-radius: 3px;
+.btn:hover {
   background-color: #6f47dd;
   box-shadow: 0 0 30px #6f47dd;
+  color: whitesmoke;
+  cursor: grab;
 }
 
-.inputImg {
-  padding: 0.8rem 1rem;
-  background-color: #f4c519;
-  color: #fff;
-  border: none;
-  cursor: grab;
-  border-radius: 3px;
-  transition: 0.5s;
+@media only screen and (max-width: 600px) {
+  .header {
+      display: none;
+      visibility: hidden;
+  }
+
+  .title{
+      font-size: 50px;
+  }
 }

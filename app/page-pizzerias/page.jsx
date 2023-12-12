@@ -1,154 +1,113 @@
-// Importação de bibliotecas e componentes necessários
-'use client';
-import { useState, useEffect } from 'react';
-import styles from "./pizzerias.module.css";
-import axios from 'axios';
-import Link from 'next/link';
+'use client'
+import axios from "axios";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import styles from "./pizzerias.module.css"
+import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
-import { FaPen } from "react-icons/fa";
-import SideHeader from '../components/header/Header';
-import Footer from '../components/footer/Footer';
-import ImageLoading from '../components/imageLoading/ImageLoading';
-import HeaderMobile from '../components/headerMobile/HeaderMobile';
+import { MdEdit } from "react-icons/md";
+import { FaAddressBook } from "react-icons/fa";
+import Footer from "../components/footer/Footer";
+import HeaderMobile from "../components/headerMobile/HeaderMobile";
 
-// Definição do componente funcional chamado RegisterPizzeiras
-const RegisterPizzeiras = () => {
-    // Estados para armazenar dados das pizzarias e dados gerais
+
+export default function Page() {
+
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
-    const [franchise, setFranchise] = useState('');
 
-    // Efeito colateral que busca dados das pizzarias ao carregar a página
-    useEffect(() => {
-        const fetchPizzerias = async () => {
-            try {
-                let queryParams = '';
-            if(franchise) {
-                queryParams += `franchise=${franchise}&`
-            }
-
-            const url = `/api/pizzerias?${queryParams}`
-            console.log(url)
-            const response = await axios.get(url);
-            setData(response.data.pizzerias)
-            }catch (error) {
-                console.error(error);
-            }
-        }
-
-        // Executa a função de busca ao montar o componente
-        fetchPizzerias();
-    }, [franchise]);
-
-
-    // Edita uma pizzaria
-    const edit = (id) => {
-        router.push(`/page-pizzerias/${id}`)
-    }
-
-    //delete animatronic
-
-    const exclude = async (id) => {
+    const deletePizzerias = async (id) => {
         const url = `/api/pizzerias/${id}`;
         try {
             await axios.delete(url);
-            setPizzerias(pizzerias.filter((pizzeria) => pizzeria.id !== id));
-        } catch (e) {
-            console.log("Error feetching data:", e);
+            setData(data.filter((pizzeria) => pizzeria.id !== id));
+        } catch (error) {
+            console.error("Error fetching data:", error);
         }
-    }
+    };
 
-    console.log(franchise);
-    // Renderização do componente com a estrutura da página
+    useEffect(() => {
+        const fetchPizzerias = async () => {
+            try {
+                const res = await axios.get("/api/pizzerias");
+                setPizzerias(res.data.pizzerias);
+                setData(res.data.pizzerias)
+
+            } catch (erro) {
+                console.log("Deu erro")
+            }
+        }
+
+        fetchPizzerias();
+    }, [data]);
+
     return (
         <div className={styles.containerPai}>
             <HeaderMobile />
-            {/* Estrutura principal do componente */}
             <div className={styles.container}>
                 <div className={styles.header}>
-                    {/* Cabeçalho */}
                     <SideHeader />
                 </div>
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
-                        {/* Título da página */}
-                        <h1 className={styles.titlePage}>PIZZARIAS</h1>
+                        <h1 className={styles.title}>Pizzarias</h1>
                     </div>
-                    {/* Link para a página de registro de pizzarias */}
-                    <Link href={"/page-pizzerias/registerP"}>
-                        <div className={styles.divButtons}>
-                            <button className={styles.buttons}>
-                                Registrar pizzaria
-                            </button>
-                        </div>
-                    </Link>
-                    <div className={styles.filter}>
-                    <select className={styles.selectedFranchise} value={franchise} onChange={(e) => setFranchise(e.target.value)} >
-                        <option value=''>Selecione</option>
-                        <option value={'FNAF'}>FNAF</option>
-                        <option value={'FNAF2'}>FNAF 2</option>
-                        <option value={'FNAF3'}>FNAF 3</option>
-                        <option value={'FNAF4'}>FNAF 4</option>
-                        <option value={'FNAFSL'}>FNAF SL</option>
-                        <option value={'FFPS'}>FFPS</option>
-                        <option value={'UNC'}>UNC</option>
-                    </select>
-                    </div>
-                    {/* Seção que exibe as pizzarias */}
                     <div className={styles.subDiv2}>
-                        <div>
-                            <article>
+                        <div className={styles.subDivAnimatronics}>
+                            <button className={styles.btnRegister}>
+                                <a className={styles.link} href={"/page-pizzerias/registerP"}><FaAddressBook /></a>
+                            </button>
+                            <article className={styles.containerCard}>
                                 {
-                                    // Verifica se há pizzarias cadastradas
-                                    data.length ? (
+                                    data.length ?
                                         pizzerias ? (
-                                            // Exibe as informações de cada pizzaria
-                                            <section className={styles.secPizzerias}>
+                                            <section className={styles.sec}>
                                                 {
-                                                    data.map((pizzeria) => (
-                                                        <div className={styles.containerCard}>
-                                                        <div className={styles.card} key={pizzeria.id}>
-                                                            <div className={styles.pizzerias}>
-                                                                <h1 className={styles.titlePizzerias}>{pizzeria.name}</h1>
-                                                                <div className={styles.imgPizzerias}>
-                                                                <img className={styles.icon} src={pizzeria.img} alt={pizzeria.name} />
-                                                                </div>
-                                                                <p><strong>DESCRIÇÃO:</strong> {pizzeria.description}</p>
-                                                                <div className={styles.btns}>
-                                                                    <button type="button" onClick={exclude} className={styles.delete}>
-                                                                        <MdDelete />
+                                                    data.map((pizzerias) => (
+                                                        <div key={pizzerias.id} className={styles.card}>
+                                                            <div className={styles.imgDiv}>
+                                                                <img src={pizzerias.img} alt={pizzerias.name} />
+                                                            </div>
+                                                            <div className={styles.infos}>
+                                                                <p><b>Nome:</b> {pizzerias.name}</p>
+                                                                <p><b>Franquia:</b> {pizzerias.franchise}</p>
+                                                                <p><b>Animatronics:</b> {pizzerias.animatronics}</p>
+                                                            </div>
+
+                                                            <div className={styles.buttons}>
+                                                                <div className={styles.buttonEdit}>
+                                                                    <button
+                                                                        className={styles.button}><MdEdit />
                                                                     </button>
-                                                                    <button type="button" onClick={edit} className={styles.edit}>
-                                                                        <FaPen />
+                                                                </div>
+
+                                                                <div className={styles.buttonDelete}>
+                                                                    <button
+                                                                        onClick={() => deletePizzerias(pizzerias.id)}
+                                                                        className={styles.button}><MdDelete />
                                                                     </button>
                                                                 </div>
                                                             </div>
-                                                        </div>
                                                         </div>
                                                     ))
                                                 }
                                             </section>
                                         ) : (
-                                            // Exibe uma mensagem de carregamento
-                                            <p>Loading...</p>
+                                            <p>Carregando</p>
                                         )
-                                    ) : (
-                                        // Exibe uma mensagem se não houver pizzarias cadastradas
-                                        <ImageLoading />
-                                    )
+
+                                        : (
+                                            <p>Não tem colaboradores cadastrados</p>
+                                        )
                                 }
                             </article>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* Rodapé */}
             <div className={styles.footer}>
                 <Footer />
             </div>
         </div>
     )
 }
-
-// Exporta o componente RegisterPizzeiras
-export default RegisterPizzeiras;

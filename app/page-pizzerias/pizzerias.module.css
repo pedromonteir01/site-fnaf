@@ -1,5 +1,7 @@
+/* Arquivo students.module.css */
+
 .containerPai {
-  background-image: url('/wallpapersHome/backPizzeria.png');
+  background-image: url("/wallpapersHome/backStudents.png");
   box-sizing: border-box;
   background-size: cover;
   background-position: right;
@@ -18,14 +20,17 @@
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
-  position: fixed;
 }
 
-.body {
+.containerGiga {
   width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  background-color: #333;
 }
 
-.titlePage {
+.title {
   background-image: url('/background-Font.png');
   text-align: center;
   font-family: 'Impact', sans-serif;
@@ -43,147 +48,142 @@
   text-shadow: 0 0 40px gold;
 }
 
-.subDiv1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.subDiv2 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.divButtons {
-  text-align: center;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  margin: 0.3rem;
-  margin-left: 5rem;
-}
-
-.divButtons button {
-  padding: 0.8rem 1rem;
+.btnRegister {
   background-color: #f4c519;
-  color: #fff;
+  padding: 1rem 2rem;
   border: none;
-  cursor: grab;
-  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.25rem;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  border-radius: 0.6rem;
+  margin-left: 1.2rem;
   transition: 0.5s;
 }
 
-.divButtons button:hover {
-  transition: 0.5s;
-  padding: 0.8rem 1.3rem;
-  border-radius: 3px;
+.btnRegister:hover {
   background-color: #6f47dd;
   box-shadow: 0 0 30px #6f47dd;
+  transition: 0.5s;
+  cursor: grab;
+  color: whitesmoke;
 }
 
-.secPizzerias {
-  display: flex;
-  flex-direction: column;
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.link:hover {
+  color: whitesmoke;
+  text-decoration: none;
+  transition: 0.5s;
+  cursor: grab;
 }
 
 .containerCard {
+  margin-top: 1.25rem;
+}
+
+.sec {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: stretch;
 }
 
 .card {
-  background-color: #f4c519d8;
-  width: 50%;
-  height: 50%;
+  width: calc(33% - 1.35rem);
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+  background-color: #202020c1;
+  border: 2px solid #f4c519;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transition: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-0.3125rem);
+  border: 2px solid #6f47dd;
+  box-shadow: 0 0 30px #6f47dd;
+  transition: 0.5s;
+}
+
+.imgDiv {
+  width: 100%;
+  height: 9.375rem;
+  overflow: hidden;
+}
+
+.imgDiv img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.infos {
+  padding: 1.25rem;
+}
+
+.infos p {
+  margin: 0;
+  color: #f4c519;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
   margin: 1rem;
-  padding: 1rem;
-  border-radius: 5px;
+  gap: 0.4rem;
 }
 
-.imgPizzerias {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0.5rem;
-}
-
-.titlePizzerias {
-  text-align: center;
-  font-weight: 600;
-}
-
-.icon {
-  width: 600px;
-  height: 300px;
-}
-
-.divText {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.texts {
-  text-align: center;
-  color: #fff;
-}
-
-.btns {
-  margin: 1rem;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-}
-
-.delete {
-  padding: 1rem;
-  background-color: purple;
-  border-radius: 5px;
-  color: white;
-  border: none;
+.button {
+  color: #ffffff;
+  padding: 0.75rem 1rem;
   border: none;
   cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
+  font-size: 1em;
   transition: background-color 0.3s ease;
-  border-radius: 0.6rem;
-  box-shadow: 0 0 10px #9e019e;
+  border-radius: 0.3rem;
+  margin-right: 0.5rem;
 }
 
-.delete:hover {
+/* Customize the edit button */
+.buttonEdit .button {
+  background-color: #f4c519;
+}
+
+.buttonEdit .button:hover {
+  background-color: #f4c519;
+  box-shadow: 0 0 30px #f4c519;
+  cursor: grab;
+}
+
+/* Customize the delete button */
+.buttonDelete .button {
   background-color: #9e019e;
 }
 
-.edit {
-  padding: 1rem;
-  color: black;
-  border: none;
-  background-color: gold;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-  border-radius: 0.6rem;
-  box-shadow: 0 0 10px #ffde67;
-}
-
-.edit:hover {
-  background-color: #ffde67;
+.buttonDelete .button:hover {
+  background-color: #9e019e;
+  box-shadow: 0 0 30px #9e019e;
+  cursor: grab;
 }
 
 @media only screen and (max-width: 600px) {
   .header {
-    display: none;
-    visibility: hidden;
+      display: none;
+      visibility: hidden;
+  }
+
+  .card {
+      width: 70%;
   }
 }

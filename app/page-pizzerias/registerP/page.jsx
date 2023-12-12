@@ -1,94 +1,151 @@
-"use client"
-// Importação de bibliotecas e componentes necessários
+"use client";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import styles from "./registerP.module.css";
-import SideHeader from "./../../components/header/Header";
-import Footer from "./../../components/footer/Footer";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import SideHeader from "@/app/components/header/Header";
+import Footer from "@/app/components/footer/Footer";
+import HeaderMobile from "@/app/components/headerMobile/HeaderMobile";
 
-// Definição do componente funcional chamado Home
-const Home = () => {
-    // Estados para gerenciar os dados do formulário e da aplicação
+
+export default function RegisterPizzerias() {
     const [name, setName] = useState("");
     const [img, setImg] = useState("");
     const [franchise, setFranchise] = useState("");
-    const [description, setDescription] = useState("");
     const [animatronics, setAnimatronics] = useState("");
-    const [pizzerias, setPizzerias] = useState([]);
+    const [description, setDescription] = useState("");
+    const [pizzerias, setPizzerias] = useState([])
+const router = useRouter();
 
-    // Função para lidar com o envio do formulário
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            // Envia uma solicitação POST para armazenar dados da pizzaria no servidor
             const response = await axios.post("/api/pizzerias", { name, franchise, animatronics, description, img });
-            // Limpa os campos do formulário e atualiza o estado com os dados recebidos
             setName("");
             setFranchise("");
-            setDescription("");
             setAnimatronics("");
-            setPizzerias(response.data.pizzerias);
+            setDescription("");
+            setPizzerias(response.data.students);
+            router.push("/page-pizzerias");
         } catch (error) {
-            console.error("Erro ao enviar dados:", error);
+            console.error("Error submitting data:", error);
         }
     };
 
-    // Efeito colateral que busca dados das pizzarias ao carregar a página
     useEffect(() => {
         async function fetchPizzerias() {
             try {
                 const response = await axios.get("/api/pizzerias");
                 setPizzerias(response.data.pizzerias);
             } catch (error) {
-                console.error("Erro ao obter dados:", error);
+                console.error("Error fetching data:", error);
             }
         }
 
         fetchPizzerias();
     }, [pizzerias]);
 
-    // Renderização do componente com a estrutura do formulário e outros elementos
     return (
-        // Estrutura principal do componente
-        <div className={styles.mainContainer}>
-            {/* Cabeçalho */}
+<div className={styles.containerPai}>
+    <HeaderMobile />
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <SideHeader />
+                    <SideHeader/>
                 </div>
-                {/* Corpo do componente */}
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
-                        {/* Título da página */}
-                        <h1 className={styles.titlePage}>Registre sua pizzaria</h1>
+                        <h1 className={styles.title}>Cadastrar Pizzarias</h1>
                     </div>
-                    {/* Formulário de registro de pizzaria */}
                     <div className={styles.subDiv2}>
-                        <form onSubmit={handleSubmit}>
-                            {/* Campos do formulário */}
-                            {/* ... (cada campo tem um rótulo e uma caixa de entrada) */}
+                    <div className={styles.subDivStudents}>
 
-                            {/* Botão de envio e link para outra página */}
-                            <Link href={"./../page-pizzerias"}>
-                                <div className={styles.divButtons}>
-                                    <button className={styles.buttons} type="submit">
-                                        Cadastrar
-                                    </button>
-                                </div>
-                            </Link>
+                        <form onSubmit={handleSubmit}>
+                            <div className={styles.containerInputs}>
+                                <label className={styles.label1} htmlFor="name">
+                                    Nome:
+                                </label>
+                                <input
+                                    className={styles.input}
+                                    type="text"
+                                    id="name"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className={styles.containerInputs}>
+                                <label className={styles.label1} htmlFor="franchise">
+                                    Franquia:
+                                </label>
+                                <input
+                                    className={styles.input}
+                                    type="text"
+                                    id="franchise"
+                                    value={franchise}
+                                    onChange={(e) => setFranchise(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className={styles.containerInputs}>
+                                <label className={styles.label1} htmlFor="animatronics">
+                                    Animatronics:
+                                </label>
+                                <input
+                                    className={styles.input}
+                                    type="text"
+                                    id="animatronics"
+                                    value={animatronics}
+                                    onChange={(e) => setAnimatronics(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className={styles.containerInputs}>
+                                <label className={styles.label1} htmlFor="description">
+                                    Descrição:
+                                </label>
+                                <input
+                                    className={styles.input}
+                                    type="text"
+                                    id="description"
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <div className={styles.containerInputs}>
+                                <label className={styles.label1} htmlFor="image">
+                                    Imagem:
+                                </label>
+                                <input
+                                    className={styles.input}
+                                    type="file"
+                                    id="img"
+                                    value={img}
+                                    onChange={(e) => setImg(e.target.value)}
+                                    required
+                                />
+                            </div>
+
+                            <button
+                                className={styles.btn}
+                                type="submit"
+                            >
+                                Cadastrar
+                            </button>
                         </form>
                     </div>
                 </div>
             </div>
-            {/* Rodapé */}
-            <div>
-                <Footer />
             </div>
-        </div>
+            <div className={styles.footer}>
+                <Footer/>
+            </div>
+            </div>
     )
 }
-
-// Exporta o componente Home
-export default Home;
