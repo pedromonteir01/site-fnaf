@@ -26,7 +26,6 @@ const animatronicPage = () => {
                     queryParams += `franchise=${franchise}&name=${name}`
                 }
                 const url = `/api/animatronics?${queryParams}`
-                console.log(url);
                 const response = await axios.get(url);
                 setData(response.data);
                 setAnimatronics(response.data.animatronics)
