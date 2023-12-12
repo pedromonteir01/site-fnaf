@@ -1,7 +1,7 @@
 /* registerS_responsive.module.css */
 
 .containerPai {
-     background-image: url("/wallpapersHome/backHome.png");
+    background-image: url("/wallpapersHome/backHome.png");
     box-sizing: border-box;
     background-size: cover;
     background-attachment: fixed;
@@ -25,7 +25,7 @@
     width: 100%;
 }
 
-.subDiv1{
+.subDiv1 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,7 +50,7 @@
     text-shadow: 0 0 40px gold;
 }
 
-.subDiv2{
+.subDiv2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,6 +66,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-top: 4rem;
     transition: 0.5s;
+    margin-bottom: 2rem;
 }
 
 .subDivStudents:hover {
@@ -113,7 +114,7 @@
 }
 
 .btn:hover {
-    background-color: #6f47dd; 
+    background-color: #6f47dd;
     box-shadow: 0 0 30px #6f47dd;
     color: whitesmoke;
     cursor: grab;
@@ -121,7 +122,11 @@
 
 @media only screen and (max-width: 600px) {
     .header {
-      display: none;
-      visibility: hidden;
+        display: none;
+        visibility: hidden;
     }
-  }
+
+    .title{
+        font-size: 50px;
+    }
+}
