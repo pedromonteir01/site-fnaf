@@ -1,7 +1,7 @@
 'use client'
 import styles from './nameEachAnimatronic.module.css';
 
-const NameAnimatronic = (id, name, imageBody, occupation, initialLocation, description, color, status, instrument, jumpscare) => {
+const NameAnimatronic = ({id, name, imageBody, occupation, initialLocation, description, color, status, instrument, jumpscare}) => {
 
   return (
     <div className={styles.containerPai}>

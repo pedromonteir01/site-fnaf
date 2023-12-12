@@ -1,40 +1,54 @@
 'use client'
-
 import axios from "axios";
 import styles from "/nameA.module.css"
 import { useEffect, useState } from "react";
+import NameAnimatronic from "../../components/nameEachanimatronic/nameEachAnimatronics";
 
 
 export default function Home({ params }) {
 
-    const [data, setData] = useState(null);
     const [animatronic, setAnimatronic] = useState(null);
-
     const { id } = params;
 
     useEffect(() => {
         const fetchAnimatronic = async () => {
-            const response = await axios.get(`/api/animatronics/${id}`);
-            setData(response);
-            setAnimatronic(response);
+            try {
+                const res = await axios.get(`/api/animatronics/${id}`);
+                setAnimatronic(res.data);
+                setData(res.data);
+            } catch (erro) {
+                console.log("Deu erro")
+            }
         }
         fetchAnimatronic();
-    }, [])
+    }, []);
 
     return (
         <div className={styles.containerPai}>
-            <HeaderMobile/>
+            <HeaderMobile />
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <SideHeader/>
+                    <SideHeader />
                 </div>
                 <div className={styles.body}>
                     {
                         animatronic ? (
-                            <article>
-                                <h1>{animatronic.name}</h1>
-
-                            </article>
+                            <div className={styles.subDiv2}>
+                                <div className={styles.cardAnimatronic}>
+                                    <NameAnimatronic 
+                                    id={animatronic.id}
+                                    name={animatronic.name}
+                                    imageBody={animatronic.imageBody}
+                                    occupation={animatronic.occupation}
+                                    initialLocation={animatronic.initialLocation}
+                                    description={animatronic.description}
+                                    color={animatronic.color}
+                                    status={animatronic.status}
+                                    instrument={animatronic.instrument}
+                                    jumpscare={animatronic.jumpscare}
+                                    />
+                                </div>
+                            </div>
                         ) : (
                             <p>Carregando...</p>
                         )
