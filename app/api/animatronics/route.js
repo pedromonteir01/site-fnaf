@@ -25,8 +25,8 @@ export async function GET(request) {
         return NextResponse.json(response.data);
       }
     } catch(e) {
-        console.log("[ORDER_GET]", e);
-        return new NextResponse("Erro interno do servidor!", { status: 500 });
+        console.log("[ORDER_GET]", e.data.errors);
+        return new NextResponse(e.data.errors, { status: 500 });
     }
 }
 
@@ -38,7 +38,8 @@ export async function POST(request) {
   
       return NextResponse.json(response.data);
     } catch (e) {
-      console.log("[ORDER_POST]", e);
-      return new NextResponse("Erro interno do servidor!", { status: 500 });
+
+      console.log("[ORDER_POST]", e.response.data.errors);
+      return new NextResponse(e.response.data.errors, { status: 500 });
     }
   }

@@ -8,10 +8,12 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import SideHeader from '@/app/components/header/Header';
 import Footer from '@/app/components/footer/Footer';
+import { MdOutlineDirectionsTransitFilled } from 'react-icons/md';
 
 const Register = () => {
 
     const [animatronicsRegistered, setAnimatronicsRegisteres] = useState([]);
+    const [pizzerias, setPizzerias] = useState([]);
 
     //variaveis do cadastro
     const [name, setName] = useState('');
@@ -44,21 +46,34 @@ const Register = () => {
             setOccupation('test');
             router.push('/page-animatronic/')
         } catch (e) {
-            console.log('error', e);
+            console.log('error', e.response.data);
         }
     }
 
     useEffect(() => {
-        async function fetchStudents() {
+        async function fetchAnimatronics() {
             try {
                 const response = await axios.get("/api/animatronics");
                 setAnimatronicsRegisteres(response.data);
             } catch (error) {
-                console.error("Error fetching data:", error);
+                console.error("Error fetching data:", error.response.data.errors);
             }
         }
 
-        fetchStudents();
+        fetchAnimatronics();
+    }, []);
+
+    useEffect(() => {
+        async function fetchPizzerias() {
+            try{
+                const response = await axios.get("/api/pizzerias");
+                setPizzerias(response.data.pizzerias);
+            } catch (e) {
+                console.log('Error fetching data pizzerias:', e);
+            }
+        }
+
+        fetchPizzerias();
     }, []);
 
     return (
@@ -97,10 +112,12 @@ const Register = () => {
                                         name="occupation"
                                         className={styles.Input}
                                     >
-                                        <option value=''>Selecione</option>
-                                        <option value='test'>test</option>
-
-
+                                        <option value=''>Selecione...</option>
+                                        {
+                                            pizzerias.map((pizzeria) => (
+                                                <option key={pizzeria.id} value={pizzeria.name}>{pizzeria.name}</option>
+                                            ))
+                                        }
                                     </select>
                                 </section>
                                 <section className={styles.inputField}>

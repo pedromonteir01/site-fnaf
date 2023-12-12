@@ -11,6 +11,7 @@ import HeaderMobile from '../components/headerMobile/HeaderMobile';
 
 const animatronicPage = () => {
     const [animatronics, setAnimatronics] = useState([]);
+    const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
 
     const [franchise, setFranchise] = useState('');
@@ -37,8 +38,21 @@ const animatronicPage = () => {
         fetchAnimatronics();
     }, [franchise, name]);
 
-    const openDetails = () => {
+    useEffect(() => {
+        async function fetchPizzerias() {
+            try{
+                const response = await axios.get("/api/pizzerias");
+                setPizzerias(response.data.pizzerias);
+            } catch (e) {
+                console.log('Error fetching data pizzerias:', e);
+            }
+        }
 
+        fetchPizzerias();
+    }, []);
+
+    const openDetails = () => {
+        router.push('')
     }
 
     //put animatronic
@@ -81,16 +95,18 @@ const animatronicPage = () => {
                         <div className={styles.subDivAnimatronics}>
                             <article className={styles.containerCard}>
                                 <section className={styles.filters}>
-                                    <select className={styles.franchise} value={franchise} onChange={(e) => setFranchise(e.target.value)}>
-                                        <option value="">Selecione...</option>
-                                        <option value={"Freddy Fazbear's Pizza (1993)"}>Freddy Fazbear's Pizza (1993)</option>
-                                        <option value={"Freddy Fazbear's Pizza (1987)"}>Freddy Fazbear's Pizza (1987)</option>
-                                        <option value={"Fazbear's Fright: The Horror Attraction (2023)"}>Fazbear's Fright: The Horror Attraction (2023)</option>
-                                        <option value={"Casa William Afton (1983)"}>Casa William Afton (1983)</option>
-                                        <option value={"Circus Baby's Pizza World (1995)"}>Circus Baby's Pizza World (1995)</option>
-                                        <option value={"Chica's Party World (1995)"}>Chica's Party World (1995)</option>
-                                        <option value={"Fredbear's Family Dinner (1983)"}>Fredbear's Family Dinner (1983)</option>
-                                        <option value={"Freddy Fazbear's Pizza (2023)"}>Freddy Fazbear's Pizza (2023)</option>
+                                <select
+                                        value={franchise}
+                                        onChange={(e) => setFranchise(e.target.value)}
+                                        name="occupation"
+                                        className={styles.Input}
+                                    >
+                                        <option value=''>Selecione...</option>
+                                        {
+                                            pizzerias.map((pizzeria) => (
+                                                <option key={pizzeria.id} value={pizzeria.name}>{pizzeria.name}</option>
+                                            ))
+                                        }
                                     </select>
                                     <input 
                                     type="text"
