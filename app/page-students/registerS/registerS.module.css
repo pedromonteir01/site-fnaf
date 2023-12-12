@@ -57,7 +57,7 @@
 }
 
 .subDivStudents {
-    min-width: 30%;
+    min-width: 40%;
     background-color: #202020c1;
     border: 2px solid #f4c519;
     color: #f4c519;
@@ -70,7 +70,7 @@
 }
 
 .subDivStudents:hover {
-    min-width: 30%;
+    min-width: 40%;
     background-color: #202020e5;
     border: 2px solid #6f47dd;
     box-shadow: 0 0 30px #6f47dd;
