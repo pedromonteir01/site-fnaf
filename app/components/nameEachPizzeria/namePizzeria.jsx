@@ -1,11 +1,14 @@
 'use client'
 import SideHeader from '../header/Header';
 import styles from './nameEachPizzeria.module.css';
+import Footer from '../footer/Footer';
+import HeaderMobile from '../headerMobile/HeaderMobile';
 
 const NamePizzeria = ({ id, name, img, franchise, animatronics, description }) => {
 
     return (
         <div className={styles.containerPai}>
+            <HeaderMobile />
             <div className={styles.container}>
                 <div className={styles.header}>
                     <SideHeader />
@@ -33,4 +36,4 @@ const NamePizzeria = ({ id, name, img, franchise, animatronics, description }) =
     )
 }
 
-export default NamePizzeria
+export default NamePizzeria;

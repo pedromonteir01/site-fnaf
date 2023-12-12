@@ -95,25 +95,7 @@ const Home = () => {
 
               <div className={styles.storie}>
                 <p className={styles.textStorie}>
-                  Sammy e Michael eram filhos de William Afton. O filho mais novo, Sammy, apesar de gostar
-
-                  muito dos animatrônicos, tinha medo dos robôs. Michael, o mais velho, sabendo disso,
-
-                  decidiu fazer uma brincadeira com o irmão na sua festa de aniversário.
-
-                  Ele agarrou Sammy e o levou até a boca de FredBear. O que ele não esperava,
-
-                  era que o robô iria fechar a boca, prensando a cabeça do garoto e
-
-                  resultando na sua morte imediata.
-
-                  William, ao saber da morte do filho, ficou transtornado e decidiu se vingar de Henry,
-
-                  o criador dos animatrônicos e o único capaz de desligá-los, o que poderia ter evitado
-
-                  a morte de Sammy, mas não estava presente no momento do acidente. Ele sequestrou a filha de Henry,
-
-                  Charlotte, e a matou, escondendo seu corpo dentro de um dos animatrônicos.
+                  A partir disso, uma série de assassinatos passou 
                 </p>
               </div>
             </div>

@@ -6,6 +6,8 @@ const url = process.env.BASE_URL + "pizzerias";
 
 export async function GET(request, { params }) {
   const { id } = params;
+  console.log("url", url);
+  console.log("id", id);
 
   try {
     const response = await axios.get(`${url}/${id}`);
