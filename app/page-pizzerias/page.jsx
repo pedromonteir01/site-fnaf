@@ -9,15 +9,17 @@ import { MdEdit } from "react-icons/md";
 import { FaAddressBook } from "react-icons/fa";
 import Footer from "../components/footer/Footer";
 import HeaderMobile from "../components/headerMobile/HeaderMobile";
-
+import { useRouter } from "next/navigation";
 
 export default function Page() {
 
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
 
+    const router = useRouter();
+
     const editPizzerias = (id) => {
-        router.push(`/page-animatronic/${id}`)
+        router.push(`/page-pizzerias/${id}`)
     }
 
     const deletePizzerias = async (id) => {
@@ -68,16 +70,19 @@ export default function Page() {
                                             <section className={styles.sec}>
                                                 {
                                                     data.map((pizzerias) => (
-                                                    <Link href={`eachPizzeria/${pizzerias.id}`} className={styles.card}>
-                                                        <div key={pizzerias.id}>
-                                                            <div className={styles.imgDiv}>
-                                                                <img src={pizzerias.img} alt={pizzerias.name} />
-                                                            </div>
-                                                            <div className={styles.infos}>
-                                                                <p><b>Nome:</b> {pizzerias.name}</p>
-                                                                <p><b>Franquia:</b> {pizzerias.franchise}</p>
-                                                                <p><b>Animatronics:</b> {pizzerias.animatronics}</p>
-                                                            </div>
+                                                        <>
+                                                            <Link href={`eachPizzeria/${pizzerias.id}`} className={styles.card}>
+                                                                <div key={pizzerias.id}>
+                                                                    <div className={styles.imgDiv}>
+                                                                        <img src={pizzerias.img} alt={pizzerias.name} />
+                                                                    </div>
+                                                                    <div className={styles.infos}>
+                                                                        <p><b>Nome:</b> {pizzerias.name}</p>
+                                                                        <p><b>Franquia:</b> {pizzerias.franchise}</p>
+                                                                        <p><b>Animatronics:</b> {pizzerias.animatronics}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </Link>
 
                                                             <div className={styles.buttons}>
                                                                 <div className={styles.buttonEdit}>
@@ -94,8 +99,8 @@ export default function Page() {
                                                                     </button>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        </Link>
+                                                        </>
+
                                                     ))
                                                 }
                                             </section>
