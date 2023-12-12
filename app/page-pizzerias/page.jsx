@@ -64,7 +64,8 @@ export default function Page() {
                                             <section className={styles.sec}>
                                                 {
                                                     data.map((pizzerias) => (
-                                                        <div key={pizzerias.id} className={styles.card}>
+                                                    <Link href={`eachPizzeria/${pizzerias.id}`} className={styles.card}>
+                                                        <div key={pizzerias.id}>
                                                             <div className={styles.imgDiv}>
                                                                 <img src={pizzerias.img} alt={pizzerias.name} />
                                                             </div>
@@ -89,6 +90,7 @@ export default function Page() {
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        </Link>
                                                     ))
                                                 }
                                             </section>
