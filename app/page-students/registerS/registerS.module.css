@@ -19,6 +19,7 @@
     align-content: center;
     flex-wrap: nowrap;
     align-items: center;
+    position: fixed;
 }
 
 .body {
