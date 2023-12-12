@@ -18,6 +18,13 @@ export default function Page() {
     const [dados, setDados] = useState([]);
     // const router = useRouter();
 
+    //put student
+
+    const edit = (id) => {
+        router.push(`/page-students/${id}`)
+    }
+
+
     const deleteStudents = async (id) => {
         console.log("id do dlete", id)
         const url = `/api/students/${id}`;
@@ -83,6 +90,7 @@ export default function Page() {
                                                             <div className={styles.buttons}>
                                                                 <div className={styles.buttonEdit}>
                                                                     <button
+                                                                        onClick={() => deleteStudents(students.id)}
                                                                         className={styles.button}><MdEdit />
                                                                     </button>
                                                                 </div>
