@@ -50,7 +50,7 @@ export default function Home({ params }) {
                                 </div>
                             </div>
                         ) : (
-                            <p>Carregando...</p>
+                            <p>ERRO!</p>
                         )
                     }
                 </div>
