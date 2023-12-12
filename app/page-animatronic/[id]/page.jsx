@@ -10,8 +10,6 @@ import SideHeader from '@/app/components/header/Header';
 import Footer from '@/app/components/footer/Footer';
 const Register = ({ params }) => {
 
-    const [animatronicsRegistered, setAnimatronicsRegisteres] = useState([]);
-
     //variaveis do cadastro
     const [name, setName] = useState('');
     const [initialLocation, setInitialLocation] = useState('');
@@ -45,7 +43,6 @@ const Register = ({ params }) => {
           try {
             const response = await axios.get(`/api/animatronics/${id}`);
             const animatronic = response.data.animatronic;
-            console.log(animatronic);
             setName(animatronic.name);
             setInitialLocation(animatronic.initialLocation);
             setDescription(animatronic.description);
