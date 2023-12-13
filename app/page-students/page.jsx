@@ -81,10 +81,10 @@ export default function Page() {
                                                                 <img src={students.img} alt={students.name} />
                                                             </div>
                                                             <div className={styles.infos}>
-                                                                <p>Nome: {students.name}</p>
-                                                                <p>Idade: {students.age}</p>
-                                                                <p>Gênero: {students.gender}</p>
-                                                                <p>Descrição: {students.description}</p>
+                                                                <p><strong>Nome </strong> {students.name}</p>
+                                                                <p><strong>Idade </strong> {students.age}</p>
+                                                                <p><strong>Gênero </strong> {students.gender}</p>
+                                                                <p><strong>Descrição </strong> {students.description}</p>
                                                             </div>
 
                                                             <div className={styles.buttons}>

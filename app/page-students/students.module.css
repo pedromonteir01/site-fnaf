@@ -133,7 +133,12 @@
 
 .infos p {
     margin: 0;
+    color: whitesmoke;
+}
+
+.infos p strong {
     color: #f4c519;
+    text-shadow: 0 0 30px #f4c519;;
 }
 
 
