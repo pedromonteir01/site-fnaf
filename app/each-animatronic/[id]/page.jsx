@@ -1,8 +1,10 @@
 'use client'
 import axios from "axios";
-import styles from "/nameA.module.css"
+import styles from "./nameA.module.css"
 import { useEffect, useState } from "react";
 import NameAnimatronic from "../../components/nameEachanimatronic/nameEachAnimatronics";
+import HeaderMobile from "@/app/components/headerMobile/HeaderMobile";
+import SideHeader from "@/app/components/header/Header";
 
 
 export default function Home({ params }) {

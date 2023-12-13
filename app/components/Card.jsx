@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MdDelete } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
+import { FaAddressBook } from "react-icons/fa";
 import styles from "./card.module.css";
 
 const Card = ({name, image, id, openDetails, exclude, edit, occupation}) => {
@@ -10,6 +11,9 @@ const Card = ({name, image, id, openDetails, exclude, edit, occupation}) => {
             <img className={styles.icon} src={image} alt={name}/>
             <p><strong>OCUPAÇÃO:</strong> {occupation}</p>
             <div className={styles.btns}>
+            <button type="button" className={styles.details}>
+            <FaAddressBook />
+                </button>
                 <button type="button" onClick={exclude} className={styles.delete}>
                     <MdDelete/>
                 </button>

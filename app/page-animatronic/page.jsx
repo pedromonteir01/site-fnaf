@@ -23,7 +23,7 @@ const animatronicPage = () => {
         const fetchAnimatronics = async () => {
             try {
                 let queryParams = '';
-                if(franchise || name) {
+                if (franchise || name) {
                     queryParams += `franchise=${franchise}&name=${name}`
                 }
                 const url = `/api/animatronics?${queryParams}`
@@ -40,7 +40,7 @@ const animatronicPage = () => {
 
     useEffect(() => {
         async function fetchPizzerias() {
-            try{
+            try {
                 const response = await axios.get("/api/pizzerias");
                 setPizzerias(response.data.pizzerias);
             } catch (e) {
@@ -84,9 +84,9 @@ const animatronicPage = () => {
                     <div className={styles.subDiv1}>
                         <h1 className={styles.titlePage}>ANIMATRONICS</h1>
                         <article className={styles.itens}>
-                        <Link href={"/page-animatronic/register"}>
-                            <button className={styles.btnRegister} style={{ color: 'black' }}>
-                                    CADASTRAR ANIMATRONIC
+                            <Link href={"/page-animatronic/register"}>
+                                <button className={styles.btnRegister}>
+                                    CRIAR ANIMATRONIC
                                 </button>
                             </Link>
                         </article>
@@ -95,7 +95,7 @@ const animatronicPage = () => {
                         <div className={styles.subDivAnimatronics}>
                             <article className={styles.containerCard}>
                                 <section className={styles.filters}>
-                                <select
+                                    <select
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="occupation"
@@ -108,28 +108,32 @@ const animatronicPage = () => {
                                             ))
                                         }
                                     </select>
-                                    <input 
-                                    type="text"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    <input
+                                        type="text"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
                                     />
                                 </section>
                                 <section className={styles.cards}>
-                                {
-                                    data.animatronics ? (
-                                        animatronics.length ? (
-                                            animatronics.map((animatronic) => (
-                                                <Link href={`each-animatronic/${animatronic.id}`} className={styles.card}>
-                                                <Card name={animatronic.name} id={animatronic.id} image={animatronic.imageIcon} occupation={animatronic.occupation} edit={() => edit(animatronic.id)} exclude={() => exclude(animatronic.id)} openDetails={openDetails}/>
-                                                </Link>
-                                            ))
+                                    {
+                                        data.animatronics ? (
+                                            animatronics.length ? (
+                                                animatronics.map((animatronic) => (
+                                                    <Card name={animatronic.name}
+                                                        id={animatronic.id}
+                                                        image={animatronic.imageIcon}
+                                                        occupation={animatronic.occupation}
+                                                        edit={() => edit(animatronic.id)}
+                                                        exclude={() => exclude(animatronic.id)}
+                                                        openDetails={<Link href={`each-animatronic/${animatronic.id}`}></Link>} />
+                                                ))
+                                            ) : (
+                                                <p>Não há animatronics cadastrados</p>
+                                            )
                                         ) : (
-                                            <p>Não há animatronics cadastrados</p>
+                                            <p>{data.message ? (data.message) : ('Carregando...')}</p>
                                         )
-                                    ) : (
-                                        <p>{data.message ? (data.message) : ('Carregando...')}</p>
-                                    )
-                                }
+                                    }
                                 </section>
                             </article>
                         </div>

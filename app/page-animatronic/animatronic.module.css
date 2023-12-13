@@ -68,7 +68,7 @@
 }
 .btnRegister {
     background-color: gold;
-    color: #ffffff;
+    color: black;
     padding: 1rem 2rem;
     border: none;
     cursor: pointer;
@@ -77,12 +77,13 @@
     display: inline-block;
     transition: background-color 0.3s ease;
     border-radius: 0.6rem;
-    box-shadow: 0 0 30px #ffde67;
     margin: 1.5rem;
 }
 
 .btnRegister:hover {
-    background-color: #ffde67;
+    background-color: #6f47dd;
+    box-shadow: 0 0 30px #6f47dd;
+    color: whitesmoke;
 }
 
 .containerCard {
