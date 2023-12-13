@@ -7,6 +7,7 @@ import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { FaAddressBook } from "react-icons/fa";
+import { FaBookOpen } from "react-icons/fa6";
 import Footer from "../components/footer/Footer";
 import HeaderMobile from "../components/headerMobile/HeaderMobile";
 import { useRouter } from "next/navigation";
@@ -15,6 +16,7 @@ export default function Page() {
 
     const [pizzerias, setPizzerias] = useState([]);
     const [data, setData] = useState([]);
+    const [franchise, setFranchise] = useState('');
 
     const router = useRouter();
 
@@ -47,6 +49,25 @@ export default function Page() {
         fetchPizzerias();
     }, [data]);
 
+    useEffect(() => {
+        const fetchAnimatronics = async () => {
+            try {
+                let queryParams = '';
+                if (franchise) {
+                    queryParams += `franchise=${franchise}`
+                }
+                const url = `/api/pizzerias?${queryParams}`
+                const response = await axios.get(url);
+                setData(response.data);
+                setPizzerias(response.data.pizzerias)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        fetchAnimatronics();
+    }, [franchise]);
+
     return (
         <div className={styles.containerPai}>
             <HeaderMobile />
@@ -60,9 +81,28 @@ export default function Page() {
                     </div>
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivAnimatronics}>
-                            <button className={styles.btnRegister}>
-                                <a className={styles.link} href={"/page-pizzerias/registerP"}><FaAddressBook /></a>
-                            </button>
+                            <div className={styles.divButtonRegisterAndFilter}>
+                                <div className={styles.divButtonRegister}>
+                                    <button className={styles.btnRegister}>
+                                        <a className={styles.link} href={"/page-pizzerias/registerP"}><FaAddressBook /></a>
+                                    </button>
+                                </div>
+                                <div className={styles.divSelect}>
+                                    <select
+                                        value={franchise}
+                                        onChange={(e) => setFranchise(e.target.value)}
+                                        name="pizzaria"
+                                        className={styles.select}
+                                    >
+                                        <option value=''>Selecione...</option>
+                                        {
+                                            pizzerias.map((pizzeria) => (
+                                                <option key={pizzeria.id} value={pizzeria.franchise}>{pizzeria.franchise}</option>
+                                            ))
+                                        }
+                                    </select>
+                                </div>
+                            </div>
                             <article className={styles.containerCard}>
                                 {
                                     data.length ?
@@ -71,7 +111,7 @@ export default function Page() {
                                                 {
                                                     data.map((pizzerias) => (
                                                         <>
-                                                            <Link href={`eachPizzeria/${pizzerias.id}`} className={styles.card}>
+                                                            <div className={styles.card}>
                                                                 <div key={pizzerias.id}>
                                                                     <div className={styles.imgDiv}>
                                                                         <img src={pizzerias.img} alt={pizzerias.name} />
@@ -82,21 +122,30 @@ export default function Page() {
                                                                         <p><b>Animatronics:</b> {pizzerias.animatronics}</p>
                                                                     </div>
                                                                 </div>
-                                                            </Link>
 
-                                                            <div className={styles.buttons}>
-                                                                <div className={styles.buttonEdit}>
-                                                                    <button
-                                                                        onClick={() => editPizzerias(pizzerias.id)}
-                                                                        className={styles.button}><MdEdit />
-                                                                    </button>
-                                                                </div>
 
-                                                                <div className={styles.buttonDelete}>
-                                                                    <button
-                                                                        onClick={() => deletePizzerias(pizzerias.id)}
-                                                                        className={styles.button}><MdDelete />
-                                                                    </button>
+                                                                <div className={styles.buttons}>
+                                                                    <div className={styles.buttonEachPizzeria}>
+                                                                        <Link href={`eachPizzeria/${pizzerias.id}`}>
+                                                                            <button
+                                                                                className={styles.button}><FaBookOpen />
+                                                                            </button>
+                                                                        </Link>
+                                                                    </div>
+
+                                                                    <div className={styles.buttonEdit}>
+                                                                        <button
+                                                                            onClick={() => editPizzerias(pizzerias.id)}
+                                                                            className={styles.button}><MdEdit />
+                                                                        </button>
+                                                                    </div>
+
+                                                                    <div className={styles.buttonDelete}>
+                                                                        <button
+                                                                            onClick={() => deletePizzerias(pizzerias.id)}
+                                                                            className={styles.button}><MdDelete />
+                                                                        </button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </>

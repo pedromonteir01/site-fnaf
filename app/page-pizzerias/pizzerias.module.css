@@ -20,14 +20,7 @@
   align-content: center;
   flex-wrap: nowrap;
   align-items: center;
-}
-
-.containerGiga {
-  width: 100%;
-  margin: 0 auto;
-  padding: 1.25rem;
-  box-sizing: border-box;
-  background-color: #333;
+  position: fixed;
 }
 
 .title {
@@ -48,6 +41,15 @@
   text-shadow: 0 0 40px gold;
 }
 
+.divButtonRegisterAndFilter {
+  display: flex;
+  flex-direction:inherit;
+}
+
+.divButtonRegister {
+  margin-right: 2rem;
+}
+
 .btnRegister {
   background-color: #f4c519;
   padding: 1rem 2rem;
@@ -58,7 +60,7 @@
   display: inline-block;
   transition: background-color 0.3s ease;
   border-radius: 0.6rem;
-  margin-left: 1.2rem;
+  margin-left: 10rem;
   transition: 0.5s;
 }
 
@@ -85,14 +87,13 @@
 
 .containerCard {
   margin-top: 1.25rem;
+  margin-left: 8rem;
 }
 
 .sec {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  flex-direction: row;
-  align-items: stretch;
+  justify-content: center;
 }
 
 .card {
@@ -105,6 +106,7 @@
   overflow: hidden;
   transition: transform 0.3s ease;
   transition: 0.5s;
+  margin: 0.5rem;
 }
 
 .card:hover {
@@ -112,7 +114,6 @@
   border: 2px solid #6f47dd;
   box-shadow: 0 0 30px #6f47dd;
   transition: 0.5s;
-  cursor: grab;
 }
 
 .imgDiv {
@@ -158,7 +159,7 @@
 
 /* Customize the edit button */
 .buttonEdit .button {
-  background-color: #f4c519;
+  background-color: #e6b609;
 }
 
 .buttonEdit .button:hover {
@@ -175,6 +176,16 @@
 .buttonDelete .button:hover {
   background-color: #9e019e;
   box-shadow: 0 0 30px #9e019e;
+  cursor: grab;
+}
+
+.buttonEachPizzeria .button {
+  background-color: rgb(176, 0, 0);
+}
+
+.buttonEachPizzeria .button:hover {
+  background-color: rgb(176, 0, 0);
+  box-shadow: 0 0 30px rgb(176, 0, 0);
   cursor: grab;
 }
 

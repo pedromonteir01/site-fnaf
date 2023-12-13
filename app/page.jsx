@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className={styles.containerPai}>
       <div className={styles.headerMobile}>
-      <HeaderMobile />
+        <HeaderMobile />
       </div>
       <div className={styles.container}>
         <div className={styles.header}>
@@ -33,7 +33,7 @@ const Home = () => {
             </div>
             <div className={styles.bannerStorie}>
               <div className={styles.banner}>
-                <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF"/>
+                <img className={styles.imgBanner} src="/banners/bannerHome.png" alt="banner FNAF" />
               </div>
             </div>
 
@@ -95,7 +95,7 @@ const Home = () => {
 
               <div className={styles.storie}>
                 <p className={styles.textStorie}>
-                  A partir disso, uma série de assassinatos passou 
+                  A partir disso, uma série de assassinatos passou a assombrar a cidade. Após a trágica morte de Sammy por um acidente com um animatrônico, seu pai, William Afton, consumido pela dor, decide vingar-se dos criadores dos robôs. Ele sequestra e mata a filha de Henry, Charlotte, escondendo seu corpo dentro de um animatrônico. William, agora conhecido como "Purple Guy", inicia uma série de assassinatos, culpando os envolvidos na criação dos animatrônicos. A cidade vive anos de pavor, enquanto o irmão mais velho, Michael, busca redenção. No entanto, uma força sobrenatural começa a se manifestar, e a batalha entre a luz e a escuridão se desenrola.
                 </p>
               </div>
             </div>
