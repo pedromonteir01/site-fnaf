@@ -133,7 +133,11 @@ const animatronicPage = () => {
                                                 <p>Não há animatronics cadastrados</p>
                                             )
                                         ) : (
-                                            <p>{data.message ? (data.message) : ('Carregando...')}</p>
+                                            <div className={styles.containerPaiImageLoading}>
+                                            <div className={styles.containerImageLoading}>
+                                            <img src="/ImageLoading.gif" alt="ImageLoading" />
+                                            </div>
+                                            </div>
                                         )
                                     }
                                 </section>

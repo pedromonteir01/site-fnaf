@@ -111,7 +111,11 @@ export default function Page() {
                                         )
 
                                         : (
-                                            <p>Não tem colaboradores cadastrados</p>
+                                            <div className={styles.containerPaiImageLoading}>
+                                            <div className={styles.containerImageLoading}>
+                                            <img src="/ImageLoading.gif" alt="ImageLoading" />
+                                            </div>
+                                            </div>
                                         )
                                 }
                             </article>

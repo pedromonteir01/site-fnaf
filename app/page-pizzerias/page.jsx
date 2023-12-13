@@ -158,7 +158,11 @@ export default function Page() {
                                         )
 
                                         : (
-                                            <p>Não tem pizzarias cadastradas</p>
+                                            <div className={styles.containerPaiImageLoading}>
+                                            <div className={styles.containerImageLoading}>
+                                            <img src="/ImageLoading.gif" alt="ImageLoading" />
+                                            </div>
+                                            </div>
                                         )
                                 }
                             </article>
