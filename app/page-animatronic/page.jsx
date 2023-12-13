@@ -125,7 +125,7 @@ const animatronicPage = () => {
                                                         occupation={animatronic.occupation}
                                                         edit={() => edit(animatronic.id)}
                                                         exclude={() => exclude(animatronic.id)}
-                                                        openDetails={<Link href={`each-animatronic/${animatronic.id}`}></Link>} />
+                                                        openDetails={`each-animatronic/${animatronic.id}`} />
                                                 ))
                                             ) : (
                                                 <p>Não há animatronics cadastrados</p>

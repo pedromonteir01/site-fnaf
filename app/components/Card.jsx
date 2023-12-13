@@ -6,14 +6,16 @@ import styles from "./card.module.css";
 
 const Card = ({name, image, id, openDetails, exclude, edit, occupation}) => {
     return(
-        <div className={styles.card} key={id} onClick={openDetails}>
+        <div className={styles.card} key={id}>
             <h1>{name}</h1>
             <img className={styles.icon} src={image} alt={name}/>
             <p><strong>OCUPAÇÃO:</strong> {occupation}</p>
             <div className={styles.btns}>
-            <button type="button" className={styles.details}>
-            <FaAddressBook />
+                <Link className={styles.details} href={openDetails}>
+            <button className={styles.details} type="button">
+                <FaAddressBook />
                 </button>
+                </Link>
                 <button type="button" onClick={exclude} className={styles.delete}>
                     <MdDelete/>
                 </button>
