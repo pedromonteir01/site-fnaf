@@ -99,7 +99,7 @@ const animatronicPage = () => {
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="occupation"
-                                        className={styles.Input}
+                                        className={styles.selectFilterPizzeria}
                                     >
                                         <option value=''>Selecione...</option>
                                         {
@@ -109,9 +109,11 @@ const animatronicPage = () => {
                                         }
                                     </select>
                                     <input
+                                        placeholder="Nome do Animatronic"
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
+                                        className={styles.inputFilterName}
                                     />
                                 </section>
                                 <section className={styles.cards}>

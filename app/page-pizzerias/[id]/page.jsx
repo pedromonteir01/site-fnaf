@@ -63,7 +63,7 @@ const Register = ({ params }) => {
                 </div>
                 <div className={styles.body}>
                     <div className={styles.subDiv1}>
-                        <h1 className={styles.title}>Cadastrar Pizzarias</h1>
+                        <h1 className={styles.title}>Editar Pizzarias</h1>
                     </div>
                     <div className={styles.subDiv2}>
                         <div className={styles.subDivStudents}>
@@ -143,7 +143,7 @@ const Register = ({ params }) => {
                                     className={styles.btn}
                                     type="submit"
                                 >
-                                    Cadastrar
+                                    Editar
                                 </button>
                             </form>
                         </div>

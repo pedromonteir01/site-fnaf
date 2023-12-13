@@ -92,7 +92,7 @@ export default function Page() {
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="pizzaria"
-                                        className={styles.select}
+                                        className={styles.selectFilterPizzeria}
                                     >
                                         <option value=''>Selecione...</option>
                                         {

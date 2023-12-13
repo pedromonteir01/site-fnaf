@@ -11,6 +11,9 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="pt-br">
+      <head>
+        <link rel="icon" type='image/png' href="/iconSite.png" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )

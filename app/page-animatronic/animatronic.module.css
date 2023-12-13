@@ -66,6 +66,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .btnRegister {
     background-color: gold;
     color: black;
@@ -103,9 +104,24 @@
     align-items: center;
 }
 
+.selectFilterPizzeria {
+    outline: none;
+    border: 2px solid #f4c519;
+    background-color: #202020;
+    color: whitesmoke;
+}
+
+.inputFilterName {
+    margin: 1rem;
+    outline: none;
+    border: 2px solid #f4c519;
+    background-color: #202020;
+    color: whitesmoke;
+}
+
 @media only screen and (max-width: 600px) {
     .header {
-      display: none;
-      visibility: hidden;
+        display: none;
+        visibility: hidden;
     }
-  }
+}

@@ -195,6 +195,12 @@
   cursor: grab;
 }
 
+.selectFilterPizzeria {
+  background-color: #202020;
+  border: 2px solid #f4c519;
+  color: whitesmoke;
+}
+
 @media only screen and (max-width: 600px) {
   .header {
       display: none;

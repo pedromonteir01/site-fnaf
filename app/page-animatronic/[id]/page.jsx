@@ -190,7 +190,7 @@ const Register = ({ params }) => {
                                 </div>
                             </article>
                             <div className={styles.regis}>
-                                <button className={styles.btnRegister} type='submit'>REGISTRAR</button>
+                                <button className={styles.btnRegister} type='submit'>EDITAR</button>
                             </div>
                         </form>
                     </main>

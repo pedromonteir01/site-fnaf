@@ -103,6 +103,15 @@
     box-shadow: 0 0 10px #dc6904;
 }
 
+.p {
+    color: whitesmoke;
+}
+
+.b {
+    color: #f4c519;
+    text-shadow: 0 0 30px #f4c519;
+}
+
 
 @media screen and (max-width: 600px) {
     
