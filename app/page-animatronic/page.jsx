@@ -95,11 +95,20 @@ const animatronicPage = () => {
                         <div className={styles.subDivAnimatronics}>
                             <article className={styles.containerCard}>
                                 <section className={styles.filters}>
+                                    <h2 className={styles.searchText}>PESQUISAR:</h2>
+                                    <label className={styles.searchText}>NOME</label>
+                                    <input
+                                        className={styles.inSearch}
+                                        type="text"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                    />
+                                    <label className={styles.searchText}>PIZZARIA:</label>
                                     <select
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="occupation"
-                                        className={styles.Input}
+                                        className={styles.selectSearch}
                                     >
                                         <option value=''>Selecione...</option>
                                         {
@@ -108,11 +117,6 @@ const animatronicPage = () => {
                                             ))
                                         }
                                     </select>
-                                    <input
-                                        type="text"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                    />
                                 </section>
                                 <section className={styles.cards}>
                                     {
@@ -131,7 +135,7 @@ const animatronicPage = () => {
                                                 <p>Não há animatronics cadastrados</p>
                                             )
                                         ) : (
-                                            <p>{data.message ? (data.message) : ('Carregando...')}</p>
+                                            <p>{data.message ? ('Nenhum animatrônico encontrado') : ('Carregando...')}</p>
                                         )
                                     }
                                 </section>

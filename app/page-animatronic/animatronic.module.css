@@ -61,11 +61,49 @@
     min-height: 100vh;
 }
 
+.subDiv1 {
+    width: 100%;
+}
+
 .subDiv2 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid gold;
+}
+
+.searchText {
+    color: gold;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0.5rem;
+}
+
+.inSearch {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: large;
+    border: 1px solid black;
+    outline: none;
+}
+
+.selectSearch {
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
 .btnRegister {
     background-color: gold;
     color: black;
@@ -101,6 +139,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -108,4 +147,9 @@
       display: none;
       visibility: hidden;
     }
+
+    .titlePage {
+        font-size: 60px;
+    }
+
   }

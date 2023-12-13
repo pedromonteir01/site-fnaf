@@ -41,16 +41,6 @@
     background-size: cover;
 }
 
-.gif {
-    border: 0.25rem solid gold;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-}
-
 .textStyle {
     font-size: x-large;
 }
@@ -177,4 +167,32 @@
     align-items: center;
     justify-content: center;
     margin: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        display: none;
+        visibility: hidden;
+      }
+
+    .Form {
+        width: 100%;
+    }
+
+    .register {
+        width: 100%;
+    }
+
+    .Input {
+        width: 90%;
+    }
+
+    .uploads {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+    }
+
+    .fieldUp {
+        width: 90%;
+    }
 }

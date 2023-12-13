@@ -1,6 +1,6 @@
 .container{
     display: flex;
-    background-color: rgb(39, 39, 39);
+    background-image: url("/wallpapersHome/backAnimatronics.png");
     box-sizing: border-box;
     background-size: cover;
     background-position: right;
@@ -15,6 +15,7 @@
     align-content: center;
     flex-wrap: nowrap;
     align-items: center;
+    position: fixed;
   }
   
   .body{
@@ -38,17 +39,6 @@
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(39, 39, 39);
-}
-
-.gif {
-    border: 0.25rem solid gold;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
 }
 
 .textStyle {
@@ -59,8 +49,16 @@
     background-color: transparent;
     width: 80%;
     border-radius: 8px;
-    border: 0.25rem solid rgb(183, 155, 0);
-    box-shadow: -15px 15px 15px rgba(128, 0, 128, 0.4);
+    border: 3px solid #f4c519;
+    background-color: #202020c1;
+    transition: 0.5s;
+}
+
+.Form:hover {
+    border: 3px solid #6f47dd;
+    box-shadow: 0 0 30px #6f47dd;
+    background-color: #202020e5;
+    transition: 0.5s;
 }
 
 .inputField {
@@ -87,13 +85,14 @@
     -webkit-text-fill-color: transparent;
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
-    text-shadow: 0 0 40px purple;
+    text-shadow: 0 0 30px #f4c519;
 }
 
 
-.title {
+.labels {
     text-transform: uppercase;
-    color: white;
+    color: #f4c519;
+    text-shadow: 0 0 30px #f4c519;
 }
 
 .Input {
@@ -104,6 +103,7 @@
     border-radius: 5px;
     outline: none;
     border: 1px solid black;
+    align-items: center;
 }
 
 
@@ -133,7 +133,7 @@
 }
 
 .btnRegister {
-    background-color: gold;
+    background-color: #f4c519;
     color: black;
     padding: 1rem 2rem;
     border: none;
@@ -143,12 +143,13 @@
     display: inline-block;
     transition: background-color 0.3s ease;
     border-radius: 0.6rem;
-    box-shadow: 0 0 30px #ffde67;
     margin: 1.5rem;
 }
 
 .btnRegister:hover {
-    background-color: #ffde67;
+    background-color: #6f47dd;
+    box-shadow: 0 0 30px #6f47dd;
+    color: whitesmoke;
 }
 
 .fieldUp {
@@ -166,4 +167,32 @@
     align-items: center;
     justify-content: center;
     margin: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        display: none;
+        visibility: hidden;
+      }
+
+    .Form {
+        width: 100%;
+    }
+
+    .register {
+        width: 100%;
+    }
+
+    .Input {
+        width: 90%;
+    }
+
+    .uploads {
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 10px;
+    }
+
+    .fieldUp {
+        width: 90%;
+    }
 }

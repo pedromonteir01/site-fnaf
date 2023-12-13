@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import SideHeader from '@/app/components/header/Header';
 import Footer from '@/app/components/footer/Footer';
+import HeaderMobile from '@/app/components/headerMobile/HeaderMobile';
 const Register = ({ params }) => {
 
     //variaveis do cadastro
@@ -22,6 +23,9 @@ const Register = ({ params }) => {
     const [imageBody, setImageBody] = useState('');
     const [imageIcon, setImageIcon] = useState('');
     const [jumpscare, setJumpscare] = useState('');
+
+    //pizzeria 
+    const [pizzerias, setPizzerias] = useState([]);
 
     //id
     const { id } = params;
@@ -64,27 +68,39 @@ const Register = ({ params }) => {
 
       }, [id]);
 
-    return (
-        <div className={styles.containerPai}>
-        {/* Estrutura principal do componente */}
-        <div className={styles.container}>
-            <div className={styles.header}>
-                {/* Cabeçalho */}
-                <SideHeader/>
-            </div>
-            <div className={styles.body}>
-                <div className={styles.subDiv1}>
-                    {/* Título da página */}
-                    <h1 className={styles.titlePage}>AFTON ROBOTICS</h1>
+    useEffect(() => {
+        const fetchPizzerias = async() => {
+            try {
+                const response = await axios.get(`/api/pizzerias`);
+                setPizzerias(response.data.pizzerias);
+            } catch(e) {
+                console.log(e);
+            }
+        }
+        fetchPizzerias();
+    }, [])
 
-                    <main className={styles.register}>
+    return (
+<div className={styles.containerPai}>
+            {/* Estrutura principal do componente */}
+            <HeaderMobile/>
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    {/* Cabeçalho */}
+                    <SideHeader />
+                </div>
+                <div className={styles.body}>
+                    <div className={styles.subDiv1}>
+                        {/* Título da página */}
+                        <h1 className={styles.titlePage}>AFTON ROBOTICS</h1>
+                        <main className={styles.register}>
                         {/*<article className={styles.gif}>
                             <img src="/assets/foxy-run.gif" alt="test" style={{ width: 500, height: 200 }} />
     </article> */}
                         <form onSubmit={handleSubmit} className={styles.tagForm}>
                             <article className={styles.Form}>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="name">Nome animatronic:</label>
+                                    <label className={styles.labels}>Nome animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -94,21 +110,23 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="occupation">Pizzaria:</label>
+                                    <label className={styles.labels}>Pizzaria:</label>
                                     <select
                                         value={occupation}
                                         onChange={(e) => setOccupation(e.target.value)}
                                         name="occupation"
                                         className={styles.Input}
                                     >
-                                        <option value=''>Selecione</option>
-                                        <option value='test'>test</option>
-
-
+                                        <option value=''>Selecione...</option>
+                                        {
+                                            pizzerias.map((pizzeria) => (
+                                                <option key={pizzeria.id} value={pizzeria.name}>{pizzeria.name}</option>
+                                            ))
+                                        }
                                     </select>
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="location">Localização inicial:</label>
+                                    <label className={styles.labels}>Localização inicial:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -118,7 +136,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="color">Cor animatronic:</label>
+                                    <label className={styles.labels}>Cor animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -128,7 +146,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="status">Status animatronic:</label>
+                                    <label className={styles.labels}>Status animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -138,7 +156,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="instrument">Instrumento animatronic:</label>
+                                    <label className={styles.labels}>Instrumento animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -148,7 +166,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="description">Descrição animatronic:</label>
+                                    <label className={styles.labels}>Descrição animatronic:</label>
                                     <textarea
                                         className={styles.Input}
                                         type="text"
@@ -159,7 +177,7 @@ const Register = ({ params }) => {
                                 </section>
 
                                 <section className={styles.uploads}>
-                                    <label style={{color: 'white'}}>Imagem do animatrônico:</label>
+                                    <label className={styles.labels}>Imagem do animatrônico:</label>
                                     <input
                                         type="text"
                                         value={imageBody}
@@ -168,7 +186,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.uploads}>
-                                    <label style={{color: 'white'}}>Imagem do ícone:</label>
+                                    <label className={styles.labels}>Imagem do ícone:</label>
                                     <input
                                         type="text"
                                         value={imageIcon}
@@ -177,7 +195,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.uploads}>
-                                    <label style={{color: 'white'}}>Vídeo do jumpscare:</label>
+                                    <label className={styles.labels}>Vídeo do jumpscare:</label>
                                     <input
                                         type="text"
                                         value={jumpscare}
@@ -190,19 +208,17 @@ const Register = ({ params }) => {
                                 </div>
                             </article>
                             <div className={styles.regis}>
-                                <button className={styles.btnRegister} type='submit'>REGISTRAR</button>
+                                <button className={styles.btnRegister} type='submit'>CRIAR</button>
                             </div>
                         </form>
                     </main>
+                    </div>
                 </div>
-
-                
+            </div>
+            <div className={styles.footer}>
+                <Footer />
             </div>
         </div>
-        <div className={styles.footer}>
-            <Footer/>
-        </div>
-    </div>
     )
 }
 

@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import SideHeader from '@/app/components/header/Header';
 import Footer from '@/app/components/footer/Footer';
 import { MdOutlineDirectionsTransitFilled } from 'react-icons/md';
+import HeaderMobile from '@/app/components/headerMobile/HeaderMobile';
 
 const Register = () => {
 
@@ -79,6 +80,7 @@ const Register = () => {
     return (
         <div className={styles.containerPai}>
             {/* Estrutura principal do componente */}
+            <HeaderMobile/>
             <div className={styles.container}>
                 <div className={styles.header}>
                     {/* Cabeçalho */}
