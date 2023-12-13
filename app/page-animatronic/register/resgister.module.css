@@ -1,11 +1,14 @@
-.container{
-    display: flex;
+.containerPai {
     background-image: url("/wallpapersHome/backAnimatronics.png");
     box-sizing: border-box;
     background-size: cover;
     background-position: right;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+
+.container{
+    display: flex;
     width: 100%;
   }
   
@@ -31,6 +34,7 @@
     justify-content: flex-end;
     align-items: center;
   }
+  
 .register {
     display: flex;
     width: 80%;

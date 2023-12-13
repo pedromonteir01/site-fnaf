@@ -84,7 +84,7 @@ const Register = ({ params }) => {
                         <form onSubmit={handleSubmit} className={styles.tagForm}>
                             <article className={styles.Form}>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="name">Nome animatronic:</label>
+                                    <label  className={styles.labels}>Nome animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -94,7 +94,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="occupation">Pizzaria:</label>
+                                    <label  className={styles.labels}>Pizzaria:</label>
                                     <select
                                         value={occupation}
                                         onChange={(e) => setOccupation(e.target.value)}
@@ -108,7 +108,7 @@ const Register = ({ params }) => {
                                     </select>
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="location">Localização inicial:</label>
+                                    <label className={styles.labels}>Localização inicial:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -118,7 +118,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="color">Cor animatronic:</label>
+                                    <label className={styles.labels}>Cor animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -128,7 +128,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="status">Status animatronic:</label>
+                                    <label className={styles.labels}>Status animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -138,7 +138,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="instrument">Instrumento animatronic:</label>
+                                    <label className={styles.labels}>Instrumento animatronic:</label>
                                     <input
                                         className={styles.Input}
                                         type="text"
@@ -148,7 +148,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.title} htmlFor="description">Descrição animatronic:</label>
+                                    <label className={styles.labels}>Descrição animatronic:</label>
                                     <textarea
                                         className={styles.Input}
                                         type="text"
@@ -159,7 +159,7 @@ const Register = ({ params }) => {
                                 </section>
 
                                 <section className={styles.uploads}>
-                                    <label style={{color: 'white'}}>Imagem do animatrônico:</label>
+                                    <label className={styles.labels}>Imagem do animatrônico:</label>
                                     <input
                                         type="text"
                                         value={imageBody}
@@ -168,7 +168,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.uploads}>
-                                    <label style={{color: 'white'}}>Imagem do ícone:</label>
+                                    <label className={styles.labels}>Imagem do ícone:</label>
                                     <input
                                         type="text"
                                         value={imageIcon}
@@ -177,7 +177,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.uploads}>
-                                    <label style={{color: 'white'}}>Vídeo do jumpscare:</label>
+                                    <label className={styles.labels}>Vídeo do jumpscare:</label>
                                     <input
                                         type="text"
                                         value={jumpscare}
