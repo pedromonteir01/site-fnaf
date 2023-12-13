@@ -32,7 +32,8 @@
 
 .title {
     background-image: url('/background-Font.png');
-    text-align: center;
+    text-align: center !important;
+    margin-right: 4rem;
     font-family: 'Impact', sans-serif;
     /* Substituí Impact-Regular pela fonte Impact */
     font-weight: 100;
@@ -132,7 +133,12 @@
 
 .infos p {
     margin: 0;
+    color: whitesmoke;
+}
+
+.infos p strong {
     color: #f4c519;
+    text-shadow: 0 0 30px #f4c519;;
 }
 
 
@@ -176,6 +182,20 @@
     box-shadow: 0 0 30px #9e019e;
     cursor: grab;
 }
+
+.containerPaiImageLoading {
+    display: flex;
+    align-items: safe;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .containerImageLoading {
+    justify-content: center;
+    margin-left: 45rem;
+    height: 100%;
+    margin-top: 4rem;
+  }
 
 @media only screen and (max-width: 600px) {
     .header {

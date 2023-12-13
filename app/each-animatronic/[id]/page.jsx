@@ -12,6 +12,8 @@ export default function Home({ params }) {
     const [animatronic, setAnimatronic] = useState(null);
     const { id } = params;
 
+    console.log(id);
+
     useEffect(() => {
         const fetchAnimatronic = async () => {
             try {

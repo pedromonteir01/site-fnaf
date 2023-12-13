@@ -46,7 +46,7 @@ const Register = ({ params }) => {
         async function fetchAnimatronics() {
           try {
             const response = await axios.get(`/api/animatronics/${id}`);
-            const animatronic = response.data.animatronic;
+            const animatronic = response.data;
             setName(animatronic.name);
             setInitialLocation(animatronic.initialLocation);
             setDescription(animatronic.description);
@@ -110,7 +110,7 @@ const Register = ({ params }) => {
                                     />
                                 </section>
                                 <section className={styles.inputField}>
-                                    <label className={styles.labels}>Pizzaria:</label>
+                                    <label  className={styles.labels}>Pizzaria:</label>
                                     <select
                                         value={occupation}
                                         onChange={(e) => setOccupation(e.target.value)}
@@ -208,7 +208,7 @@ const Register = ({ params }) => {
                                 </div>
                             </article>
                             <div className={styles.regis}>
-                                <button className={styles.btnRegister} type='submit'>CRIAR</button>
+                                <button className={styles.btnRegister} type='submit'>EDITAR</button>
                             </div>
                         </form>
                     </main>

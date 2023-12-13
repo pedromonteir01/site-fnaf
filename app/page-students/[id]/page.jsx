@@ -8,6 +8,7 @@ import Footer from "../../components/footer/Footer";
 import HeaderMobile from "../../components/headerMobile/HeaderMobile";
 
 const Register = ({ params }) => {
+
     //variaveis do cadastro
     const [name, setName] = useState("");
     const [img, setImg] = useState("");
@@ -35,7 +36,7 @@ const Register = ({ params }) => {
             try {
                 const response = await axios.get(`/api/students/${id}`);
                 const student = response.data;
-                console.log(student);
+               // console.log(student);
                 setName(student.name);
                 setImg(student.img);
                 setAge(student.age);

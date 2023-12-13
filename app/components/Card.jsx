@@ -9,7 +9,7 @@ const Card = ({name, image, id, openDetails, exclude, edit, occupation}) => {
         <div className={styles.card} key={id}>
             <h1>{name}</h1>
             <img className={styles.icon} src={image} alt={name}/>
-            <p><strong>OCUPAÇÃO:</strong> {occupation}</p>
+            <p className={styles.p}><strong className={styles.b}>OCUPAÇÃO </strong> {occupation}</p>
             <div className={styles.btns}>
                 <Link className={styles.details} href={openDetails}>
             <button className={styles.details} type="button">

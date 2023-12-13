@@ -71,6 +71,7 @@
     align-items: center;
 }
 
+<<<<<<< HEAD
 .filters {
     display: flex;
     flex-direction: column;
@@ -104,6 +105,8 @@
 
 }
 
+=======
+>>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
 .btnRegister {
     background-color: gold;
     color: black;
@@ -142,14 +145,37 @@
     width: 100%;
 }
 
+.selectFilterPizzeria {
+    outline: none;
+    border: 2px solid #f4c519;
+    background-color: #202020;
+    color: whitesmoke;
+}
+
+.inputFilterName {
+    margin: 1rem;
+    outline: none;
+    border: 2px solid #f4c519;
+    background-color: #202020;
+    color: whitesmoke;
+}
+
+.containerPaiImageLoading {
+    margin-top: 5rem;
+}
+
 @media only screen and (max-width: 600px) {
     .header {
-      display: none;
-      visibility: hidden;
+        display: none;
+        visibility: hidden;
     }
+<<<<<<< HEAD
 
     .titlePage {
         font-size: 60px;
     }
 
   }
+=======
+}
+>>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
