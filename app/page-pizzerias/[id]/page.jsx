@@ -9,6 +9,7 @@ import { useRouter } from 'next/navigation';
 import SideHeader from '@/app/components/header/Header';
 import HeaderMobile from '@/app/components/headerMobile/HeaderMobile';
 import Footer from '@/app/components/footer/Footer';
+
 const Register = ({ params }) => {
 
     //variaveis do cadastro
@@ -38,6 +39,7 @@ const Register = ({ params }) => {
                 const response = await axios.get(`/api/pizzerias/${id}`);
                 const pizzeria = response.data;
                 setName(pizzeria.name);
+                setImg(pizzeria.img)
                 setFranchise(pizzeria.franchise)
                 setAnimatronics(pizzeria.animatronics);
                 setDescription(pizzeria.description);
@@ -50,7 +52,7 @@ const Register = ({ params }) => {
             fetchPizzerias();
         }
 
-    }, [id]);
+    }, []);
 
     return (
         <div className={styles.containerPai}>
@@ -129,7 +131,7 @@ const Register = ({ params }) => {
                                     </label>
                                     <input
                                         className={styles.input}
-                                        type="file"
+                                        type="text"
                                         id="img"
                                         value={img}
                                         onChange={(e) => setImg(e.target.value)}

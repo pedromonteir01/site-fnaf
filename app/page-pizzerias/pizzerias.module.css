@@ -7,6 +7,7 @@
   background-position: right;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  height: 100%;
 }
 
 .container {
@@ -134,7 +135,12 @@
 
 .infos p {
   margin: 0;
+  color: whitesmoke;
+}
+
+.b {
   color: #f4c519;
+  text-shadow: 0 0 30px #f4c519;
 }
 
 
@@ -180,12 +186,12 @@
 }
 
 .buttonEachPizzeria .button {
-  background-color: rgb(176, 0, 0);
+  background-color: #dc6904;
 }
 
 .buttonEachPizzeria .button:hover {
-  background-color: rgb(176, 0, 0);
-  box-shadow: 0 0 30px rgb(176, 0, 0);
+  background-color: #dc6904;
+  box-shadow: 0 0 30px #dc6904;
   cursor: grab;
 }
 

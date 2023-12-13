@@ -6,7 +6,7 @@ import styles from "./pizzerias.module.css"
 import SideHeader from "../components/header/Header";
 import { MdDelete } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
-import { FaAddressBook } from "react-icons/fa";
+import { FaPizzaSlice } from "react-icons/fa";
 import { FaBookOpen } from "react-icons/fa6";
 import Footer from "../components/footer/Footer";
 import HeaderMobile from "../components/headerMobile/HeaderMobile";
@@ -84,7 +84,7 @@ export default function Page() {
                             <div className={styles.divButtonRegisterAndFilter}>
                                 <div className={styles.divButtonRegister}>
                                     <button className={styles.btnRegister}>
-                                        <a className={styles.link} href={"/page-pizzerias/registerP"}><FaAddressBook /></a>
+                                        <a className={styles.link} href={"/page-pizzerias/registerP"}><FaPizzaSlice /></a>
                                     </button>
                                 </div>
                                 <div className={styles.divSelect}>
@@ -117,9 +117,9 @@ export default function Page() {
                                                                         <img src={pizzerias.img} alt={pizzerias.name} />
                                                                     </div>
                                                                     <div className={styles.infos}>
-                                                                        <p><b>Nome:</b> {pizzerias.name}</p>
-                                                                        <p><b>Franquia:</b> {pizzerias.franchise}</p>
-                                                                        <p><b>Animatronics:</b> {pizzerias.animatronics}</p>
+                                                                        <p><b className={styles.b}>Nome</b> {pizzerias.name}</p>
+                                                                        <p><b className={styles.b}>Franquia</b> {pizzerias.franchise}</p>
+                                                                        <p><b className={styles.b}>Animatronics</b> {pizzerias.animatronics}</p>
                                                                     </div>
                                                                 </div>
 

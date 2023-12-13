@@ -42,7 +42,7 @@ const Register = ({ params }) => {
         async function fetchAnimatronics() {
           try {
             const response = await axios.get(`/api/animatronics/${id}`);
-            const animatronic = response.data.animatronic;
+            const animatronic = response.data;
             setName(animatronic.name);
             setInitialLocation(animatronic.initialLocation);
             setDescription(animatronic.description);
