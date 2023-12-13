@@ -108,11 +108,7 @@ const animatronicPage = () => {
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="occupation"
-<<<<<<< HEAD
                                         className={styles.selectSearch}
-=======
-                                        className={styles.selectFilterPizzeria}
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
                                     >
                                         <option value=''>Selecione...</option>
                                         {
@@ -121,16 +117,6 @@ const animatronicPage = () => {
                                             ))
                                         }
                                     </select>
-<<<<<<< HEAD
-=======
-                                    <input
-                                        placeholder="Nome do Animatronic"
-                                        type="text"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        className={styles.inputFilterName}
-                                    />
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
                                 </section>
                                 <section className={styles.cards}>
                                     {
@@ -149,15 +135,11 @@ const animatronicPage = () => {
                                                 <p>Não há animatronics cadastrados</p>
                                             )
                                         ) : (
-<<<<<<< HEAD
-                                            <p>{data.message ? ('Nenhum animatrônico encontrado') : ('Carregando...')}</p>
-=======
                                             <div className={styles.containerPaiImageLoading}>
-                                            <div className={styles.containerImageLoading}>
-                                            <img src="/ImageLoading.gif" alt="ImageLoading" />
+                                                <div className={styles.containerImageLoading}>
+                                                <img src="/ImageLoading.gif" alt="ImageLoading" />
+                                                </div>
                                             </div>
-                                            </div>
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
                                         )
                                     }
                                 </section>

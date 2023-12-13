@@ -71,7 +71,6 @@
     align-items: center;
 }
 
-<<<<<<< HEAD
 .filters {
     display: flex;
     flex-direction: column;
@@ -105,8 +104,6 @@
 
 }
 
-=======
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
 .btnRegister {
     background-color: gold;
     color: black;
@@ -169,13 +166,10 @@
         display: none;
         visibility: hidden;
     }
-<<<<<<< HEAD
 
     .titlePage {
         font-size: 60px;
     }
 
   }
-=======
-}
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
+

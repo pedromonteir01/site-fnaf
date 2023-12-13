@@ -9,11 +9,9 @@ import { useRouter } from 'next/navigation';
 import SideHeader from '@/app/components/header/Header';
 import Footer from '@/app/components/footer/Footer';
 import { MdOutlineDirectionsTransitFilled } from 'react-icons/md';
-<<<<<<< HEAD
 import HeaderMobile from '@/app/components/headerMobile/HeaderMobile';
-=======
 import Popup from '@/app/components/popUp/PopUp';
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
+
 
 const Register = () => {
 

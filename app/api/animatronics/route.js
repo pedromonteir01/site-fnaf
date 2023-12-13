@@ -15,7 +15,6 @@ export async function GET(request) {
         const franchiseCondition = franchise === undefined || franchise === null ? '' : `franchise=${franchise}`;
         const nameCondition = name === undefined || name === null ? '' : `name=${name}`;
 
-        console.log(franchiseCondition);
         //requisição filtrada
         const response = await axios.get(`${baseUrl}?${franchiseCondition}&${nameCondition}`);
         return NextResponse.json(response.data);
