@@ -147,11 +147,12 @@
     border: 2px solid #f4c519;
     background-color: #202020;
     color: whitesmoke;
+    padding: 2px;
+    outline: none;
 }
 
 .inputFilterName {
     margin: 1rem;
-    outline: none;
     border: 2px solid #f4c519;
     background-color: #202020;
     color: whitesmoke;

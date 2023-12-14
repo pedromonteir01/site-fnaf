@@ -96,7 +96,7 @@ const animatronicPage = () => {
                             <article className={styles.containerCard}>
                                 <section className={styles.filters}>
                                     <input
-                                        className={styles.inSearch}
+                                        className={styles.selectFilterPizzeria}
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
@@ -106,7 +106,7 @@ const animatronicPage = () => {
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="occupation"
-                                        className={styles.selectSearch}
+                                        className={styles.inputFilterName}
                                     >
                                         <option value=''>Pizzaria...</option>
                                         {
