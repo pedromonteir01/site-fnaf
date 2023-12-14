@@ -20,7 +20,7 @@ const pageContact = () => {
                 </div>
                 <div className={styles.subDiv2}>
                     <div className={styles.form}>
-                        <img src={"/check.webp"} width={620} height={620} />
+                        <img src={"/ImageSucess.gif"} width={1200} height={820} />
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 .containerPai {
-    background-image: url('/wallpapersHome/backHomeP.png');
+  background-color: black;
     box-sizing: border-box;
     background-size: cover;
     background-position: right;
@@ -64,4 +64,13 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+  }
+
+  .form  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    background-color: black;
   }
