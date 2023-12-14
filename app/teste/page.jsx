@@ -1,11 +1,9 @@
 import React from 'react'
-import ImageLoading from '../components/imageLoading/ImageLoading'
+import pageContact from '../page-contact/page'
 
 function page() {
   return (
-    <div>
-      <ImageLoading/>
-    </div>
+    <pageContact />
   )
 }
 

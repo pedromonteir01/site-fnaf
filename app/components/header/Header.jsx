@@ -5,6 +5,7 @@ import { FaHome } from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { FaPizzaSlice } from "react-icons/fa";
 import { GiBearFace } from "react-icons/gi";
+import { IoCall } from "react-icons/io5";
 
 const SideHeader = () => {
   return (
@@ -15,6 +16,7 @@ const SideHeader = () => {
           <div className={Styles.buttons}><a href="../page-animatronic"><button><GiBearFace /></button></a></div>
           <div className={Styles.buttons}><a href="../page-pizzerias"><button><FaPizzaSlice /></button></a></div>
           <div className={Styles.buttons}><a href="../page-students"><button><FaPeopleGroup /></button></a></div>
+          <div className={Styles.buttons}><a href="../page-contact"><button><IoCall /></button></a></div>
         </div>
       </div>
     </div>
