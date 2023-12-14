@@ -33,7 +33,6 @@
 .title {
     background-image: url('/background-Font.png');
     text-align: center !important;
-    margin-right: 4rem;
     font-family: 'Impact', sans-serif;
     /* Substituí Impact-Regular pela fonte Impact */
     font-weight: 100;
@@ -117,7 +116,7 @@
 
 .imgDiv {
     width: 100%;
-    height: 9.375rem;
+    height: 20.375rem;
     overflow: hidden;
 }
 
