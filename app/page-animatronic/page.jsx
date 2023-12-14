@@ -95,22 +95,20 @@ const animatronicPage = () => {
                         <div className={styles.subDivAnimatronics}>
                             <article className={styles.containerCard}>
                                 <section className={styles.filters}>
-                                    <h2 className={styles.searchText}>PESQUISAR:</h2>
-                                    <label className={styles.searchText}>NOME</label>
                                     <input
                                         className={styles.inSearch}
                                         type="text"
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
+                                        placeholder='Nome...'
                                     />
-                                    <label className={styles.searchText}>PIZZARIA:</label>
                                     <select
                                         value={franchise}
                                         onChange={(e) => setFranchise(e.target.value)}
                                         name="occupation"
                                         className={styles.selectSearch}
                                     >
-                                        <option value=''>Selecione...</option>
+                                        <option value=''>Pizzaria...</option>
                                         {
                                             pizzerias.map((pizzeria) => (
                                                 <option key={pizzeria.id} value={pizzeria.name}>{pizzeria.name}</option>

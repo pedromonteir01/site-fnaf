@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 .container{
     display: flex;
-=======
-.containerPai {
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
     background-image: url("/wallpapersHome/backAnimatronics.png");
     box-sizing: border-box;
     background-size: cover;
@@ -48,19 +44,6 @@
     justify-content: center;
     background-repeat: no-repeat;
     background-size: cover;
-<<<<<<< HEAD
-=======
-}
-
-.gif {
-    border: 0.25rem solid gold;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
 }
 
 .textStyle {
@@ -108,15 +91,12 @@
     -webkit-font-smoothing: antialiased;
     text-transform: uppercase;
     text-shadow: 0 0 30px #f4c519;
-<<<<<<< HEAD
-=======
 }
 
 .labels {
     text-transform: uppercase;
     color: #f4c519;
     text-shadow: 0 0 30px #f4c519;
->>>>>>> 9d2662f42a06c2c1b6720d742ff00fdcf5a69d14
 }
 
 
