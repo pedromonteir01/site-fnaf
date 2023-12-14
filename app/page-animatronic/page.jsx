@@ -108,7 +108,7 @@ const animatronicPage = () => {
                                         name="occupation"
                                         className={styles.selectSearch}
                                     >
-                                        <option value=''>Pizzaria...</option>
+                                        <option value=''>Pizzeria...</option>
                                         {
                                             pizzerias.map((pizzeria) => (
                                                 <option key={pizzeria.id} value={pizzeria.name}>{pizzeria.name}</option>

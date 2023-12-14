@@ -69,6 +69,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .filters {
@@ -129,8 +130,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .cards {

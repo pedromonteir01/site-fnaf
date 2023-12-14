@@ -1,6 +1,6 @@
 .card {
     padding: 1rem;
-    width: 30%;
+    width: 22.5rem;
     display: flex;
     flex-direction: column;
     font-size: medium;
@@ -40,7 +40,7 @@
 }
 
 .btns {
-    width: 25%;
+    width: 45%;
     margin: 10px;
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,8 @@
     text-decoration: none;
     display: inline-block;
     transition: background-color 0.3s ease;
-    border-radius: 0.6rem;
+    border-radius: 0.6rem;  
+    justify-content: center;
 }
 
 .delete:hover {
@@ -79,6 +80,7 @@
     display: inline-block;
     transition: background-color 0.3s ease;
     border-radius: 0.6rem;
+    justify-content: center;
 }
 
 .edit:hover {
@@ -97,6 +99,7 @@
     display: inline-block;
     transition: background-color 0.3s ease;
     border-radius: 0.6rem;
+    justify-content: center;
 }
 
 .details:hover {

@@ -37,10 +37,13 @@ export default function Page() {
     useEffect(() => {
         const fetchPizzerias = async () => {
             try {
-                const res = await axios.get("/api/pizzerias");
+                let queryParams = '';
+                if (franchise) {
+                    queryParams += `franchise=${franchise}`
+                }
+                const url = `/api/pizzerias?${queryParams}`
+                const res = await axios.get(url);
                 setPizzerias(res.data.pizzerias);
-                setData(res.data.pizzerias)
-
             } catch (erro) {
                 console.log("Deu erro")
             }
@@ -50,23 +53,17 @@ export default function Page() {
     }, [data]);
 
     useEffect(() => {
-        const fetchAnimatronics = async () => {
+        const fetchPizzerias = async () => {
             try {
-                let queryParams = '';
-                if (franchise) {
-                    queryParams += `franchise=${franchise}`
-                }
-                const url = `/api/pizzerias?${queryParams}`
-                const response = await axios.get(url);
-                setData(response.data);
-                setPizzerias(response.data.pizzerias)
-            } catch (error) {
-                console.log(error);
+                const res = await axios.get('/api/pizzerias');
+                setData(res.data.pizzerias);
+            } catch (erro) {
+                console.log("Deu erro")
             }
         }
 
-        fetchAnimatronics();
-    }, [franchise]);
+        fetchPizzerias();
+    }, [data]);
 
     return (
         <div className={styles.containerPai}>
@@ -96,7 +93,7 @@ export default function Page() {
                                     >
                                         <option value=''>Selecione...</option>
                                         {
-                                            pizzerias.map((pizzeria) => (
+                                            data.map((pizzeria) => (
                                                 <option key={pizzeria.id} value={pizzeria.franchise}>{pizzeria.franchise}</option>
                                             ))
                                         }
