@@ -18,6 +18,8 @@ const Register = () => {
     const [animatronicsRegistered, setAnimatronicsRegisteres] = useState([]);
     const [pizzerias, setPizzerias] = useState([]);
 
+    const [errors, setErrors] = useState([]);
+
     //variaveis do cadastro
     const [name, setName] = useState('');
     const [initialLocation, setInitialLocation] = useState('');
@@ -40,7 +42,7 @@ const Register = () => {
     const router = useRouter();
 
     //função do PopUp
-    const handleShowPopup = (icon1, message, icon2, type, time) => {
+    const handleShowPopup = (message, type, time) => {
         setPopupMessage(message)
         setPopupIcon1(icon1)
         setPopupIcon2(icon2)
@@ -54,6 +56,7 @@ const Register = () => {
     // IMPORTANTE PARA PEDRO:
     // como colocar na verificação EXEMPLO: handleShowPopup(<AiFillWarning />, 'Preencha todos os campos', <AiFillWarning />, 'error', 3000);
 
+
     const scrollToTop = () => {
         window.scrollTo({
           top: 0,
@@ -65,6 +68,7 @@ const Register = () => {
         e.preventDefault();
         try {
             await axios.post('/api/animatronics', { name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare });
+            console.log(name, occupation, initialLocation, description, color, status, instrument, imageBody, imageIcon, jumpscare );
             setName('');
             setInitialLocation('');
             setDescription('');
@@ -74,25 +78,13 @@ const Register = () => {
             setImageBody('');
             setImageIcon('');
             setJumpscare('');
-            setOccupation('test');
+            setOccupation('');
             router.push('/page-animatronic/')
         } catch (e) {
-            console.log('error', e.response.data);
+            setErrors(e.response.data)
+            console.log('error', e);
         }
     }
-
-    useEffect(() => {
-        async function fetchAnimatronics() {
-            try {
-                const response = await axios.get("/api/animatronics");
-                setAnimatronicsRegisteres(response.data);
-            } catch (error) {
-                console.error("Error fetching data:", error.response.data.errors);
-            }
-        }
-
-        fetchAnimatronics();
-    }, []);
 
     useEffect(() => {
         async function fetchPizzerias() {
@@ -254,6 +246,14 @@ const Register = () => {
                                     <button className={styles.btnRegister} type='submit'>CRIAR</button>
                                 </div>
                             </form>
+                            {
+                                errors.length ? (
+                                    <p style={{color:'white'}}>{errors}</p>
+                                ) : (null)
+                            }
+                            {
+                                console.log(errors)
+                            }
                         </main>
                     </div>
                 </div>

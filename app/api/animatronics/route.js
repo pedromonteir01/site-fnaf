@@ -39,6 +39,6 @@ export async function POST(request) {
     } catch (e) {
 
       console.log("[ORDER_POST]", e.response.data.errors);
-      return new NextResponse(e.response.data.errors, { status: 500 });
+      return new NextResponse(e.response.data.errors, {status: 500});
     }
   }
